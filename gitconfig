@@ -1,0 +1,20 @@
+[user]
+	name = Hans-Gunther Schmidt
+	email = hans@otype.de
+[core]
+	editor = vim
+	autocrlf = input
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	up = rebase
+	ci = commit
+[apply]
+	whitespace = strip
+[diff]
+	color = auto
+[pager]
+	color = true
+[status]
+	color = true

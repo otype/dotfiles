@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+# Settings for RIAK
+#
+#
+
+# set a higher ulimit
+ulimit -n 4096
+

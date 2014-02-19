@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+# RBENV
+#
+#
+if [ `uname -s` = "Linux" ]; then
+	export PATH="$HOME/.rbenv/bin:$PATH"
+	eval "$(rbenv init -)"
+    rbenv rehash
+else
+    export PYENV_ROOT=/usr/local/opt/pyenv
+    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+    rbenv rehash
+fi
