@@ -10,6 +10,9 @@
 	br = branch
 	up = rebase
 	ci = commit
+	pr = pull --rebase
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [apply]
 	whitespace = strip
 [diff]
@@ -18,3 +21,10 @@
 	color = true
 [status]
 	color = true
+[push]
+	default = simple
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
