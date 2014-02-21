@@ -21,8 +21,6 @@
 	color = true
 [status]
 	color = true
-[push]
-	default = simple
 [color]
     branch = auto
     diff = auto
