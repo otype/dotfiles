@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 #
 # http://stevelosh.com/blog/2012/10/the-homely-mutt/#configuring-offlineimap
 #
