@@ -3,7 +3,9 @@
 # RBENV
 #
 #
-if [ `uname -s` = "Linux" ]; then
+if [ `uname -s` = "FreeBSD" ]; then
+    # do nothing, we are done
+elif [ `uname -s` = "Linux" ]; then
 	export PATH="$HOME/.rbenv/bin:$PATH"
 	eval "$(rbenv init -)"
 	rbenv rehash

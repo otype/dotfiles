@@ -15,65 +15,19 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 
-# ANDROID
-#
-#
-if [[ -f $HOME/.zsh/zshenv-android ]]; then
-    . $HOME/.zsh/zshenv-android
-fi
-
-# JAVA
-#
-#
-if [[ -f $HOME/.zsh/zshenv-java ]]; then
-    . $HOME/.zsh/zshenv-java
-fi
-
-# EC2 
-#
-# 
-if [[ -f $HOME/.zsh/zshenv-ec2 ]]; then
-    . $HOME/.zsh/zshenv-ec2
-fi
-
-# RIAK
-#
-#
-if [[ -f $HOME/.zsh/zshenv-riak ]]; then
-    . $HOME/.zsh/zshenv-riak
-fi
-
-# RBENV
-#
-#
-if [[ -f $HOME/.zsh/zshenv-rbenv ]]; then
-    . $HOME/.zsh/zshenv-rbenv
-fi
-
-# HOMEBREW
-#
-#
-if [[ -f $HOME/.zsh/zshenv-brew ]]; then
-    . $HOME/.zsh/zshenv-brew
-fi
-
-# PYTHON VIRTUALENV
-#
-#
-if [[ -f $HOME/.zsh/zshenv-virtualenv ]]; then
-    . $HOME/.zsh/zshenv-virtualenv
-fi
-
-# PYENV
-#
-#
-if [[ -f $HOME/.zsh/zshenv-pyenv ]]; then
-    . $HOME/.zsh/zshenv-pyenv
-fi
-
 # $HOME/bin
 #
 # Add ~/bin to our PATH
-if [[ -d ~/bin ]]; then
+if [[ -d "${HOME}/bin" ]]; then
 	export PATH=$PATH:$HOME/bin
 fi
+
+# SOURCE ALL ENVIRONMENT CONFIGS
+#
+#
+for config in ${HOME}/.zsh/env-enabled/*
+do
+    . ${config}
+done
+
+

@@ -22,14 +22,10 @@ export EDITOR="vim"
 export BZR_EDITOR="vim"
 
 # Source aliases files
-if [[ -f $HOME/.zsh/zsh-aliases ]]; then
-	. $HOME/.zsh/zsh-aliases
-fi
+. $HOME/.zsh/zsh-aliases
 
 # Source zshenv files
-if [[ -f $HOME/.zsh/zshenv ]]; then
-	. $HOME/.zsh/zshenv
-fi
+. $HOME/.zsh/zshenv
 
 # Load the prompt theme system
 autoload -U promptinit
