@@ -6,9 +6,9 @@
 if [ `uname -s` = "Linux" ]; then
 	export PATH="$HOME/.rbenv/bin:$PATH"
 	eval "$(rbenv init -)"
-    rbenv rehash
+	rbenv rehash
 else
 	export RBENV_ROOT=/usr/local/var/rbenv
 	if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-    rbenv rehash
+	rbenv rehash
 fi
