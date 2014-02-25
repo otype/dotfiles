@@ -10,3 +10,4 @@ alias venv2=virtualenv-2.7
 alias venv3=virtualenv-3.3
 alias pep8='pep8 --max-line-length=120'
 alias cdv=cdvirtualenv
+#alias listwifi=sudo /sbin/ifconfig -v wlan0 list scan | awk '{print $4, $5, "\t\t", $1}'
