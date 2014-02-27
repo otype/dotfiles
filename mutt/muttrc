@@ -8,7 +8,6 @@ set message_cachedir = ~/.mutt_tmp/cache/bodies  # where to store bodies
 set certificate_file = ~/.mutt_tmp/certificates  # where to store certs
 set tmpdir           = ~/.mutt_tmp/temp          # where to keep temp files
 set mailcap_path     = ~/.mutt/mailcap           # entries for filetypes
-set signature        = ~/.signature              # my signature file
 
 # Source external files ----------------------------------------------------
 source ~/.mutt/mutt_colors                   # color options
