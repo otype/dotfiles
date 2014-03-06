@@ -8,7 +8,7 @@ import re
 import yaml
 import subprocess
 
-imap_passwd_file = os.environ['HOME'] + '/.offlineimap-credentials'
+imap_passwd_file = os.environ['HOME'] + '/.offlineimap.yaml'
 
 def get_keychain_pass(account=None, server=None):
     """
@@ -35,7 +35,7 @@ def read_password_from_file(account=None):
 
         Can be used on any system that does not have Keychain
     """
-    stream = open(os.environ['HOME'] + '/.offlineimap.yaml', 'r')
+    stream = open(imap_passwd_file, 'r')
     credentials = yaml.load(stream)
     return credentials[account]
 
