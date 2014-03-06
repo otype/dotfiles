@@ -31,9 +31,7 @@ bind    index         <space>  collapse-thread
 # general bindings
 bind    index,pager   c        mail                                                                                 #Compose
 bind    index,pager   l        copy-message                                                                         #Label
-#macro   index,pager   C        "<copy-message>?<toggle-mailboxes>"                             "copy a message to a mailbox"
 bind    index,pager   m        save-message                                                                         #Move to
-#macro   index,pager   M        "<save-message>?<toggle-mailboxes>"                             "move a message to a mailbox"
 bind    index,pager   N        search-opposite
 bind    index,pager   R        group-reply                                                                          #Reply all
 bind    index,pager   *        flag-message                                                                         #Star a message
