@@ -1,1 +1,1 @@
-COMMAND urlview %s
+COMMAND firefox -new-window %s
