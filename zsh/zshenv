@@ -22,6 +22,11 @@ if [[ -d "${HOME}/bin" ]]; then
 	export PATH=$PATH:$HOME/bin
 fi
 
+# Add /opt/local/bin
+if [[ -d "/opt/local/bin" ]]; then
+    export PATH=$PATH:/opt/local/bin
+fi
+
 # SOURCE ALL ENVIRONMENT CONFIGS
 #
 #
