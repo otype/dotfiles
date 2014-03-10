@@ -55,21 +55,21 @@ macro   index,pager   I        '<set-flag>O'                                    
 macro   index,pager   U        '<clear-flag>O'                                              "mark as unread"
 
 # Change to mailbox
-macro   index,pager   gi       '<change-folder>=INBOX<enter>'                          "Go to inbox"
-macro   index,pager   ga       '<change-folder>=archive<enter>'                        "Go to 'archive'"
-macro   index,pager   gf       '<change-folder>=flagged<enter>'                        "Go to 'flagged'"
-macro   index,pager   gd       '<change-folder>=drafts<enter>'                         "Go to 'drafts'"
-macro   index,pager   gs       '<change-folder>=sent<enter>'                           "Go to 'sent'"
-macro   index,pager   gt       '<change-folder>=trash<enter>'                          "Go to 'trash'"
-macro   index,pager   gp       '<change-folder>=spam<enter>'                           "Go to 'spam'"
-macro   index,pager   gl       '<change-folder>?'                                      "Go to 'Label'"
+macro   index,pager   gi       '<change-folder>=INBOX<enter>'                                   "Go to inbox"
+macro   index,pager   ga       '<change-folder>=[Gmail].All Mail<enter>'                        "Go to '[Gmail].All Mail'"
+macro   index,pager   g*       '<change-folder>=[Gmail].Starred<enter>'                         "Go to '[Gmail].Starred'"
+macro   index,pager   gd       '<change-folder>=[Gmail].Drafts<enter>'                          "Go to '[Gmail].Drafts'"
+macro   index,pager   gs       '<change-folder>=[Gmail].Sent Mail<enter>'                       "Go to '[Gmail].Sent Mail'"
+macro   index,pager   gt       '<change-folder>=[Gmail].Trash<enter>'                           "Go to '[Gmail.Trash'"
+macro   index,pager   gp       '<change-folder>=[Gmail].Spam<enter>'                            "Go to '[Gmail].Spam'"
+macro   index,pager   gl       '<change-folder>?'                                               "Go to 'Label'"
 
 # Gmail actions
-macro   index,pager   a        '<save-message>=archive<enter><enter><sync-mailbox>'    "archive to archive"
-macro   index,pager   d        '<save-message>=trash<enter><enter><sync-mailbox>'      "move to trash"
-macro   index,pager   !        '<save-message>=spam<enter><enter><sync-mailbox>'       "mark as spam"
-macro   index,pager   *        '<save-message>=flagged<enter><enter><sync-mailbox>'    "mark as flagged"
-macro   index,pager   +        '<save-message>=important<enter><enter><sync-mailbox>'  "mark as important"
+macro   index,pager   a        '<save-message>=[Gmail].All Mail<enter><enter><sync-mailbox>'    "[Gmail].All Mail to [Gmail].All Mail"
+macro   index,pager   d        '<save-message>=[Gmail].Trash<enter><enter><sync-mailbox>'       "move to [Gmail.Trash"
+macro   index,pager   !        '<save-message>=[Gmail].Spam<enter><enter><sync-mailbox>'        "mark as [Gmail].Spam"
+macro   index,pager   *        '<save-message>=[Gmail].Starred<enter><enter><sync-mailbox>'     "mark as [Gmail].Starred"
+macro   index,pager   +        '<save-message>=[Gmail].Important<enter><enter><sync-mailbox>'   "mark as important"
 
 # Folder hooks for accounts
 macro   index         g1       '<sync-mailbox><enter-command>source ~/.mutt/account_local<enter><change-folder>!<enter>'

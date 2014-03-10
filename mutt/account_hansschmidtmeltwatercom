@@ -1,8 +1,8 @@
 set folder      = ~/Mail/hansschmidtmeltwatercom
 set spoolfile   = "+INBOX"
-set mbox        = "+archive"
-set postponed   = "+drafts"
-set record      = "+sent"
+set mbox        = "+[Gmail].All Mail"
+set postponed   = "+[Gmail].Drafts"
+set record      = "+[Gmail].Sent Mail"
 set from        = "hans.schmidt@meltwater.com"
 set signature   = "~/.signature-hansschmidtmeltwatercom"
 mailboxes +INBOX

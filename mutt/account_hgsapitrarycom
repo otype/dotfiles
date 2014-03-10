@@ -1,8 +1,8 @@
 set folder      = ~/Mail/hgsapitrarycom
 set spoolfile   = "+INBOX"
-set mbox        = "+archive"
-set postponed   = "+drafts"
-set record      = "+sent"
+set mbox        = "+[Gmail].All Mail"
+set postponed   = "+[Gmail].Drafts"
+set record      = "+[Gmail].Sent Mail"
 set from        = "hgs@apitrary.com"
 set signature   = "~/.signature-hgsapitrarycom"
 mailboxes +INBOX
