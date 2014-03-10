@@ -22,6 +22,7 @@ bind    pager         <Up>     previous-line
 bind    attach        <return> view-mailcap
 
 # Index Key Bindings
+bind    index         Q        quit
 bind    index         gg       first-entry
 bind    index         G        last-entry
 bind    index         x        tag-thread                                                                           #Select Conversation
@@ -50,22 +51,22 @@ macro   index         o        '<shell-escape>offlineimap -qf INBOX<enter>' "run
 
 # Ctrl-R to mark all as read, I = mark as read, U = mark as unread
 macro   index         \Cr      'T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>' "mark all messages as read"
-macro   index,pager   I        '<set-flag>O'                                                   "mark as read"
-macro   index,pager   U        '<clear-flag>O'                                                 "mark as unread"
+macro   index,pager   I        '<set-flag>O'                                                "mark as read"
+macro   index,pager   U        '<clear-flag>O'                                              "mark as unread"
 
 # Change to mailbox
-macro   index,pager   gi       '<change-folder>=INBOX<enter>'                                  "Go to inbox"
-macro   index,pager   ga       '<change-folder>=[Gmail].All Mail<enter>'                       "Go to 'All Mail'"
-macro   index,pager   g*       '<change-folder>=[Gmail].Starred<enter>'                        "Go to 'Starred'"
-macro   index,pager   gd       '<change-folder>=[Gmail].Drafts<enter>'                         "Go to 'Drafts'"
-macro   index,pager   gs       '<change-folder>=[Gmail].Sent Mail<enter>'                      "Go to 'Sent Mail'"
-macro   index,pager   gt       '<change-folder>=[Gmail].Trash<enter>'                          "Go to 'Trash'"
-macro   index,pager   gp       '<change-folder>=[Gmail].Spam<enter>'                           "Go to 'Spam'"
-macro   index,pager   gl       '<change-folder>?'                                              "Go to 'Label'"
+macro   index,pager   gi       '<change-folder>=INBOX<enter>'                          "Go to inbox"
+macro   index,pager   ga       '<change-folder>=archive<enter>'                        "Go to 'archive'"
+macro   index,pager   gf       '<change-folder>=flagged<enter>'                        "Go to 'flagged'"
+macro   index,pager   gd       '<change-folder>=drafts<enter>'                         "Go to 'drafts'"
+macro   index,pager   gs       '<change-folder>=sent<enter>'                           "Go to 'sent'"
+macro   index,pager   gt       '<change-folder>=trash<enter>'                          "Go to 'trash'"
+macro   index,pager   gp       '<change-folder>=spam<enter>'                           "Go to 'spam'"
+macro   index,pager   gl       '<change-folder>?'                                      "Go to 'Label'"
 
 # Gmail actions
-macro   index,pager   a        '<save-message>=[Gmail].All Mail<enter><enter><sync-mailbox>'   "archive to All Mail"
-macro   index,pager   d        '<save-message>=[Gmail].Trash<enter><enter><sync-mailbox>'      "move to Trash"
-macro   index,pager   !        '<save-message>=[Gmail].Spam<enter><enter><sync-mailbox>'       "mark as Spam"
-macro   index,pager   *        '<save-message>=[Gmail].Starred<enter><enter><sync-mailbox>'    "mark as Starred"
-macro   index,pager   +        '<save-message>=[Gmail].Important<enter><enter><sync-mailbox>'  "mark as important"
+macro   index,pager   a        '<save-message>=archive<enter><enter><sync-mailbox>'    "archive to archive"
+macro   index,pager   d        '<save-message>=trash<enter><enter><sync-mailbox>'      "move to trash"
+macro   index,pager   !        '<save-message>=spam<enter><enter><sync-mailbox>'       "mark as spam"
+macro   index,pager   *        '<save-message>=flagged<enter><enter><sync-mailbox>'    "mark as flagged"
+macro   index,pager   +        '<save-message>=important<enter><enter><sync-mailbox>'  "mark as important"
