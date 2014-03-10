@@ -2,6 +2,7 @@
 # `Everything You Need To Know To Start Using GnuPG with Mutt'
 # http://codesorcery.net/old/mutt/mutt-gnupg-howto
 
+# PGP Settings -------------------------------------------------------------
 set pgp_decode_command          = "gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
 set pgp_verify_command          = "gpg --no-verbose --batch --output - --verify %s %f"
 set pgp_decrypt_command         = "gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
@@ -17,5 +18,7 @@ set pgp_list_secring_command    = "gpg --no-verbose --batch --with-colons --list
 set pgp_replyencrypt            = yes
 set pgp_timeout                 = 1800
 set pgp_good_sign               = "^gpg: Good signature from"
+set pgp_autosign                = no
+#set pgp_sign_as                 = E1B1B4A77773DB42
 
 # vim: set ft= muttrc

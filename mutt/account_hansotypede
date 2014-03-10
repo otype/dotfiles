@@ -1,0 +1,8 @@
+set folder      = ~/Mail/hansotypede
+set spoolfile   = "+INBOX"
+set mbox        = "+archive"
+set postponed   = "+drafts"
+set record      = "+sent"
+set from        = "hans@otype.de"
+set signature   = "~/.signature-hansotypede"
+mailboxes +INBOX

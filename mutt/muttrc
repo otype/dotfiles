@@ -1,5 +1,9 @@
-# Private Settings ---------------------------------------------------------
-source ~/.muttrc.private
+# Account Settings ---------------------------------------------------------
+source ~/.mutt/account_hansotypede
+
+# Personal settings --------------------------------------------------------
+set pgp_sign_as      = E1B1B4A77773DB42
+set realname         = "Hans-Gunther Schmidt"        # who am i?
 
 # Paths --------------------------------------------------------------------
 set header_cache     = ~/.mutt_tmp/cache/headers # where to store headers

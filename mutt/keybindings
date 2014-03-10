@@ -70,3 +70,9 @@ macro   index,pager   d        '<save-message>=trash<enter><enter><sync-mailbox>
 macro   index,pager   !        '<save-message>=spam<enter><enter><sync-mailbox>'       "mark as spam"
 macro   index,pager   *        '<save-message>=flagged<enter><enter><sync-mailbox>'    "mark as flagged"
 macro   index,pager   +        '<save-message>=important<enter><enter><sync-mailbox>'  "mark as important"
+
+# Folder hooks for accounts
+macro   index         g1       '<sync-mailbox><enter-command>source ~/.mutt-private/account_local<enter><change-folder>!<enter>'
+macro   index         g2       '<sync-mailbox><enter-command>source ~/.mutt-private/account_hansotypede<enter><change-folder>!<enter>'
+macro   index         g3       '<sync-mailbox><enter-command>source ~/.mutt-private/account_hansschmidtmeltwatercom<enter><change-folder>!<enter>'
+macro   index         g4       '<sync-mailbox><enter-command>source ~/.mutt-private/account_hgsapitrarycom<enter><change-folder>!<enter>'
