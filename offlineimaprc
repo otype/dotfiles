@@ -1,0 +1,119 @@
+[general]
+ui = ttyui
+accounts = hansotypede, hgsapitrarycom, hansschmidtmeltwatercom
+pythonfile=~/.mutt/get_credentials.py
+maxsyncaccounts = 3
+
+# hans@otype.de
+#
+#
+[Account hansotypede]
+localrepository = hansotypede-local
+remoterepository = hansotypede-remote
+status_backend = sqlite
+
+[Repository hansotypede-local]
+type = Maildir
+localfolders = ~/Mail/hansotypede
+nametrans = lambda folder: {'drafts':   '[Gmail]/Drafts',
+                            'sent':     '[Gmail]/Sent Mail',
+                            'flagged':  '[Gmail]/Starred',
+                            'important':'[Gmail]/Important',
+                            'trash':    '[Gmail]/Trash',
+                            'archive':  '[Gmail]/All Mail',
+                           }.get(folder, folder)
+
+[Repository hansotypede-remote]
+type = Gmail
+ssl = yes
+maxconnections = 1
+realdelete = no
+cert_fingerprint=89091347184d41768bfc0da9fad94bfe882dd358
+remoteuser = hans@otype.de
+remotepasseval = get_password_for(account="hans@otype.de", server="imap.gmail.com")
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Important': 'important',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/Spam':      'spam',
+                            '[Gmail]/All Mail':  'archive',
+                           }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Chats',
+                                             ]
+
+# hgs@apitrary.com
+#
+#
+[Account hgsapitrarycom]
+localrepository = hgsapitrarycom-local
+remoterepository = hgsapitrarycom-remote
+status_backend = sqlite
+
+[Repository hgsapitrarycom-local]
+type = Maildir
+localfolders = ~/Mail/hgsapitrarycom
+nametrans = lambda folder: {'drafts':   '[Gmail]/Drafts',
+                            'sent':     '[Gmail]/Sent Mail',
+                            'flagged':  '[Gmail]/Starred',
+                            'important':'[Gmail]/Important',
+                            'trash':    '[Gmail]/Trash',
+                            'archive':  '[Gmail]/All Mail',
+                           }.get(folder, folder)
+
+[Repository hgsapitrarycom-remote]
+type = Gmail
+ssl = yes
+maxconnections = 1
+realdelete = no
+cert_fingerprint=89091347184d41768bfc0da9fad94bfe882dd358
+remoteuser = hgs@apitrary.com
+remotepasseval = get_password_for(account="hgs@apitrary.com", server="imap.gmail.com")
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Important': 'important',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/Spam':      'spam',
+                            '[Gmail]/All Mail':  'archive',
+                           }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Chats',
+                                             ]
+
+# hans.schmidt@meltwater.com
+#
+#
+[Account hansschmidtmeltwatercom]
+localrepository = hansschmidtmeltwatercom-Local
+remoterepository = hansschmidtmeltwatercom-Remote
+status_backend = sqlite
+
+[Repository hansschmidtmeltwatercom-Local]
+type = Maildir
+localfolders = ~/Mail/hansschmidtmeltwatercom
+nametrans = lambda folder: {'drafts':   '[Gmail]/Drafts',
+                            'sent':     '[Gmail]/Sent Mail',
+                            'flagged':  '[Gmail]/Starred',
+                            'important':'[Gmail]/Important',
+                            'trash':    '[Gmail]/Trash',
+                            'archive':  '[Gmail]/All Mail',
+                           }.get(folder, folder)
+
+[Repository hansschmidtmeltwatercom-Remote]
+type = Gmail
+ssl = yes
+maxconnections = 1
+realdelete = no
+cert_fingerprint=89091347184d41768bfc0da9fad94bfe882dd358
+remoteuser = hans.schmidt@meltwater.com
+remotepasseval = get_password_for(account="hans.schmidt@meltwater.com", server="imap.googlemail.com")
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Important': 'important',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/Spam':      'spam',
+                            '[Gmail]/All Mail':  'archive',
+                           }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Chats',
+                                             ]
