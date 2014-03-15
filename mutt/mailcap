@@ -16,7 +16,7 @@ text/html;                      lynx %s; nametemplate=%s.html
 text/html;                      lynx -dump %s; nametemplate=%s.html; copiousoutput
 
 # TXT
-text/plain; view %s
+text/plain; open_attachment.sh %s
 
 # Unidentified files
 application/octet-stream; open_attachment.sh %s
