@@ -62,6 +62,7 @@ macro   index,pager   gd       '<change-folder>=[Gmail].Drafts<enter>'          
 macro   index,pager   gs       '<change-folder>=[Gmail].Sent Mail<enter>'                       "Go to '[Gmail].Sent Mail'"
 macro   index,pager   gt       '<change-folder>=[Gmail].Trash<enter>'                           "Go to '[Gmail.Trash'"
 macro   index,pager   gp       '<change-folder>=[Gmail].Spam<enter>'                            "Go to '[Gmail].Spam'"
+macro   index,pager   gn       '<change-folder>=News<enter>'                                    "Go to 'News'"
 macro   index,pager   gl       '<change-folder>?'                                               "Go to 'Label'"
 
 # Gmail actions
