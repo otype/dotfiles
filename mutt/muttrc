@@ -91,5 +91,6 @@ set forward_quote                            # include message in forwards
 set editor       = "mvim -f +7 -C -n -c 'set syntax=mail ft=mail enc=utf-8'"
 
 # Contacts options ---------------------------------------------------------
-set query_command = "contacts -sSf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+#set query_command = "contacts -sSf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
+set query_command = "/usr/local/bin/lbdbq '%s'"
 
