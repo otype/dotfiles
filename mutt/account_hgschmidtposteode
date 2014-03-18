@@ -1,0 +1,18 @@
+set folder      = ~/Mail/hgschmidtposteode
+set spoolfile   = "+INBOX"
+set mbox        = "=Archive"
+set postponed   = "=Drafts"
+set record      = "=Sent"
+set trash       = "=Trash"
+set from        = "hgschmidt@posteo.de"
+set signature   = "~/.signature-hgschmidtposteode"
+mailboxes +INBOX
+
+
+#macro   index,pager   ga       '<change-folder>=Archive<enter>'                    "Go to '[Gmail].All Mail'"
+#macro   index,pager   g*       '<change-folder>=Flagged<enter>'                    "Go to '[Gmail].Starred'"
+#macro   index,pager   gd       '<change-folder>=Drafts<enter>'                     "Go to '[Gmail].Drafts'"
+#macro   index,pager   gs       '<change-folder>=Sent<enter>'                       "Go to '[Gmail].Sent Mail'"
+#macro   index,pager   gt       '<change-folder>=Trash<enter>'                      "Go to '[Gmail.Trash'"
+#macro   index,pager   gp       '<change-folder>=Spam<enter>'                       "Go to '[Gmail].Spam'"
+#macro   index,pager   gl       '<change-folder>?'                                  "Go to 'Label'"

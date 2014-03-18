@@ -46,7 +46,8 @@ bind    index,pager   \#       delete-thread                                    
 macro   pager         \Cu      "|urlview<enter>" "call urlview to open links"
 
 # Sync email
-macro   index         O        '<shell-escape>imapfilter -v && offlineimap<enter>'           "run offlineimap to sync all mail"
+#macro   index         O        '<shell-escape>imapfilter -v && offlineimap<enter>'           "run offlineimap to sync all mail"
+macro   index         O        '<shell-escape>offlineimap<enter>'           "run offlineimap to sync all mail"
 macro   index         o        '<shell-escape>offlineimap -qf INBOX<enter>' "run offlineimap to sync inbox"
 
 # Ctrl-R to mark all as read, I = mark as read, U = mark as unread
@@ -75,5 +76,6 @@ macro   index,pager   +        '<save-message>=[Gmail].Important<enter><enter><s
 # Folder hooks for accounts
 macro   index         g1       '<sync-mailbox><enter-command>source ~/.mutt/account_local<enter><change-folder>!<enter>'
 macro   index         g2       '<sync-mailbox><enter-command>source ~/.mutt/account_hansotypede<enter><change-folder>!<enter>'
-macro   index         g3       '<sync-mailbox><enter-command>source ~/.mutt/account_hansschmidtmeltwatercom<enter><change-folder>!<enter>'
-macro   index         g4       '<sync-mailbox><enter-command>source ~/.mutt/account_hgsapitrarycom<enter><change-folder>!<enter>'
+macro   index         g3       '<sync-mailbox><enter-command>source ~/.mutt/account_hgsapitrarycom<enter><change-folder>!<enter>'
+macro   index         g4       '<sync-mailbox><enter-command>source ~/.mutt/account_hansschmidtmeltwatercom<enter><change-folder>!<enter>'
+macro   index         g5       '<sync-mailbox><enter-command>source ~/.mutt/account_hgschmidtposteode<enter><change-folder>!<enter>'
