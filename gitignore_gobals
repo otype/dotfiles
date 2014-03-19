@@ -1,0 +1,11 @@
+# IDE-related files
+*.iml
+.classpath
+.project
+.idea
+
+# IntelliJ plugins
+atlassian-ide-plugin.xml
+
+# Mac trash files
+.DS_Store
