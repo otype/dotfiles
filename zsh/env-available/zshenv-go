@@ -10,3 +10,8 @@ if [[ -d "${HOME}/code/go" ]]; then
   export GOPATH="${HOME}/code/go"
   export PATH=$PATH:$GOPATH/bin
 fi
+
+# Set APPENGINE path
+if [[ -d "${HOME}/code/go_appengine" ]]; then
+  export PATH=$PATH:${HOME}/code/go_appengine
+fi
