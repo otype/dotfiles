@@ -18,13 +18,13 @@ export LANGUAGE="en_US.UTF-8"
 # $HOME/bin
 #
 # Add ~/bin to our PATH
-if [[ -d "${HOME}/bin" ]]; then
-	export PATH=$PATH:$HOME/bin
+if [[ -d "$HOME/bin" ]]; then
+	PATH=$PATH:$HOME/bin
 fi
 
 # Add /opt/local/bin
 if [[ -d "/opt/local/bin" ]]; then
-    export PATH=$PATH:/opt/local/bin
+    PATH=$PATH:/opt/local/bin
 fi
 
 # SOURCE ALL ENVIRONMENT CONFIGS
@@ -35,4 +35,4 @@ do
     . ${config}
 done
 
-
+export PATH
