@@ -10,8 +10,13 @@
 # For Oracle JDK 1.7
 #export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home"
 
-# For Oracle JDK 1.8
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
+if [ `uname -s` = "FreeBSD" ]; then
+    # OpenJDK 7
+    export JAVA_HOME="/usr/local/openjdk7"
+else
+    # For Oracle JDK 1.8
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home"
+fi
 
 # Maven settings
 export M2_HOME="/usr/share/maven"
