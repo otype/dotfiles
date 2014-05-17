@@ -1,6 +1,5 @@
 [general]
 ui = ttyui
-#accounts = hansotypede, hansschmidtmeltwatercom
 accounts = hansotypede, hansschmidtmeltwatercom, hgschmidtposteode
 pythonfile=~/.mutt/get_credentials.py
 maxsyncaccounts = 3
