@@ -7,7 +7,7 @@ if [ `uname -s` = "FreeBSD" ]; then
 else
     # Add the GOROOT to PATH
     if [[ -d "/usr/local/Cellar/go" ]]; then
-        export PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
+        export PATH=$PATH:/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec/bin
     fi
 fi
 
