@@ -98,7 +98,7 @@ localfolders = ~/Mail/hgschmidtposteode
 type = IMAP
 ssl = yes
 maxconnections = 1
-cert_fingerprint=6324a14b7f50efa15915975f230f33d3e4bd4231
+cert_fingerprint=3a89d8addca7235c8f44e9dd2e856a31d2d3c970
 remoteuser = hgschmidt@posteo.de
 remotehost = posteo.de
 remotepasseval = get_password_for(account="hgschmidt@posteo.de", server="posteo.de")
