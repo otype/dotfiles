@@ -1,34 +1,35 @@
 [user]
-	name = Hans-Gunther Schmidt
-	email = hans@otype.de
+  name = Hans-Gunther Schmidt
+  email = hans@otype.de
 [core]
-	editor = vim
-	autocrlf = input
-	excludesfile = ~/.gitignore_globals
+  editor = vim
+  autocrlf = input
+  excludesfile = ~/.gitignore_globals
 [alias]
-	st = status
-	co = checkout
-	br = branch
-	up = rebase
-	ci = commit
-	pr = pull --rebase
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  st = status
+  co = checkout
+  br = branch
+  up = rebase
+  ci = commit
+  pr = pull --rebase
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  spr = !git stash && git pull --rebase && git stash pop
 [apply]
-	whitespace = strip
+  whitespace = strip
 [diff]
-	color = auto
+  color = auto
 [pager]
-	color = true
+  color = true
 [status]
-	color = true
+  color = true
 [color]
-    branch = auto
-    diff = auto
-    interactive = auto
-    status = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
 [push]
-	default = simple
+  default = simple
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
