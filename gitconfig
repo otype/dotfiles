@@ -5,6 +5,7 @@
   editor = vim
   autocrlf = input
   excludesfile = ~/.gitignore_globals
+  whitespace = cr-at-eol
 [alias]
   st = status
   co = checkout
@@ -19,6 +20,7 @@
   whitespace = strip
 [diff]
   color = auto
+  noprefix = true
 [pager]
   color = true
 [status]
