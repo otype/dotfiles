@@ -5,5 +5,5 @@
 #
 
 # set a higher ulimit
-ulimit -n 4096
+ulimit -n 2048
 
