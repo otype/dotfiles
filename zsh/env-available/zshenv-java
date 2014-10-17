@@ -27,6 +27,7 @@ export MAVEN_OPTS="-Xmx3072m -XX:MaxPermSize=1024m -Xms128m -Djava.awt.headless=
 # http://stackoverflow.com/questions/13578062/how-to-increase-ide-memory-limit-in-intellij-idea-on-mac
 # http://www.jetbrains.com/idea/webhelp/increasing-memory-heap.html
 function fix-intellij-vmoptions() {
+    mkdir -p ${HOME}/Library/Preferences/IntelliJIdea13
     echo "[Writing new configuration]"
     cat << EOF > $HOME/Library/Preferences/IntelliJIdea13/idea.vmoptions
 -Xms512m

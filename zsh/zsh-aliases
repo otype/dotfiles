@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+alias h=history
 alias sl=ls
 alias sshconfig='vim ~/.ssh/config'
 alias p=python2

@@ -2,9 +2,28 @@
 
 # Some ZSH options
 setopt promptsubst
-setopt CORRECT					# command CORRECTION
+setopt CORRECT			# command CORRECTION
+setopt globdots			# GLOBDOTS lets files beginning with a . be matched without explicitly specifying the dot.
 setopt EXTENDED_HISTORY		# puts timestamps in history
 setopt HASH_CMDS
+setopt AUTO_REMOVE_SLASH	# When the last character resulting from a completion is a slash and the next character typed is a word delimiter, remove the slash.
+setopt HIST_VERIFY		# Whenever the user enters a line with history substitution, don't execute the line directly; instead, perform history substitution and reload the line into the editing buffer.
+setopt MAIL_WARNING		# Print a warning message if a mail file has been accessed since the shell last checked.
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY		# To retrieve the history file everytime history is called upon.
+setopt HIST_NO_STORE		# Remove the history (fc -l) command from the history list when invoked. 
+setopt HIST_SAVE_NO_DUPS	# When writing out the history file, older commands that duplicate newer ones are omittesetopt INC_APPEND_HISTORY_TIME
+setopt HIST_NO_FUNCTIONS
+setopt AUTO_CD			# zsh will check to see if it's actually a directory
+
+# History settings
+export HISTSIZE=1000
+export SAVEHIST=1000
+export HISTFILE=~/.zsh_history
+export KEYTIMEOUT=1		# reduce vi-mode lag of 0.4 second delay to 0.1
+
+# Bind keys
+bindkey -v
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
 stty stop undef
