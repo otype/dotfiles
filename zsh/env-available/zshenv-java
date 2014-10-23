@@ -19,7 +19,8 @@ else
 fi
 
 # Maven settings
-export M2_HOME="/usr/share/maven"
+# Using maven2? Then, use M2_HOME! If you have maven3, DO NOT USE M2_HOME!
+#export M2_HOME="/usr/share/maven"
 export MAVEN_OPTS="-Xmx3072m -XX:MaxPermSize=1024m -Xms128m -Djava.awt.headless=true"
 
 # Fix IntelliJ 12+ vmoptions when upgrading
