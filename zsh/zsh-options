@@ -14,4 +14,3 @@ setopt HIST_NO_FUNCTIONS	# Remove function definitions from the history list.
 setopt HIST_SAVE_NO_DUPS	# When writing out the history file, older commands that duplicate newer ones are omitted
 setopt INC_APPEND_HISTORY_TIME
 setopt HIST_NO_FUNCTIONS
-setopt AUTO_CD			# zsh will check to see if it's actually a directory
