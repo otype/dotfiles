@@ -18,7 +18,6 @@ set ignorecase                              " case-insensitive search
 set incsearch                               " search as you type
 set iskeyword+=_,$,@,%,#,-                  " don't linebreak when encounter these characters.
 set laststatus=2                            " always show statusline
-set list                                    " show trailing whitespace
 set matchtime=2                             " the length of time to show matching parent.
 set ruler                                   " show where you are
 set scrolloff=3                             " show context above/below cursorline
