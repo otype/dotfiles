@@ -1,0 +1,39 @@
+[user]
+  name = Hans-Gunther Schmidt
+  email = hans.schmidt@meltwater.com
+[core]
+  editor = vim
+  autocrlf = input
+  excludesfile = ~/.gitignore_globals
+  whitespace = cr-at-eol
+[alias]
+  st = status
+  co = checkout
+  br = branch
+  up = rebase
+  ci = commit
+  pr = pull --rebase
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  spr = !git stash && git pull --rebase && git stash pop
+[apply]
+  whitespace = strip
+[diff]
+  color = auto
+  noprefix = true
+[pager]
+  color = true
+[status]
+  color = true
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[push]
+  default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[rebase]
+	stat = true
