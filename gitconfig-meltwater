@@ -1,6 +1,6 @@
 [user]
   name = Hans-Gunther Schmidt
-  email = hans.schmidt@meltwater.com
+	email = hans.schmidt@meltwater.com
 [core]
   editor = vim
   autocrlf = input
