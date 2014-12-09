@@ -1,14 +1,5 @@
 # zgitinit and prompt_otype_setup must be somewhere in your $fpath, see README for more.
 
-# ulimit settings
-# Requires to set following in /etc/launchd.conf (on Macs up to Mavericks, NOT Yosemite)
-# $ cat /etc/launchd.conf
-#limit maxfiles 16384 32768
-#limit maxproc 2048 2048
-#
-ulimit -n 16384
-ulimit -u 2048
-
 # ZSH options
 . ${HOME}/.zsh/zsh-options
 
