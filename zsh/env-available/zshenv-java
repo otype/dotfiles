@@ -4,12 +4,10 @@
 #
 #
 
-# 1.6 Apple Java
-export JDK6="/System/Library/Frameworks/JavaVM.framework/Home"
-
-# Oracle JDK 1.7 and higher
-export JDK7="/Library/Java/JavaVirtualMachines/`ls /Library/Java/JavaVirtualMachines | grep 1.7 |  sort -n | tail -n 1`/Contents/Home"
-export JDK8="/Library/Java/JavaVirtualMachines/`ls /Library/Java/JavaVirtualMachines | grep 1.8 |  sort -n | tail -n 1`/Contents/Home"
+# JDKs
+export JDK6="/usr/libexec/java_home -v 1.6"
+export JDK7="/usr/libexec/java_home -v 1.7"
+export JDK8="/usr/libexec/java_home -v 1.8"
 
 # Default JDK
 export defaultJDK=$JDK8
