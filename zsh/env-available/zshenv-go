@@ -5,7 +5,7 @@ if [[ -d "/usr/local/Cellar/go" ]]; then
 fi
 
 if [[ -d "/usr/local/go" ]]; then
-    export GOROOT=$HOME/go
+    export GOROOT=/usr/local/go
     export PATH=$PATH:$GOROOT/bin
 fi
 
