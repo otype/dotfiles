@@ -1,23 +1,15 @@
 #!/usr/local/bin/zsh
 
-if [ `uname -s` = "FreeBSD" ]; then
-    if [[ -d "/usr/local/go/bin" ]]; then
-        export PATH=$PATH:/usr/local/go/bin
-    fi
-else
-    # Add the GOROOT to PATH
-    if [[ -d "/usr/local/Cellar/go" ]]; then
-        export PATH=$PATH:/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec/bin
-    fi
+if [[ -d "/usr/local/Cellar/go" ]]; then
+    export PATH=$PATH:/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec/bin
 fi
 
-# Set GOPATH
+if [[ -d "/usr/local/go" ]]; then
+    export GOROOT=$HOME/go
+    export PATH=$PATH:$GOROOT/bin
+fi
+
 if [[ -d "${HOME}/code/go" ]]; then
     export GOPATH="$HOME/code/go"
     export PATH=$PATH:$GOPATH/bin
-fi
-
-# Set APPENGINE path
-if [[ -d "$HOME/code/go_appengine" ]]; then
-    export PATH=$PATH:$HOME/code/go_appengine
 fi

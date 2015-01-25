@@ -5,9 +5,14 @@
 #
 
 # JDKs
-export JDK6=`/usr/libexec/java_home -v 1.6`
-export JDK7=`/usr/libexec/java_home -v 1.7`
-export JDK8=`/usr/libexec/java_home -v 1.8`
+if [[ `uname -s` -eq "FreeBSD" ]]; then
+    export JDK7="/usr/local/openjdk7"
+    export JDK8="/usr/local/openjdk8"
+else
+    export JDK6=`/usr/libexec/java_home -v 1.6`
+    export JDK7=`/usr/libexec/java_home -v 1.7`
+    export JDK8=`/usr/libexec/java_home -v 1.8`
+fi
 
 # Default JDK
 export defaultJDK=$JDK8
