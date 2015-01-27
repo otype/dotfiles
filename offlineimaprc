@@ -29,7 +29,7 @@ type = Gmail
 ssl = yes
 maxconnections = 1
 realdelete = no
-cert_fingerprint=687687a7f2dc166baf58221ff7a42f1683d0d164
+cert_fingerprint=d4ddbc3715ed1e919a185dd634581a05930e4d43
 remoteuser = hans@otype.de
 remotepasseval = get_password_for(account="hans@otype.de", server="imap.gmail.com")
 #nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
@@ -68,7 +68,7 @@ type = Gmail
 ssl = yes
 maxconnections = 1
 realdelete = no
-cert_fingerprint=687687a7f2dc166baf58221ff7a42f1683d0d164
+cert_fingerprint=d4ddbc3715ed1e919a185dd634581a05930e4d43
 remoteuser = hans.schmidt@meltwater.com
 remotepasseval = get_password_for(account="hans.schmidt@meltwater.com", server="imap.googlemail.com")
 #nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',

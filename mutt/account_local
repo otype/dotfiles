@@ -1,5 +1,5 @@
 set folder      = /var/mail
 set spoolfile   = "+hgschmidt"
-set from        = "hans@mbp17.oty.local"
+set from        = "hans@mean.local"
 set signature   = "~/.signature"
 mailboxes +hgschmidt
