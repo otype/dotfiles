@@ -23,12 +23,4 @@ set pgp_sign_as                 = 0xCAC4CBC0
 set pgp_replyencrypt            = yes
 set pgp_use_gpg_agent           = yes
 
-# Crypt Settings ----------------------------------------------------------
-#set crypt_autosign              = yes
-#set crypt_replysign             = yes     # sign only replies to signed messages
-#set crypt_autoencrypt           = yes     # automatically encrypt outgoing messages
-#set crypt_replyencrypt          = yes     # encrypt only replies to signed messages
-#set crypt_replysignencrypted    = yes     # encrypt and sign replies to encrypted messages
-#set crypt_verify_sig            = yes     # automatically verify the sign of a message when opened
-
 # vim: set ft= muttrc

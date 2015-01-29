@@ -2,7 +2,6 @@
 source ~/.mutt/account_hansotypede
 
 # Personal settings --------------------------------------------------------
-set pgp_sign_as      = E1B1B4A77773DB42
 set realname         = "Hans-Gunther Schmidt"        # who am i?
 
 # Paths --------------------------------------------------------------------
@@ -11,13 +10,18 @@ set message_cachedir = ~/.mutt_tmp/cache/bodies  # where to store bodies
 set certificate_file = ~/.mutt_tmp/certificates  # where to store certs
 set tmpdir           = ~/.mutt_tmp/temp          # where to keep temp files
 set alias_file       = ~/.aliases                # where to store aliases
-set mailcap_path     = ~/.mutt/mailcap           # entries for filetypes
+set mailcap_path     = ~/.mailcap                # entries for filetypes
 
 # Source external files ----------------------------------------------------
-source ~/.mutt/mutt_colors                   # color options
-source ~/.mutt/settings_sidebar              # sidebar bindings
-source ~/.mutt/settings_pgp                  # PGP settings
-source ~/.mutt/keybindings                   # shortcuts
+source ~/.mutt/colors.rc                     # color options
+source ~/.mutt/sidebar.rc                    # sidebar bindings
+source ~/.mutt/gpg.rc                        # PGP settings
+source ~/.mutt/keybindings.rc                # shortcuts
+
+#source ~/.mutt/mutt_colors                   # color options
+#source ~/.mutt/settings_sidebar              # sidebar bindings
+#source ~/.mutt/settings_pgp                  # PGP settings
+#source ~/.mutt/keybindings                   # shortcuts
 
 # Basic Options ------------------------------------------------------------
 set sendmail         = /usr/local/bin/msmtp  # Use msmtp for sending mail to SMTP
@@ -87,8 +91,8 @@ set reply_to                                 # reply to Reply to: field
 set reverse_name                             # reply as whomever it was to
 set include                                  # include message in replies
 set forward_quote                            # include message in forwards
-#set editor       = "vim +7 -c 'set syntax=mail ft=mail enc=utf-8'"
-set editor       = "mvim -f +7 -C -n -c 'set syntax=mail ft=mail enc=utf-8'"
+set editor       = "vim +7 -c 'set syntax=mail ft=mail enc=utf-8'"
+#set editor       = "mvim -f +7 -C -n -c 'set syntax=mail ft=mail enc=utf-8'"
 
 # Contacts options ---------------------------------------------------------
 #set query_command = "contacts -sSf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
