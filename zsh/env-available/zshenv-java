@@ -5,24 +5,17 @@
 #
 
 # JDKs
-if [[ `uname -s` -eq "FreeBSD" ]]; then
+if [[ "`uname -s`" == "FreeBSD" ]]; then
     export JDK7="/usr/local/openjdk7"
     export JDK8="/usr/local/openjdk8"
+    defaultJDK=$JDK7
 else
     export JDK6=`/usr/libexec/java_home -v 1.6`
     export JDK7=`/usr/libexec/java_home -v 1.7`
     export JDK8=`/usr/libexec/java_home -v 1.8`
+    defaultJDK=$JDK8
 fi
-
-# Default JDK
-export defaultJDK=$JDK8
-
-if [ `uname -s` = "FreeBSD" ]; then
-    # OpenJDK 7
-    export JAVA_HOME="/usr/local/openjdk7"
-else
-    export JAVA_HOME="${defaultJDK}"
-fi
+export JAVA_HOME="${defaultJDK}"
 
 # Maven settings
 # Using maven2? Then, use M2_HOME! If you have maven3, DO NOT USE M2_HOME!
