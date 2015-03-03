@@ -69,11 +69,11 @@ macro   index,pager   gp       '<change-folder>=[Gmail].Spam<enter>'            
 macro   index,pager   gl       '<change-folder>?'                                               "Go to 'Label'"
 
 # My own label setup
-macro   index,pager   ggs      '<change-folder>=services<enter>'                                "Go to 'services'"
-macro   index,pager   ggb      '<change-folder>=all_berlin<enter>'                              "Go to 'all_berlin'"
-macro   index,pager   gge      '<change-folder>=all_eng<enter>'                                 "Go to 'all_eng'"
-macro   index,pager   ggm      '<change-folder>=all_mobile<enter>'                              "Go to 'all_mobile'"
-macro   index,pager   ggh      '<change-folder>=all_haakon<enter>'                              "Go to 'all_haakon'"
+macro   index,pager   ls       '<change-folder>=services<enter>'                                "Go to 'services'"
+macro   index,pager   lab      '<change-folder>=all_berlin<enter>'                              "Go to 'all_berlin'"
+macro   index,pager   lae      '<change-folder>=all_eng<enter>'                                 "Go to 'all_eng'"
+macro   index,pager   lam      '<change-folder>=all_mobile<enter>'                              "Go to 'all_mobile'"
+macro   index,pager   lah      '<change-folder>=all_haakon<enter>'                              "Go to 'all_haakon'"
 
 # Gmail actions
 macro   index,pager   a        '<save-message>=[Gmail].All Mail<enter><enter><sync-mailbox>'    "[Gmail].All Mail to [Gmail].All Mail"
