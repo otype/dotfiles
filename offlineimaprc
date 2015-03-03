@@ -21,7 +21,7 @@ type = Gmail
 ssl = yes
 maxconnections = 1
 realdelete = no
-cert_fingerprint=e0478e5b1535d51ac3672543f3a0d5943fb19fa2
+sslcacertfile = ~/.dotfiles/ca-bundle.crt
 remoteuser = hans@otype.de
 remotepasseval = get_password_for(account="hans@otype.de", server="imap.gmail.com")
 
@@ -42,7 +42,7 @@ type = Gmail
 ssl = yes
 maxconnections = 1
 realdelete = no
-cert_fingerprint=e0478e5b1535d51ac3672543f3a0d5943fb19fa2
+sslcacertfile = ~/.dotfiles/ca-bundle.crt
 remoteuser = hans.schmidt@meltwater.com
 remotepasseval = get_password_for(account="hans.schmidt@meltwater.com", server="imap.googlemail.com")
 
