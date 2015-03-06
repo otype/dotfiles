@@ -7,14 +7,14 @@ bind    editor        <Tab>    complete-query
 bind    editor        ^T       complete
 bind    editor        <space>  noop
 
-bind    generic       x        tag-entry                                                                            #Select Conversation
+bind    generic       x        tag-entry                                                        # Select Conversation
 
 # Pager Key Bindings
 bind    pager         gg       top
 bind    pager         G        bottom
 bind    pager         j        next-entry
 bind    pager         k        previous-entry
-bind    pager         x        tag-message                                                                          #Select Conversation
+bind    pager         x        tag-message                                                      # Select Conversation
 bind    pager         <Down>   next-line
 bind    pager         <Up>     previous-line
 
@@ -25,18 +25,18 @@ bind    attach        <return> view-mailcap
 bind    index         Q        quit
 bind    index         gg       first-entry
 bind    index         G        last-entry
-bind    index         x        tag-thread                                                                           #Select Conversation
+bind    index         x        tag-thread                                                       # Select Conversation
 bind    index         <tab>    sync-mailbox
 bind    index         <space>  collapse-thread
 
 # general bindings
-bind    index,pager   c        mail                                                                                 #Compose
-bind    index,pager   l        copy-message                                                                         #Label
-bind    index,pager   m        save-message                                                                         #Move to
+bind    index,pager   c        mail                                                             # Compose
+bind    index,pager   l        copy-message                                                     # Label
+bind    index,pager   m        save-message                                                     # Move to
 bind    index,pager   N        search-opposite
-bind    index,pager   R        group-reply                                                                          #Reply all
-bind    index,pager   *        flag-message                                                                         #Star a message
-bind    index,pager   \#       delete-thread                                                                        #Delete
+bind    index,pager   R        group-reply                                                      # Reply all
+bind    index,pager   *        flag-message                                                     # Star a message
+bind    index,pager   \#       delete-thread                                                    # Delete
 
 # MACROS
 #
@@ -54,22 +54,25 @@ macro   index         \Cr      'T~U<enter><tag-prefix><clear-flag>N<untag-patter
 macro   index,pager   I        '<set-flag>O'                                                    "mark as read"
 macro   index,pager   U        '<clear-flag>O'                                                  "mark as unread"
 
-# Change to mailbox
+# General folder switch macros
 macro   index,pager   gi       '<change-folder>=INBOX<enter>'                                   "Go to inbox"
-macro   index,pager   ga       '<change-folder>=[Gmail].All Mail<enter>'                        "Go to '[Gmail].All Mail'"
-macro   index,pager   g*       '<change-folder>=[Gmail].Starred<enter>'                         "Go to '[Gmail].Starred'"
-macro   index,pager   gd       '<change-folder>=[Gmail].Drafts<enter>'                          "Go to '[Gmail].Drafts'"
-macro   index,pager   gs       '<change-folder>=[Gmail].Sent Mail<enter>'                       "Go to '[Gmail].Sent Mail'"
-macro   index,pager   gt       '<change-folder>=[Gmail].Trash<enter>'                           "Go to '[Gmail.Trash'"
-macro   index,pager   gp       '<change-folder>=[Gmail].Spam<enter>'                            "Go to '[Gmail].Spam'"
 macro   index,pager   gl       '<change-folder>?'                                               "Go to 'Label'"
 
-# My own label setup
-macro   index,pager   ls       '<change-folder>=services<enter>'                                "Go to 'services'"
-macro   index,pager   lab      '<change-folder>=all_berlin<enter>'                              "Go to 'all_berlin'"
-macro   index,pager   lae      '<change-folder>=all_eng<enter>'                                 "Go to 'all_eng'"
-macro   index,pager   lam      '<change-folder>=all_mobile<enter>'                              "Go to 'all_mobile'"
-macro   index,pager   lah      '<change-folder>=all_haakon<enter>'                              "Go to 'all_haakon'"
+# Google-specific folder switch macros
+macro   index,pager   gga      '<change-folder>=[Gmail].All Mail<enter>'                        "Go to '[Gmail].All Mail'"
+macro   index,pager   gg*      '<change-folder>=[Gmail].Starred<enter>'                         "Go to '[Gmail].Starred'"
+macro   index,pager   ggd      '<change-folder>=[Gmail].Drafts<enter>'                          "Go to '[Gmail].Drafts'"
+macro   index,pager   ggs      '<change-folder>=[Gmail].Sent Mail<enter>'                       "Go to '[Gmail].Sent Mail'"
+macro   index,pager   ggt      '<change-folder>=[Gmail].Trash<enter>'                           "Go to '[Gmail.Trash'"
+macro   index,pager   ggp      '<change-folder>=[Gmail].Spam<enter>'                            "Go to '[Gmail].Spam'"
+
+# Meltwater-specific folder switch macros
+macro   index,pager   gas      '<change-folder>=services<enter>'                                "Go to 'services'"
+macro   index,pager   gab      '<change-folder>=all_berlin<enter>'                              "Go to 'all_berlin'"
+macro   index,pager   gae      '<change-folder>=all_eng<enter>'                                 "Go to 'all_eng'"
+macro   index,pager   gam      '<change-folder>=all_mobile<enter>'                              "Go to 'all_mobile'"
+macro   index,pager   gah      '<change-folder>=all_haakon<enter>'                              "Go to 'all_haakon'"
+macro   index,pager   gar      '<change-folder>=action_required<enter>'                         "Go to 'action_required'"
 
 # Gmail actions
 macro   index,pager   a        '<save-message>=[Gmail].All Mail<enter><enter><sync-mailbox>'    "[Gmail].All Mail to [Gmail].All Mail"
