@@ -1,8 +1,0 @@
-set folder      = ~/Mail/hansotypede
-set spoolfile   = "+INBOX"
-set mbox        = "+[Gmail].All Mail"
-set postponed   = "+[Gmail].Drafts"
-set record      = "+[Gmail].Sent Mail"
-set from        = "hans@otype.de"
-set signature   = "~/.signature-hansotypede"
-mailboxes +INBOX
