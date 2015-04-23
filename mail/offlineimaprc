@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = hansotypede, hansschmidtmeltwatercom, hgschmidtposteode
+accounts = hansotypede, hansschmidtmeltwatercom
 pythonfile=~/.mutt/get_credentials.py
 maxsyncaccounts = 3
 
@@ -46,23 +46,3 @@ sslcacertfile = ~/.dotfiles/mail/ca-bundle.crt
 remoteuser = hans.schmidt@meltwater.com
 remotepasseval = get_password_for(account="hans.schmidt@meltwater.com", server="imap.googlemail.com")
 
-# hgschmidt@posteo.de
-#
-#
-[Account hgschmidtposteode]
-localrepository = hgschmidtposteode-local
-remoterepository = hgschmidtposteode-remote
-status_backend = sqlite
-
-[Repository hgschmidtposteode-local]
-type = Maildir
-localfolders = ~/Mail/hgschmidtposteode
-
-[Repository hgschmidtposteode-remote]
-type = IMAP
-ssl = yes
-maxconnections = 1
-cert_fingerprint=3a89d8addca7235c8f44e9dd2e856a31d2d3c970
-remoteuser = hgschmidt@posteo.de
-remotehost = posteo.de
-remotepasseval = get_password_for(account="hgschmidt@posteo.de", server="posteo.de")
