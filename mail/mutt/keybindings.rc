@@ -60,20 +60,12 @@ macro   index,pager   gi       '<change-folder>=INBOX<enter>'                   
 macro   index,pager   gl       '<change-folder>?'                                               "Go to 'Label'"
 
 # Google-specific folder switch macros
-macro   index,pager   gga      '<change-folder>=[Gmail].All Mail<enter>'                        "Go to '[Gmail].All Mail'"
-macro   index,pager   gg*      '<change-folder>=[Gmail].Starred<enter>'                         "Go to '[Gmail].Starred'"
-macro   index,pager   ggd      '<change-folder>=[Gmail].Drafts<enter>'                          "Go to '[Gmail].Drafts'"
-macro   index,pager   ggs      '<change-folder>=[Gmail].Sent Mail<enter>'                       "Go to '[Gmail].Sent Mail'"
-macro   index,pager   ggt      '<change-folder>=[Gmail].Trash<enter>'                           "Go to '[Gmail.Trash'"
-macro   index,pager   ggp      '<change-folder>=[Gmail].Spam<enter>'                            "Go to '[Gmail].Spam'"
-
-# Meltwater-specific folder switch macros
-macro   index,pager   gas      '<change-folder>=services<enter>'                                "Go to 'services'"
-macro   index,pager   gab      '<change-folder>=all_berlin<enter>'                              "Go to 'all_berlin'"
-macro   index,pager   gae      '<change-folder>=all_eng<enter>'                                 "Go to 'all_eng'"
-macro   index,pager   gam      '<change-folder>=all_mobile<enter>'                              "Go to 'all_mobile'"
-macro   index,pager   gah      '<change-folder>=all_haakon<enter>'                              "Go to 'all_haakon'"
-macro   index,pager   gar      '<change-folder>=action_required<enter>'                         "Go to 'action_required'"
+macro   index,pager   ga       '<change-folder>=[Gmail].All Mail<enter>'                        "Go to '[Gmail].All Mail'"
+macro   index,pager   g*       '<change-folder>=[Gmail].Starred<enter>'                         "Go to '[Gmail].Starred'"
+macro   index,pager   gd       '<change-folder>=[Gmail].Drafts<enter>'                          "Go to '[Gmail].Drafts'"
+macro   index,pager   gs       '<change-folder>=[Gmail].Sent Mail<enter>'                       "Go to '[Gmail].Sent Mail'"
+macro   index,pager   gt       '<change-folder>=[Gmail].Trash<enter>'                           "Go to '[Gmail.Trash'"
+macro   index,pager   gp       '<change-folder>=[Gmail].Spam<enter>'                            "Go to '[Gmail].Spam'"
 
 # Gmail actions
 macro   index,pager   a        '<save-message>=[Gmail].All Mail<enter><enter><sync-mailbox>'    "[Gmail].All Mail to [Gmail].All Mail"
