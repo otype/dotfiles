@@ -8,6 +8,7 @@ maxsyncaccounts = 3
 #
 #
 [Account hansotypede]
+postsynchook = notmuch new
 localrepository = hansotypede-local
 remoterepository = hansotypede-remote
 status_backend = sqlite
@@ -29,6 +30,7 @@ remotepasseval = get_password_for(account="hans@otype.de", server="imap.gmail.co
 #
 #
 [Account hansschmidtmeltwatercom]
+postsynchook = notmuch new
 localrepository = hansschmidtmeltwatercom-Local
 remoterepository = hansschmidtmeltwatercom-Remote
 status_backend = sqlite
