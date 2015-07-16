@@ -19,11 +19,38 @@ export JAVA_HOME="${defaultJDK}"
 
 # Maven settings
 # Using maven2? Then, use M2_HOME! If you have maven3, DO NOT USE M2_HOME!
-#export M2_HOME="/usr/share/maven"
-export MAVEN_OPTS="-Xmx3072m -XX:MaxPermSize=1024m -Xms128m -Djava.awt.headless=true"
+function set-maven-opts() {
+  #export M2_HOME="/usr/share/maven"
+  if [[ "$JAVA_HOME" != "$JDK8" ]]; then
+    MAVEN_EXTRA_OPTS="-XX:MaxPermSize=1024m"
+  fi
+  export MAVEN_OPTS="-Xmx3072m -Xms128m -Djava.awt.headless=true ${MAVEN_EXTRA_OPTS}"
+}
+set-maven-opts
 
 function java-versions() {
 	env | grep JDK
+}
+
+function switch-to-java() {
+  jdk=$1
+
+  if [[ "$jdk" == "1.7" ]]; then
+    JAVA_HOME=$JDK7
+  elif [[ "$jdk" == "7" ]]; then
+    JAVA_HOME=$JDK7
+  elif [[ "$jdk" == "1.8" ]]; then
+    JAVA_HOME=$JDK8
+  elif [[ "$jdk" == "8" ]]; then
+    JAVA_HOME=$JDK8
+  else
+    JAVA_HOME=$JDK8
+  fi
+
+  export JAVA_HOME
+  echo "Switching to $JAVA_HOME"
+  set-maven-opts
+  echo "Setting MAVEN_OPTS=$MAVEN_OPTS"
 }
 
 # Fix IntelliJ 12+ vmoptions when upgrading
