@@ -47,12 +47,13 @@ bind    index,pager   \#       delete-thread                                    
 macro   pager         \Cu      "|urlview<enter>"                                                "call urlview to open links"
 
 # Sync email
-macro   index         O        '<shell-escape>offlineimap<enter>'                 "run offlineimap to sync all mail"
-macro   index         o        '<shell-escape>offlineimap -qf INBOX<enter>'       "run offlineimap to sync inbox"
+macro   index         O        '<shell-escape>offlineimap<enter>'                               "run offlineimap to sync all mail"
+macro   index         o        '<shell-escape>offlineimap -qf INBOX<enter>'                     "run offlineimap to sync inbox"
+macro   index         I        '<shell-escape>imapfilter<enter>'                                "run imapfilter"
 
 # Ctrl-R to mark all as read, I = mark as read, U = mark as unread
 macro   index         \Cr      'T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>'     "mark all messages as read"
-macro   index,pager   I        '<set-flag>O'                                                    "mark as read"
+macro   index,pager   R        '<set-flag>O'                                                    "mark as read"
 macro   index,pager   U        '<clear-flag>O'                                                  "mark as unread"
 
 # General folder switch macros
