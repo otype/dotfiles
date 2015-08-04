@@ -53,8 +53,8 @@ macro   index         I        '<shell-escape>imapfilter<enter>'                
 
 # Ctrl-R to mark all as read, I = mark as read, U = mark as unread
 macro   index         \Cr      'T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>'     "mark all messages as read"
-macro   index,pager   R        '<set-flag>O'                                                    "mark as read"
-macro   index,pager   U        '<clear-flag>O'                                                  "mark as unread"
+macro   index,pager   rr       '<set-flag>O'                                                    "mark as read"
+macro   index,pager   uu       '<clear-flag>O'                                                  "mark as unread"
 
 # General folder switch macros
 macro   index,pager   gi       '<change-folder>=INBOX<enter>'                                   "Go to inbox"
