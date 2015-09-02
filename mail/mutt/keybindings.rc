@@ -35,6 +35,7 @@ bind    index,pager   c        mail                                             
 bind    index,pager   l        copy-message                                                     # Label
 bind    index,pager   m        save-message                                                     # Move to
 bind    index,pager   N        search-opposite
+bind    index,pager   r        reply                                                            # Reply
 bind    index,pager   R        group-reply                                                      # Reply all
 bind    index,pager   *        flag-message                                                     # Star a message
 bind    index,pager   \#       delete-thread                                                    # Delete
@@ -53,8 +54,8 @@ macro   index         I        '<shell-escape>imapfilter<enter>'                
 
 # Ctrl-R to mark all as read, I = mark as read, U = mark as unread
 macro   index         \Cr      'T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>'     "mark all messages as read"
-macro   index,pager   rr       '<set-flag>O'                                                    "mark as read"
-macro   index,pager   uu       '<clear-flag>O'                                                  "mark as unread"
+#macro   index,pager   \Cr      '<set-flag>O'                                                    "mark as read"
+#macro   index,pager   \Cu      '<clear-flag>O'                                                  "mark as unread"
 
 # General folder switch macros
 macro   index,pager   gi       '<change-folder>=INBOX<enter>'                                   "Go to inbox"
