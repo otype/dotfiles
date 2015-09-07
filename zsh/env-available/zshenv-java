@@ -10,7 +10,7 @@ if [[ "`uname -s`" == "FreeBSD" ]]; then
     export JDK8="/usr/local/openjdk8"
     defaultJDK=$JDK7
 else
-#    export JDK6=`/usr/libexec/java_home -v 1.6`
+    export JDK6=`/usr/libexec/java_home -v 1.6`
     export JDK7=`/usr/libexec/java_home -v 1.7`
     export JDK8=`/usr/libexec/java_home -v 1.8`
     defaultJDK=$JDK8
@@ -58,22 +58,21 @@ function switch-to-java() {
 # http://stackoverflow.com/questions/13578062/how-to-increase-ide-memory-limit-in-intellij-idea-on-mac
 # http://www.jetbrains.com/idea/webhelp/increasing-memory-heap.html
 function fix-intellij-vmoptions() {
-    mkdir -p ${HOME}/Library/Preferences/IntelliJIdea13
+    mkdir -p ${HOME}/Library/Preferences/IntelliJIdea14
     echo "[Writing new configuration]"
-    cat << EOF > $HOME/Library/Preferences/IntelliJIdea13/idea.vmoptions
+    cat << EOF > $HOME/Library/Preferences/IntelliJIdea14/idea.vmoptions
 -Xms512m
 -Xmx3072m
 -XX:MaxPermSize=1024m
-#-XX:MaxGCPauseMillis=10
 -XX:ReservedCodeCacheSize=96m
 -XX:+UseCodeCacheFlushing
 -XX:+UseCompressedOops
 EOF
     echo ""
     echo "Following file was written:"
-    echo "$HOME/Library/Preferences/IntelliJIdea13/idea.vmoptions"
+    echo "$HOME/Library/Preferences/IntelliJIdea14/idea.vmoptions"
     echo ""
-    cat $HOME/Library/Preferences/IntelliJIdea13/idea.vmoptions
+    cat $HOME/Library/Preferences/IntelliJIdea14/idea.vmoptions
     echo ""
     echo "Done. Restart IntelliJ for changes to take effect."
     return 0
