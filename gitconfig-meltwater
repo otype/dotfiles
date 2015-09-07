@@ -30,6 +30,7 @@
   diff = auto
   interactive = auto
   status = auto
+	ui = true
 [push]
   default = simple
 [filter "media"]

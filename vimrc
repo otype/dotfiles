@@ -25,9 +25,12 @@ set shiftwidth=2                            " normal mode indentation commands u
 set showcmd
 set showmatch                               " show matching brackets.
 set smartcase                               " case-sensitive search if any caps
-set smartindent
 set smarttab                                " Insert appropriate spaces in front of line according to 
                                             " shiftwidth, tabstop, softtabstop.
+                                            " Turn off vi compatibility
+set nocompatible
+set smartindent
+filetype indent on                          " load indent file for the current filetype
 set softtabstop=2                           " insert mode tab and backspace use 2 spaces
 set tabstop=4                               " The number of spaces count for a TAB.
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc

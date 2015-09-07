@@ -4,6 +4,5 @@
 #limit maxfiles 16384 32768
 #limit maxproc 2048 2048
 #
-ulimit -n 16384
-ulimit -u 2048
-
+#ulimit -n 16384
+#ulimit -u 2048

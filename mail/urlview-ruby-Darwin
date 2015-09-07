@@ -1,0 +1,94 @@
+#!/usr/bin/env ruby
+
+#--------------------------------------------------
+# Author: Jan X <jan.h.xie@gmail.com> http://jan.yculblog.com
+# Date: Apr. 14, 2008
+#-------------------------------------------------- 
+
+#--------------------------------------------------
+# Test Cases
+# http://www.google.com
+# ftp://jan:jan@ftp.gmail.com
+# ed2k://10.21.33.49
+# https://www.gmail.com
+# mailto://jan.h.xie@gmail.com
+# ssh://11.22.33.44
+#-------------------------------------------------- 
+
+# url pattern
+pattern = /((http|ftp|mailto|https|ssh|telnet|ed2k)\:\/\/[a-z0-9\-\/._?&=]+)/i
+
+# settings
+UP = 107 #'k'
+DOWN = 106 #'j'
+EXIT = 104 #'h'
+RETURN = 108 #'l'
+BROWSER = 'open'
+
+urls = []
+f = ARGV.size > 0 ? File.open(ARGV[0]) : STDIN
+f.grep(pattern){urls << $~}
+#$stdin.reopen 'COM1:'
+
+require 'curses'
+
+def draw_menu(scr, urls, selected)
+  return if selected < 0 or selected >= urls.size
+
+  x, y = 0, 0
+  scr.setpos y, x
+  scr.addstr 'urlview <jan.h.xie@gmail.com>'
+  y += 2
+  urls.each_with_index do |url, i|
+    scr.setpos y, x
+    if selected == i
+      scr.attron Curses::A_REVERSE
+      scr.addstr url.to_s
+      scr.attroff Curses::A_REVERSE
+    else
+      scr.addstr url.to_s
+    end
+    y += 1
+  end
+  scr.setpos y+1, x
+  scr.addstr %{UP:#{"%c"%UP} DOWN:#{"%c"%DOWN} GO:#{"%c"%RETURN} QUIT:#{"%c"%EXIT}}
+end
+
+module Curses
+  def self.program 
+    main_screen = init_screen 
+    noecho 
+    cbreak 
+    curs_set(0) 
+    main_screen.keypad = true 
+    yield main_screen 
+  end 
+end 
+
+Curses.program do |scr|
+  if urls.size > 0
+    selected = 0
+    draw_menu scr, urls, selected
+    loop do
+      case scr.getch
+      when UP
+        selected -= 1
+        selected = 0 if selected < 0
+      when DOWN
+        selected += 1
+        selected = urls.size-1 if selected >= urls.size
+      when RETURN
+        `#{BROWSER} #{urls[selected].to_s}`
+        break
+      when EXIT
+        break
+      end
+      draw_menu scr, urls, selected
+    end
+  else
+    scr.addstr "No url found!"
+    scr.setpos 1, 0
+    scr.addstr "Press any key to exit ..."
+    scr.getch
+  end
+end
