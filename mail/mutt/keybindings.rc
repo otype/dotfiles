@@ -31,14 +31,17 @@ bind    index         <space>  collapse-thread
 bind    index         nn       next-unread-mailbox
 
 # general bindings
-bind    index,pager   c        mail                                                             # Compose
 bind    index,pager   l        copy-message                                                     # Label
-bind    index,pager   m        save-message                                                     # Move to
 bind    index,pager   N        search-opposite
 bind    index,pager   r        reply                                                            # Reply
 bind    index,pager   R        group-reply                                                      # Reply all
 bind    index,pager   *        flag-message                                                     # Star a message
 bind    index,pager   \#       delete-thread                                                    # Delete
+
+# Sidebar ctrl-n, ctrl-p to select next, prev folder, ctrl-o to open selected folder
+bind    index,pager   \Ck      sidebar-prev
+bind    index,pager   \Cj      sidebar-next
+bind    index,pager   \Ci      sidebar-open
 
 # MACROS
 #
@@ -54,8 +57,8 @@ macro   index         I        '<shell-escape>imapfilter<enter>'                
 
 # Ctrl-R to mark all as read, I = mark as read, U = mark as unread
 macro   index         \Cr      'T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>'     "mark all messages as read"
-#macro   index,pager   \Cr      '<set-flag>O'                                                    "mark as read"
-#macro   index,pager   \Cu      '<clear-flag>O'                                                  "mark as unread"
+#macro   index,pager  \Cr      '<set-flag>O'                                                    "mark as read"
+#macro   index,pager  \Cu      '<clear-flag>O'                                                  "mark as unread"
 
 # General folder switch macros
 macro   index,pager   gi       '<change-folder>=INBOX<enter>'                                   "Go to inbox"
@@ -80,3 +83,9 @@ macro   index,pager   +        '<save-message>=[Gmail].Important<enter><enter><s
 macro   index         g1       '<sync-mailbox><enter-command>source ~/.mutt/account_hansotypede<enter><change-folder>!<enter>'
 macro   index         g2       '<sync-mailbox><enter-command>source ~/.mutt/account_hansschmidtmeltwatercom<enter><change-folder>!<enter>'
 macro   index         g3       '<sync-mailbox><enter-command>source ~/.mutt/account_local<enter><change-folder>!<enter>'
+
+# Sidebar visibility, use 'b'
+macro   index         b        '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro   pager         b        '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+
+

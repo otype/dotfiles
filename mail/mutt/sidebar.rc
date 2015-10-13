@@ -1,12 +1,7 @@
 # Sidebar Patch --------------------------------------
-#set sidebar_delim   = '  │'
-#set sidebar_visible = yes
+#set sidebar_delim       = ' │'
+set sidebar_width		= 40
+set sidebar_visible		= yes
+set sidebar_sort 		= yes
 
-# color of folders with new mail
-#color sidebar_new yellow default
-#set sidebar_width   = 24
-
-# Sidebar Navigation ---------------------------------
-#bind index,pager <down>   sidebar-next
-#bind index,pager <up>     sidebar-prev
-#bind index,pager <right>  sidebar-open
+# vim: filetype=muttrc
