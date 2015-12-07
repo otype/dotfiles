@@ -1,0 +1,8 @@
+#!/usr/local/bin/zsh
+
+# IDS
+#
+#
+export DEV_RMQ_PWD=`cat ~/.ids-rmq-credentials | grep password | cut -d= -f2`
+export DEV_RMQ_USERNAME=`cat ~/.ids-rmq-credentials | grep username | cut -d= -f2`
+export STORM_PATH=`ls -d /usr/local/Cellar/storm/* | sort -n | head -n 1`
