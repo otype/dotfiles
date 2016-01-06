@@ -20,6 +20,7 @@ localfolders = ~/Mail/hansotypede
 [Repository hansotypede-remote]
 type = Gmail
 ssl = yes
+auth_mechanisms = LOGIN
 maxconnections = 1
 realdelete = no
 sslcacertfile = ~/.dotfiles/mail/ca-bundle.crt
@@ -42,6 +43,7 @@ localfolders = ~/Mail/hansschmidtmeltwatercom
 [Repository hansschmidtmeltwatercom-Remote]
 type = Gmail
 ssl = yes
+auth_mechanisms = LOGIN
 maxconnections = 1
 realdelete = no
 sslcacertfile = ~/.dotfiles/mail/ca-bundle.crt
