@@ -3,10 +3,21 @@
 # IDS
 #
 #
-export DEV_RMQ_PWD=`cat ~/.ids-rmq-credentials | grep password | cut -d= -f2`
-export DEV_RMQ_USERNAME=`cat ~/.ids-rmq-credentials | grep username | cut -d= -f2`
-export STORM_PATH=`ls -d /usr/local/Cellar/storm/* | sort -n | head -n 1`
+if [[ -f "~/.ids-rmq-credentials" ]]; then
+  export DEV_RMQ_PWD=`cat ~/.ids-rmq-credentials | grep password | cut -d= -f2`
+  export DEV_RMQ_USERNAME=`cat ~/.ids-rmq-credentials | grep username | cut -d= -f2`
+fi
+
+if [[ -d "/usr/local/Cellar/storm" ]]; then
+  export STORM_PATH=`ls -d /usr/local/Cellar/storm/* | sort -n | head -n 1`
+fi
+
 export LOG_LEVEL=INFO
-export ES_HOST=localhost
-export ES_CLUSTER_NAME=kermit
-export ES_PORT=9300
+
+export ES_DECKS_HOST=localhost
+export ES_DECKS_CLUSTER_NAME=kermit
+export ES_DECKS_PORT=9300
+
+export ES_SIGNALS_HOST=localhost
+export ES_SIGNALS_CLUSTER_NAME=kermit
+export ES_SIGNALS_PORT=9300

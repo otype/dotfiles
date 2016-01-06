@@ -9,7 +9,9 @@ if [ `uname -s` = "FreeBSD" ]; then
 #	eval "$(pyenv init -)"
 #	pyenv rehash
 else
-    if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-	nodenv rehash
+    if which nodenv > /dev/null; then
+      eval "$(nodenv init -)"
+	  nodenv rehash
+    fi
 fi
 
