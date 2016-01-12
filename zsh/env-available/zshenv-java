@@ -24,7 +24,7 @@ function set-maven-opts() {
   if [[ "$JAVA_HOME" != "$JDK8" ]]; then
     MAVEN_EXTRA_OPTS="-XX:MaxPermSize=1024m"
   fi
-  export MAVEN_OPTS="-Xmx3072m -Xms128m -Djava.awt.headless=true ${MAVEN_EXTRA_OPTS}"
+  export MAVEN_OPTS="-Xmx3072m -Xms128m -Djava.awt.headless='true' ${MAVEN_EXTRA_OPTS}"
 }
 set-maven-opts
 
