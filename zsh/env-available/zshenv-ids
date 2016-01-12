@@ -14,10 +14,13 @@ fi
 
 export LOG_LEVEL=INFO
 
-export ES_DECKS_HOST=localhost
+export ES_DECKS_HOST=192.168.99.100
 export ES_DECKS_CLUSTER_NAME=kermit
 export ES_DECKS_PORT=9300
 
-export ES_SIGNALS_HOST=localhost
+export ES_SIGNALS_HOST=192.168.99.100
 export ES_SIGNALS_CLUSTER_NAME=kermit
 export ES_SIGNALS_PORT=9300
+
+# For Kermit
+export ES_FULL_HOST=http://192.168.99.100:9200
