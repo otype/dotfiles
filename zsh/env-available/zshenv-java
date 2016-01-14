@@ -58,21 +58,21 @@ function switch-to-java() {
 # http://stackoverflow.com/questions/13578062/how-to-increase-ide-memory-limit-in-intellij-idea-on-mac
 # http://www.jetbrains.com/idea/webhelp/increasing-memory-heap.html
 function fix-intellij-vmoptions() {
-    mkdir -p ${HOME}/Library/Preferences/IntelliJIdea14
+    mkdir -p ${HOME}/Library/Preferences/IntelliJIdea15
     echo "[Writing new configuration]"
-    cat << EOF > $HOME/Library/Preferences/IntelliJIdea14/idea.vmoptions
+    cat << EOF > $HOME/Library/Preferences/IntelliJIdea15/idea.vmoptions
 -Xms512m
 -Xmx3072m
--XX:MaxPermSize=1024m
--XX:ReservedCodeCacheSize=96m
--XX:+UseCodeCacheFlushing
+-XX:MaxPermSize=768m
+-XX:ReservedCodeCacheSize=350m
 -XX:+UseCompressedOops
+-XX:+UseCodeCacheFlushing
 EOF
     echo ""
     echo "Following file was written:"
-    echo "$HOME/Library/Preferences/IntelliJIdea14/idea.vmoptions"
+    echo "$HOME/Library/Preferences/IntelliJIdea15/idea.vmoptions"
     echo ""
-    cat $HOME/Library/Preferences/IntelliJIdea14/idea.vmoptions
+    cat $HOME/Library/Preferences/IntelliJIdea15/idea.vmoptions
     echo ""
     echo "Done. Restart IntelliJ for changes to take effect."
     return 0
