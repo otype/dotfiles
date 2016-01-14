@@ -61,10 +61,10 @@ function fix-intellij-vmoptions() {
     mkdir -p ${HOME}/Library/Preferences/IntelliJIdea15
     echo "[Writing new configuration]"
     cat << EOF > $HOME/Library/Preferences/IntelliJIdea15/idea.vmoptions
--Xms512m
--Xmx3072m
--XX:MaxPermSize=768m
--XX:ReservedCodeCacheSize=350m
+-Xms256m
+-Xmx2048m
+-XX:MaxPermSize=512m
+-XX:ReservedCodeCacheSize=300m
 -XX:+UseCompressedOops
 -XX:+UseCodeCacheFlushing
 EOF
