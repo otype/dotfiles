@@ -1,7 +1,0 @@
-# Sidebar Patch --------------------------------------
-#set sidebar_delim       = ' │'
-set sidebar_width		= 40
-set sidebar_visible		= no
-set sidebar_sort 		= yes
-
-# vim: filetype=muttrc
