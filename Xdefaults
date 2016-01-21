@@ -23,7 +23,7 @@ URxvt*background:                       Black
 URxvt*foreground:                       White
 URxvt*colorUL:                          yellow
 URxvt*underlineColor:                   yellow
-URxvt*saveLines:                        32768
+URxvt*saveLines:                        32767
 URxvt*buffered:                         true
 URxvt*hold:                             false
 URxvt.cursorUnderline:                  false
