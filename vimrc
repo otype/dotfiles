@@ -15,7 +15,7 @@ set incsearch                               " search as you type
 set laststatus=2
 set shiftwidth=2                            " normal mode indentation commands use 2 spaces
 set showmatch                               " show matching brackets.
-set tabstop=4                               " The number of spaces count for a TAB.
+set tabstop=2                               " The number of spaces count for a TAB.
 set term=xterm-256color
 set termencoding=utf-8
 set t_Co=256
