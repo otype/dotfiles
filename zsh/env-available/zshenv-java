@@ -4,26 +4,11 @@
 #
 #
 
-# JDKs
-if [[ "`uname -s`" == "FreeBSD" ]]; then
-    export JDK7="/usr/local/openjdk7"
-    export JDK8="/usr/local/openjdk8"
-    defaultJDK=$JDK7
-else
-    export JDK6=`/usr/libexec/java_home -v 1.6`
-    export JDK7=`/usr/libexec/java_home -v 1.7`
-    export JDK8=`/usr/libexec/java_home -v 1.8`
-    defaultJDK=$JDK8
-fi
-export JAVA_HOME="${defaultJDK}"
-
 # Maven settings
-# Using maven2? Then, use M2_HOME! If you have maven3, DO NOT USE M2_HOME!
+# Using maven2? Then, use M2_HOME! If you have maven3 DO NOT USE M2_HOME!
 function set-maven-opts() {
-  #export M2_HOME="/usr/share/maven"
-  if [[ "$JAVA_HOME" != "$JDK8" ]]; then
-    MAVEN_EXTRA_OPTS="-XX:MaxPermSize=1024m"
-  fi
+  [[ "$JAVA_HOME" != "$JDK8" ]] && MAVEN_EXTRA_OPTS="-XX:MaxPermSize=1024m"
+
   export MAVEN_OPTS="-Xmx3072m -Xms128m -Djava.awt.headless='true' ${MAVEN_EXTRA_OPTS}"
 }
 set-maven-opts
@@ -77,3 +62,20 @@ EOF
     echo "Done. Restart IntelliJ for changes to take effect."
     return 0
 }
+
+# JDKs
+#
+#
+if [[ "`uname -s`" == "FreeBSD" ]]; then
+    JDK7="/usr/local/openjdk7"
+    JDK8="/usr/local/openjdk8"
+    defaultJDK=$JDK7
+else
+    JDK7=`/usr/libexec/java_home -v 1.7`
+    JDK8=`/usr/libexec/java_home -v 1.8`
+    defaultJDK=$JDK8
+fi
+export JDK7
+export JDK8
+export JAVA_HOME="${defaultJDK}"
+
