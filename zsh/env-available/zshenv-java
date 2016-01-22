@@ -43,9 +43,21 @@ function switch-to-java() {
 # http://stackoverflow.com/questions/13578062/how-to-increase-ide-memory-limit-in-intellij-idea-on-mac
 # http://www.jetbrains.com/idea/webhelp/increasing-memory-heap.html
 function fix-intellij-vmoptions() {
-    mkdir -p ${HOME}/Library/Preferences/IntelliJIdea15
-    echo "[Writing new configuration]"
-    cat << EOF > $HOME/Library/Preferences/IntelliJIdea15/idea.vmoptions
+	if [[ "`uname -s`" == "FreeBSD" ]]; then
+		echo "No config, yet! Exiting now!"
+		exit 1
+	elif [ `uname -s` = "Linux" ]; then
+		echo "No config, yet! Exiting now!"
+		exit 1
+	else
+		intellij_pref_path="${HOME}/Library/Preferences/IntelliJIdea15"
+	fi
+
+	idea_vmoptions_file="${intellij_pref_path}/idea.vmoptions"
+
+	mkdir -p $intellij_pref_path
+	echo "[Writing new configuration]"
+	cat << EOF > ${idea_vmoptions_file}
 -Xms256m
 -Xmx2048m
 -XX:MaxPermSize=512m
@@ -53,11 +65,12 @@ function fix-intellij-vmoptions() {
 -XX:+UseCompressedOops
 -XX:+UseCodeCacheFlushing
 EOF
-    echo ""
-    echo "Following file was written:"
-    echo "$HOME/Library/Preferences/IntelliJIdea15/idea.vmoptions"
-    echo ""
-    cat $HOME/Library/Preferences/IntelliJIdea15/idea.vmoptions
+	echo ""
+	echo "Following file was written:"
+	echo "${idea_vmoptions_file}"
+	echo ""
+	cat $idea_vmoptions_file
+
     echo ""
     echo "Done. Restart IntelliJ for changes to take effect."
     return 0
@@ -78,4 +91,5 @@ fi
 export JDK7
 export JDK8
 export JAVA_HOME="${defaultJDK}"
+export JRE_HOME="${defaultJDK}/jre"
 
