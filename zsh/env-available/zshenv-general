@@ -1,0 +1,23 @@
+#!/usr/local/bin/zsh
+
+# ZSHENV General
+#
+#
+
+# $HOME/bin
+#
+# Add ~/bin to our PATH
+if [[ -d "$HOME/bin" ]]; then
+	PATH=$PATH:$HOME/bin
+fi
+
+# Add /opt/local/bin
+if [[ -d "/opt/local/bin" ]]; then
+    PATH=$PATH:/opt/local/bin
+fi
+
+# Lang variables
+export LC_CTYPE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"

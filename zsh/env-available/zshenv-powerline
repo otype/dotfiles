@@ -1,0 +1,12 @@
+#!/usr/local/bin/zsh
+
+# Powerline ENV
+#
+#
+
+# Generate ~/.powerline.conf
+export POWERLINE_TMUX_CONF="`pip show powerline-status | grep ^Location | awk '{print $2}'`/powerline/bindings/tmux/powerline.conf"
+cd $HOME && ln -nsf $POWERLINE_TMUX_CONF .powerline.conf
+
+# Run powerline-daemon
+[[ -f `which powerline-daemon` ]] && powerline-daemon -q
