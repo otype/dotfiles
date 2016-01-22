@@ -12,6 +12,7 @@ if [ `uname -s` = "FreeBSD" ]; then
 elif [ `uname -s` = "Linux" ]; then
 	export PATH="$HOME/.pyenv/bin:$PATH"
 	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
 	pyenv rehash
 else
 	export PYENV_ROOT=/usr/local/opt/pyenv
