@@ -4,20 +4,25 @@
 #
 #
 
-# $HOME/bin
-#
-# Add ~/bin to our PATH
-if [[ -d "$HOME/bin" ]]; then
-	PATH=$PATH:$HOME/bin
-fi
+# History settings
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE=~/.zsh_history
+export KEYTIMEOUT=1							# reduce vi-mode lag of 0.4 second delay to 0.1
 
-# Add /opt/local/bin
-if [[ -d "/opt/local/bin" ]]; then
-    PATH=$PATH:/opt/local/bin
-fi
+# General exports
+export PAGER="less"
+export EDITOR="vim"
 
 # Lang variables
 export LC_CTYPE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
+
+# Add ~/bin to our PATH
+[[ -d "$HOME/bin" ]] && PATH=$PATH:$HOME/bin
+
+# Add /opt/local/bin
+[[ -d "/opt/local/bin" ]] && PATH=$PATH:/opt/local/bin

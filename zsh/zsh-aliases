@@ -22,14 +22,4 @@ function pjgk() {
 
 alias h=history
 alias sl=ls
-alias sshconfig='vim ~/.ssh/config'
-alias p=python2
-alias p2=python2
-alias p3=python3
-alias venv=virtualenv-2.7
-alias venv2=virtualenv-2.7
-alias venv3=virtualenv-3.3
-alias pep8='pep8 --max-line-length=120'
-alias cdv=cdvirtualenv
-#alias listwifi=sudo /sbin/ifconfig -v wlan0 list scan | awk '{print $4, $5, "\t\t", $1}'
 alias vi=vim

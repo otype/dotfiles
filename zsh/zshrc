@@ -3,31 +3,6 @@
 # ZSH options
 . ${HOME}/.zsh/zsh-options
 
-# History settings
-export HISTFILESIZE=10000
-export HISTSIZE=5000
-export SAVEHIST=5000
-export HISTFILE=~/.zsh_history
-export KEYTIMEOUT=1		# reduce vi-mode lag of 0.4 second delay to 0.1
-
-# Bind keys
-bindkey -v
-bindkey "^R" history-incremental-search-backward
-bindkey "^S" history-incremental-search-forward
-stty stop undef
-
-# Added for brew zsh-completions
-if [ `uname -s` != "Linux" ]; then
-	unalias run-help
-	autoload run-help
-	HELPDIR=/usr/local/share/zsh/helpfiles
-fi
-
-# General exports
-export PAGER="less"
-export EDITOR="vim"
-export BZR_EDITOR="vim"
-
 # Source aliases files
 . $HOME/.zsh/zsh-aliases
 

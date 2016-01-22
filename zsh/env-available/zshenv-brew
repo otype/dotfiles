@@ -3,14 +3,15 @@
 # HOMEBREW sbin
 #
 #
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-if [[ -d /usr/local/share/python ]]; then
-    PATH=/usr/local/share/python:$PATH
+# Added for brew zsh-completions
+if [[ `uname -s` == "Darwin" ]]; then
+	unalias run-help
+	autoload run-help
+	HELPDIR=/usr/local/share/zsh/helpfiles
+
+	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+	[[ -d /usr/local/share/python ]] && export PATH=/usr/local/share/python:$PATH
+	[[ -d /usr/local/share/npm/bin ]] && export PATH=/usr/local/share/npm/bin:$PATH
 fi
-
-if [[ -d /usr/local/share/npm/bin ]]; then
-    PATH=/usr/local/share/npm/bin:$PATH
-fi
-
-export PATH
