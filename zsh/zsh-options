@@ -1,17 +1,17 @@
-setopt promptsubst
-setopt globdots			# GLOBDOTS lets files beginning with a . be matched without explicitly specifying the dot.
-setopt EXTENDED_HISTORY		# puts timestamps in history
-setopt HASH_CMDS
-setopt HIST_VERIFY		# Whenever the user enters a line with history substitution, don't execute the line directly; instead, perform history substitution and reload the line into the editing buffer.
-setopt MAIL_WARNING		# Print a warning message if a mail file has been accessed since the shell last checked.
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY		# To retrieve the history file everytime history is called upon.
-setopt HIST_NO_STORE		# Remove the history (fc -l) command from the history list when invoked. 
-setopt HIST_IGNORE_DUPS		# Do not enter command lines into the history list if they are duplicates of the previous event.
-setopt HIST_NO_FUNCTIONS	# Remove function definitions from the history list.
-setopt HIST_SAVE_NO_DUPS	# When writing out the history file, older commands that duplicate newer ones are omitted
-setopt INC_APPEND_HISTORY_TIME
-setopt HIST_NO_FUNCTIONS
+#setopt promptsubst
+#setopt globdots			# GLOBDOTS lets files beginning with a . be matched without explicitly specifying the dot.
+#setopt EXTENDED_HISTORY		# puts timestamps in history
+#setopt HASH_CMDS
+#setopt HIST_VERIFY		# Whenever the user enters a line with history substitution, don't execute the line directly; instead, perform history substitution and reload the line into the editing buffer.
+#setopt MAIL_WARNING		# Print a warning message if a mail file has been accessed since the shell last checked.
+#setopt APPEND_HISTORY
+#setopt SHARE_HISTORY		# To retrieve the history file everytime history is called upon.
+#setopt HIST_NO_STORE		# Remove the history (fc -l) command from the history list when invoked. 
+#setopt HIST_IGNORE_DUPS		# Do not enter command lines into the history list if they are duplicates of the previous event.
+#setopt HIST_NO_FUNCTIONS	# Remove function definitions from the history list.
+#setopt HIST_SAVE_NO_DUPS	# When writing out the history file, older commands that duplicate newer ones are omitted
+#setopt INC_APPEND_HISTORY_TIME
+#setopt HIST_NO_FUNCTIONS
 
 # Bind keys
 bindkey -v

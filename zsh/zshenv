@@ -3,9 +3,6 @@
 # ZSH
 #
 #
-fpath=($fpath $HOME/.zsh/functions)
-fpath=(/usr/local/share/zsh-completions $fpath)
-typeset -U fpath
 
 # SOURCE ALL ENVIRONMENT CONFIGS
 #
