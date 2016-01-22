@@ -83,6 +83,10 @@ if [[ "`uname -s`" == "FreeBSD" ]]; then
     JDK7="/usr/local/openjdk7"
     JDK8="/usr/local/openjdk8"
     defaultJDK=$JDK7
+elif [ `uname -s` = "Linux" ]; then
+		JDK7="/usr/java/jdk1.7.0_79"
+		JDK8="/usr/java/jdk1.8.0_71"
+		defaultJDK=$JDK8
 else
     JDK7=`/usr/libexec/java_home -v 1.7`
     JDK8=`/usr/libexec/java_home -v 1.8`
