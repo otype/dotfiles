@@ -11,7 +11,8 @@
 
 # Load the prompt theme system
 autoload -U promptinit
-autoload -U compinit; compinit
+autoload -U compinit
+compinit
 promptinit
 
 # Use the otype prompt theme

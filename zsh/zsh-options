@@ -1,9 +1,7 @@
 setopt promptsubst
-setopt CORRECT			# command CORRECTION
 setopt globdots			# GLOBDOTS lets files beginning with a . be matched without explicitly specifying the dot.
 setopt EXTENDED_HISTORY		# puts timestamps in history
 setopt HASH_CMDS
-setopt AUTO_REMOVE_SLASH	# When the last character resulting from a completion is a slash and the next character typed is a word delimiter, remove the slash.
 setopt HIST_VERIFY		# Whenever the user enters a line with history substitution, don't execute the line directly; instead, perform history substitution and reload the line into the editing buffer.
 setopt MAIL_WARNING		# Print a warning message if a mail file has been accessed since the shell last checked.
 setopt APPEND_HISTORY
