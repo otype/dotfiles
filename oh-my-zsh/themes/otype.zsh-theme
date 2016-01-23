@@ -36,7 +36,7 @@ ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[yellow]%} ⬆"
 
 local user_host='(%{$fg_bold[green]%}%n@%m%{$reset_color%})'
 local current_dir='%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}'
-local git_info='$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%} $(git_prompt_ahead)%{$reset_color%}'
+local git_info='$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}'
 
 PROMPT="
 ${user_host} :: ${current_dir} ${git_info} ${rbenv_info} ${pyenv_info}
