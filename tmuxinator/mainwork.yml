@@ -1,0 +1,40 @@
+# ~/.tmuxinator/mainwork.yml
+
+name: mainwork
+root: ~/
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+startup_window: main
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+attach: true
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t mainwork
+
+windows:
+  - main:
+      layout: 1ae5,364x88,0,0[364x11,0,0{100x11,0,0,89,112x11,101,0,91,85x11,214,0,92,64x11,300,0,93},364x63,0,12{317x63,0,12,94,46x63,318,12[46x18,318,12,95,46x16,318,31,96,46x14,318,48,97,46x12,318,63,98]},364x12,0,76{115x12,0,76,99,100x12,116,76,100,77x12,217,76,101,69x12,295,76,102}]
+      panes:
+        - cd src/gitlab/kermit-web && git status
+        - cd src/gitlab/kermit-web
+        - watch -n 60 'docker ps'
+        - watch -n 60 "docker images | grep -v REPOSITORY | awk '{print \$1\" (\"\$2\")\" }'"
+        - #
+        - htop
+        - #
+        - #
+        - #
+        - cd src/gitlab/ids && git status
+        - cd src/gitlab/ids
+        - cd src/gitlab/ids
+        - cd src/gitlab/ids
