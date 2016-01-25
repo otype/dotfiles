@@ -1,0 +1,36 @@
+# ~/.tmuxinator/mediumwork.yml
+
+name: mediumwork
+root: ~/
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+startup_window: main
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+attach: true
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t mediumwork
+
+windows:
+  - main:
+      layout: 2783,272x69,0,0[272x14,0,0{77x14,0,0,0,89x14,78,0,1,62x14,168,0,2,41x14,231,0,3},272x40,0,15{220x40,0,15,4,51x40,221,15[51x14,221,15,5,51x12,221,30,6,51x12,221,43,8]},272x13,0,56,9]
+      panes:
+        - cd src/gitlab/kermit-web && clear && git status
+        - cd src/gitlab/kermit-web && clear
+        - clear
+        - clear
+        - clear
+        - htop
+        - clear
+        - clear
+        - cd src/gitlab/ids && clear
