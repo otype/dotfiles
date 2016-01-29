@@ -37,6 +37,9 @@ bind    index,pager   R        group-reply                                      
 bind    index,pager   *        flag-message                                                     # Star a message
 bind    index,pager   \#       delete-thread                                                    # Delete
 
+# GPG bindings
+bind    compose       p        pgp-menu
+
 # Sidebar ctrl-n, ctrl-p to select next, prev folder, ctrl-o to open selected folder
 #bind    index,pager   \Ck      sidebar-prev
 #bind    index,pager   \Cj      sidebar-next
