@@ -30,3 +30,5 @@ if has("gui_running")
       set guifont=Inconsolata\ for\ Powerline:h15
    endif
 endif
+
+autocmd filetype crontab setlocal nobackup nowritebackup
