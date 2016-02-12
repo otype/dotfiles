@@ -1,15 +1,11 @@
 #!/usr/local/bin/zsh
 
 if [[ -d "/usr/local/Cellar/go" ]]; then
-    export PATH=$PATH:/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec/bin
-fi
-
-if [[ -d "/usr/local/go" ]]; then
-    export GOROOT=/usr/local/go
+    export GOROOT=/usr/local/Cellar/go/`ls /usr/local/Cellar/go`/libexec
     export PATH=$PATH:$GOROOT/bin
 fi
 
-if [[ -d "${HOME}/code/go" ]]; then
-    export GOPATH="$HOME/code/go"
+if [[ -d "${HOME}/src/go" ]]; then
+    export GOPATH="$HOME/src/go"
     export PATH=$PATH:$GOPATH/bin
 fi
