@@ -34,7 +34,7 @@ windows:
         - tmux select-pane -t:.7 -P 'bg=colour234' && clear
         - tmux select-pane -t:.8 -P 'bg=colour234' && clear
         - tmux select-pane -t:.9 -P 'bg=colour234' && clear
-        - tmux select-pane -t:.10 -P 'bg=colour235' && cd src/gitlab/ids && git status
-        - tmux select-pane -t:.11 -P 'bg=colour235' && cd src/gitlab/ids && clear
-        - tmux select-pane -t:.12 -P 'bg=colour235' && cd src/gitlab/ids &&  clear
-        - tmux select-pane -t:.13 -P 'bg=colour235' && cd src/gitlab/ids && clear
+        - tmux select-pane -t:.10 -P 'bg=colour234' && cd src/gitlab/ids && git status
+        - tmux select-pane -t:.11 -P 'bg=colour234' && cd src/gitlab/ids && clear
+        - tmux select-pane -t:.12 -P 'bg=colour234' && cd src/gitlab/ids &&  clear
+        - tmux select-pane -t:.13 -P 'bg=colour234' && cd src/gitlab/ids && clear
