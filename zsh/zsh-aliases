@@ -1,25 +1,5 @@
 #!/bin/zsh
 
-function pj() {
-  ps aux | grep "$JAVA_HOME" | grep -v "grep" | awk '{print $2, $11, $(NF)}'
-}
-
-function pjk() {
-  for pid in `pj | awk '{print $1}'`
-  do
-    echo ">>> Killing [$pid]"
-    kill -9 $pid
-  done
-}
-
-function pjgk() {
-  for pid in `pj | grep "com.meltwater.ids" | awk '{print $1}'`
-  do
-    echo ">>> Killing [$pid]"
-    kill -9 $pid
-  done
-}
-
 alias h=history
 alias sl=ls
 alias vi=vim
