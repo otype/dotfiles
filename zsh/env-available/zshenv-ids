@@ -4,8 +4,10 @@
 #
 #
 if [[ -f ~/.ids-rmq.credentials ]]; then
-  export DEV_RMQ_PWD=`cat ~/.ids-rmq.credentials | grep password | cut -d= -f2`
-  export DEV_RMQ_USERNAME=`cat ~/.ids-rmq.credentials | grep username | cut -d= -f2`
+  export DEV_RMQ_PWD=`cat ~/.ids-rmq.credentials | grep DEV_RMQ_PWD | cut -d= -f2`
+  export DEV_RMQ_USERNAME=`cat ~/.ids-rmq.credentials | grep DEV_RMQ_USERNAME | cut -d= -f2`
+  export VAGRANT_RMQ_PWD=`cat ~/.ids-rmq.credentials | grep VAGRANT_RMQ_PWD | cut -d= -f2`
+  export VAGRANT_RMQ_USERNAME=`cat ~/.ids-rmq.credentials | grep VAGRANT_RMQ_USERNAME | cut -d= -f2`
 fi
 
 if [[ -d "/usr/local/Cellar/storm" ]]; then
