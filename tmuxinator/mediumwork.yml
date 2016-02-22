@@ -22,15 +22,14 @@ attach: true
 # post: tmux -CC attach -t mediumwork
 
 windows:
-  - main:
-      layout: 2783,272x69,0,0[272x14,0,0{77x14,0,0,0,89x14,78,0,1,62x14,168,0,2,41x14,231,0,3},272x40,0,15{220x40,0,15,4,51x40,221,15[51x14,221,15,5,51x12,221,30,6,51x12,221,43,8]},272x13,0,56,9]
+  - mediumwork:
+      layout: e390,238x78,0,0[238x17,0,0{68x17,0,0,0,98x17,69,0,1,70x17,168,0,2},238x43,0,18{185x43,0,18,4,52x43,186,18[52x17,186,18,5,52x12,186,36,6,52x12,186,49,7]},238x16,0,62,8]
       panes:
         - tmux select-pane -t:.1 -P 'bg=colour234' && clear
         - tmux select-pane -t:.2 -P 'bg=colour234' && clear
-        - tmux select-pane -t:.3 -P 'bg=colour234' && clear
-        - tmux select-pane -t:.4 -P 'bg=colour234' && clear
+        - tmux select-pane -t:.3 -P 'bg=colour234' && htop
         - clear
-        - tmux select-pane -t:.6 -P 'bg=colour234' && htop
+        - tmux select-pane -t:.5 -P 'bg=colour234' && clear
+        - tmux select-pane -t:.6 -P 'bg=colour234' && clear
         - tmux select-pane -t:.7 -P 'bg=colour234' && clear
         - tmux select-pane -t:.8 -P 'bg=colour234' && clear
-        - tmux select-pane -t:.9 -P 'bg=colour234' && clear
