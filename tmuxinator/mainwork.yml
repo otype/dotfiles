@@ -27,14 +27,14 @@ windows:
       panes:
         - tmux select-pane -t:.1 -P 'bg=colour234' && cd src/gitlab/kermit-web && git status
         - tmux select-pane -t:.2 -P 'bg=colour234' && clear && cd src/gitlab/kermit-web
-        - tmux select-pane -t:.3 -P 'bg=colour234' && watch -n 60 'docker ps'
-        - tmux select-pane -t:.4 -P 'bg=colour234' && watch -n 60 "docker images | grep -v REPOSITORY | awk '{print \$1\" (\"\$2\")\" }'"
+        - tmux select-pane -t:.3 -P 'bg=colour234' && clear
+        - tmux select-pane -t:.4 -P 'bg=colour234' && clear 
         - clear
         - tmux select-pane -t:.6 -P 'bg=colour234' && htop
         - tmux select-pane -t:.7 -P 'bg=colour234' && clear
         - tmux select-pane -t:.8 -P 'bg=colour234' && clear
         - tmux select-pane -t:.9 -P 'bg=colour234' && clear
-        - tmux select-pane -t:.10 -P 'bg=colour234' && cd src/gitlab/ids && git status
-        - tmux select-pane -t:.11 -P 'bg=colour234' && cd src/gitlab/ids && clear
-        - tmux select-pane -t:.12 -P 'bg=colour234' && cd src/gitlab/ids &&  clear
-        - tmux select-pane -t:.13 -P 'bg=colour234' && cd src/gitlab/ids && clear
+        - tmux select-pane -t:.10 -P 'bg=colour234' && clear && ssh vagrant.haven.com
+        - tmux select-pane -t:.11 -P 'bg=colour234' && clear && ssh vagrant.haven.com
+        - tmux select-pane -t:.12 -P 'bg=colour234' && clear && ssh vagrant.haven.com
+        - tmux select-pane -t:.13 -P 'bg=colour234' && clear && ssh vagrant.haven.com
