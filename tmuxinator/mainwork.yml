@@ -30,7 +30,7 @@ windows:
         - tmux select-pane -t:.3 -P 'bg=colour234' && clear
         - tmux select-pane -t:.4 -P 'bg=colour234' && clear 
         - clear
-        - tmux select-pane -t:.6 -P 'bg=colour234' && htop
+        - tmux select-pane -t:.6 -P 'bg=colour234' && glances
         - tmux select-pane -t:.7 -P 'bg=colour234' && clear
         - tmux select-pane -t:.8 -P 'bg=colour234' && clear
         - tmux select-pane -t:.9 -P 'bg=colour234' && clear
