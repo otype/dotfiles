@@ -78,5 +78,6 @@ macro   index,pager   +        '<save-message>=[Gmail].Important<enter><enter><s
 # Folder hooks for accounts
 macro   index         g1       '<sync-mailbox><enter-command>source ~/.mutt/account_hansotypede<enter><change-folder>!<enter>'
 macro   index         g2       '<sync-mailbox><enter-command>source ~/.mutt/account_hansschmidtmeltwatercom<enter><change-folder>!<enter>'
-macro   index         g3       '<sync-mailbox><enter-command>source ~/.mutt/account_local<enter><change-folder>!<enter>'
+macro   index         g3       '<sync-mailbox><enter-command>source ~/.mutt/account_wirotypede<enter><change-folder>!<enter>'
+macro   index         g4       '<sync-mailbox><enter-command>source ~/.mutt/account_local<enter><change-folder>!<enter>'
 

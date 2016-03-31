@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = hansotypede, hansschmidtmeltwatercom
+accounts = hansotypede, wirotypede, hansschmidtmeltwatercom
 pythonfile=~/.mutt/get_credentials.py
 maxsyncaccounts = 3
 
@@ -26,6 +26,29 @@ realdelete = no
 sslcacertfile = ~/.dotfiles/mail/ca-bundle.crt
 remoteuser = hans@otype.de
 remotepasseval = get_password_for(account="hans@otype.de", server="imap.gmail.com")
+
+# wir@otype.de
+#
+#
+[Account wirotypede]
+postsynchook = notmuch new
+localrepository = wirotypede-local
+remoterepository = wirotypede-remote
+status_backend = sqlite
+
+[Repository wirotypede-local]
+type = Maildir
+localfolders = ~/Mail/wirotypede
+
+[Repository wirotypede-remote]
+type = Gmail
+ssl = yes
+auth_mechanisms = LOGIN
+maxconnections = 1
+realdelete = no
+sslcacertfile = ~/.dotfiles/mail/ca-bundle.crt
+remoteuser = wir@otype.de
+remotepasseval = get_password_for(account="wir@otype.de", server="imap.gmail.com")
 
 # hans.schmidt@meltwater.com
 #

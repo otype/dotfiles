@@ -1,0 +1,16 @@
+set folder      = ~/Mail/wirotypede
+set spoolfile   = "+INBOX"
+set mbox        = "+[Gmail].All Mail"
+set postponed   = "+[Gmail].Drafts"
+set record      = "+[Gmail].Sent Mail"
+set trash       = "+[Gmail].Trash"
+set from        = "wir@otype.de"
+set signature   = "~/.signature-wirotypede"
+mailboxes "+-- wir@otype.de ----" \
+          +INBOX \
+          "+[Gmail].Starred" \
+          "+[Gmail].Sent Mail" \
+          "+[Gmail].Drafts" \
+          "+[Gmail].All Mail" \
+          "+[Gmail].Trash" \
+
