@@ -73,7 +73,7 @@ function fix-intellij-vmoptions() {
 		echo "No config, yet! Exiting now!"
 		exit 1
 	else
-		intellij_pref_path="${HOME}/Library/Preferences/IntelliJIdea15"
+		intellij_pref_path="${HOME}/Library/Preferences/IntelliJIdea2016.1"
 	fi
 
 	idea_vmoptions_file="${intellij_pref_path}/idea.vmoptions"
