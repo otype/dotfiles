@@ -1,0 +1,71 @@
+# ACCOUNT INFORMATION
+IMAPAccount hansotypede
+Host imap.gmail.com
+User hans@otype.de
+PassCmd "security find-generic-password -s mbsync-gmail-password -w"
+# UseIMAPS yes
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions SSLv3
+CertificateFile ~/.dotfiles/mail/ca-bundle.crt
+
+# THEN WE SPECIFY THE LOCAL AND REMOTE STORAGE
+# - THE REMOTE STORAGE IS WHERE WE GET THE MAIL FROM (E.G., THE
+#   SPECIFICATION OF AN IMAP ACCOUNT)
+# - THE LOCAL STORAGE IS WHERE WE STORE THE EMAIL ON OUR COMPUTER
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore hansotypede-remote
+Account hansotypede
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p .mails/hansotypede)
+MaildirStore hansotypede-local
+Path ~/.mails/hansotypede/
+Inbox ~/.mails/hansotypede/inbox
+
+# CONNECTIONS SPECIFY LINKS BETWEEN REMOTE AND LOCAL FOLDERS
+#
+# CONNECTIONS ARE SPECIFIED USING PATTERNS, WHICH MATCH REMOTE MAIl
+# FOLDERS. SOME COMMONLY USED PATTERS INCLUDE:
+#
+# 1 "*" TO MATCH EVERYTHING
+# 2 "!DIR" TO EXCLUDE "DIR"
+# 3 "DIR" TO MATCH DIR
+#
+# FOR INSTANCE IN THE SPECIFICATION BELOW:
+#
+# gmail-inbox gets the folder INBOX, ARCHIVE, and everything under "ARCHIVE*"
+# gmail-trash gets only the "[Gmail]/Trash" folder and stores it to the local "trash" folder
+
+Channel hansotypede-inbox
+Master :hansotypede-remote:
+Slave :hansotypede-local:
+Patterns "INBOX" "Arch*"
+Create Both
+Expunge Both
+SyncState *
+
+Channel hansotypede-trash
+Master :hansotypede-remote:"[Gmail]/Trash"
+Slave :hansotypede-local:trash
+Create Both
+Expunge Both
+SyncState *
+
+Channel hansotypede-sent
+Master :hansotypede-remote:"[Gmail]/Sent Mail"
+Slave :hansotypede-local:sent
+Create Both
+Expunge Both
+SyncState *
+
+# GROUPS PUT TOGETHER CHANNELS, SO THAT WE CAN INVOKE
+# MBSYNC ON A GROUP TO SYNC ALL CHANNELS
+#
+# FOR INSTANCE: "mbsync gmail" GETS MAIL FROM 
+# "gmail-inbox", "gmail-sent", and "gmail-trash"
+#
+Group hansotypede
+Channel hansotypede-inbox
+Channel hansotypede-sent
+Channel hansotypede-trash
