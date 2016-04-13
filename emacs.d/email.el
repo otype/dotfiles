@@ -4,6 +4,15 @@
 (require 'mu4e-maildirs-extension)
 (mu4e-maildirs-extension)
 
+;(add-hook 'mu4e-update-pre-hook 'etc/imapfilter)
+;(defun etc/imapfilter ()
+;  (message "Running imapfilter...")
+;  (with-current-buffer (get-buffer-create " *imapfilter*")
+;    (goto-char (point-max))
+;    (insert "---\n")
+;    (call-process "/usr/local/bin/imapfilter" nil (current-buffer) nil "-v"))
+;  (message "Running imapfilter...done"))
+
 (setq mu4e-maildir (expand-file-name "~/.mails")
       mu4e-html2text-command "/usr/local/bin/w3m -T text/html"
       user-full-name "Hans-Gunther Schmidt"
