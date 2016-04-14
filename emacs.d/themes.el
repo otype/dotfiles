@@ -1,5 +1,5 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'base16-solarized t)
+(load-theme 'zenburn t)
 
 (set-default-font "Monaco 14")
 

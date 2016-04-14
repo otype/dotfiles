@@ -16,6 +16,31 @@
 (setq user-mail-address "hans@otype.de")
 (setq user-full-name "Hans-Gunther Schmidt")
 
+;; decrypt automatically
+(setq mu4e-decryption-policy t)
+
+;; be prompted with key selection menu before sending a message
+;(setq mm-sign-option 'guided)
+
+;; automatically sign outgoing mails
+(add-hook 'message-send-hook 'mml-secure-message-sign-pgpmime)
+
+;; Automaticall load epa-mail-mode in mu
+;; EasyPG ships with a minor mode for use in mail programs, which is really useful. Enables epa-mail-mode when composing messages.
+;; Now, when composing a message, use:
+;;   C-c C-e s to sign a message.
+;;   C-c C-e e to encrypt a message
+(add-hook 'mu4e-compose-mode-hook
+   (defun my-setup-epa-hook ()
+     (epa-mail-mode)))
+
+;; Now, when viewing a message, enter:
+;;   C-c C-e v to verify a signature
+;;   C-c C-e d to decrypt a message
+(add-hook 'mu4e-view-mode-hook
+  (defun my-view-mode-hook ()
+    (epa-mail-mode)))
+
 ;;; Mu4e settings
 ;;
 (setq mu4e-headers-skip-duplicates t)
@@ -74,16 +99,12 @@
 ;; Shortcuts for jumping around mailboxes
 ;;
 (setq mu4e-maildir-shortcuts
-      '(("/hansotypede/inbox"   . ?i)
-	("/hansotypede/sent"    . ?s)
-	("/hansotypede/trash"   . ?t)
-	("/hansotypede/drafts"  . ?d)
-	("/hansotypede/archive" . ?a)
-	("/hansschmidtmeltwatercom/inbox"   . ?I)
-	("/hansschmidtmeltwatercom/sent"    . ?S)
-	("/hansschmidtmeltwatercom/trash"   . ?T)
-	("/hansschmidtmeltwatercom/drafts"  . ?D)
-	("/hansschmidtmeltwatercom/archive" . ?A)))
+      '(("/hansotypede/inbox"   . ?I)
+	("/hansotypede/starred" . ?S)
+	("/hansschmidtmeltwatercom/inbox"         . ?i)
+	("/hansschmidtmeltwatercom/catch_all"     . ?c)
+	("/hansschmidtmeltwatercom/all_meltwater" . ?a)
+	("/hansschmidtmeltwatercom/starred"       . ?s)))
 
 ;; Contexts
 ;;
