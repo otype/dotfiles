@@ -1,0 +1,3 @@
+#!/usr/local/bin/zsh
+
+eval $(gpg-agent --daemon)
