@@ -1,33 +1,80 @@
 (add-to-list 'load-path "/usr/local/Cellar/mu/HEAD/share/emacs/site-lisp/mu/mu4e")
 (setq mu4e-mu-binary (executable-find "/usr/local/bin/mu"))
+
 (require 'mu4e)
+(require 'mu4e-contrib)
+(require 'org-mu4e)
 (require 'mu4e-maildirs-extension)
 (mu4e-maildirs-extension)
 
-(setq mu4e-maildir (expand-file-name "~/.mails")
-      mu4e-html2text-command "/usr/local/bin/w3m -T text/html"
-      user-full-name "Hans-Gunther Schmidt"
-      mu4e-show-images t
-      mu4e-view-show-images t
-      mu4e-sent-messages-behavior 'delete
-      mu4e-get-mail-command "/usr/local/bin/mbsync -a"
-      mu4e-update-interval 600
-      message-send-mail-function 'message-send-mail-with-sendmail
+;; Don't send to these address in wide reply.
+(setq message-dont-reply-to-names '("notifications@github\\.com"
+                                    ".*@noreply\\.github\\.com"
+                                    "hans@otype\\.de"))
+
+;; This is ME!
+(setq user-mail-address "hans@otype.de")
+(setq user-full-name "Hans-Gunther Schmidt")
+
+;;; Mu4e settings
+;;
+(setq mu4e-headers-skip-duplicates t)
+
+;; Our mail base directory
+(setq mu4e-maildir (expand-file-name "~/.mails"))
+
+;; when to refresh mails
+(setq mu4e-update-interval 600)
+
+;;; Save attachment (this can also be a function)
+(setq mu4e-attachment-dir "~/Downloads")
+
+;;; Use 'fancy' non-ascii characters in various places in mu4e
+(setq mu4e-use-fancy-chars t)
+
+;; Silly mu4e only shows names in From: by default. Of course we also want the addresses.
+(setq mu4e-view-show-addresses t)
+
+;; Show Smileys
+(add-hook 'mu4e-view-mode-hook 'smiley-buffer)
+
+;; Attempt to show images when viewing messages
+(setq mu4e-show-images t
+      mu4e-view-image-max-width 800)
+(setq mu4e-view-show-images t
+      mu4e-view-image-max-width 800)
+
+;; use imagemagick to show images
+(when (fboundp 'imagemagick-register-types)
+  (imagemagick-register-types))
+
+;;; View html message in firefox (type aV)
+(add-to-list 'mu4e-view-actions
+	     '("ViewInBrowser" . mu4e-action-view-in-browser) t)
+
+;; sendmail configuration
+(setq message-send-mail-function 'message-send-mail-with-sendmail
       sendmail-program "/usr/local/bin/msmtp"
       message-sendmail-extra-arguments '("--read-envelope-from")
-      message-sendmail-f-is-evil 't
-      mu4e-use-fancy-chars t
-      mu4e-attachment-dir "~/Downloads")
+      message-sendmail-f-is-evil 't)
 
-(setq user-mail-address "hans@otype.de"
-      message-signature-file "~/.signature-hansotypede"
-      mu4e-sent-folder "/hansotypede/sent"
-      mu4e-drafts-folder "/hansotypede/drafts"
-      mu4e-trash-folder "/hansotypede/trash"
-      mu4e-refile-folder "/hansotypede/archive"
-      mu4e-maildir-shortcuts
-      '(
-	("/hansotypede/inbox"   . ?i)
+;; get mail configuration
+(setq mu4e-get-mail-command "/usr/local/bin/mbsync -a")
+
+;;; Don't save message to Sent Messages, Gmail/IMAP takes care of this
+(setq mu4e-sent-messages-behavior 'delete)
+
+;; use w3m for html
+(setq mu4e-html2text-command "/usr/local/bin/w3m -T text/html")
+
+;; bail out of mu4e with Q
+(define-key mu4e-main-mode-map "q" 'quit-window)
+(define-key mu4e-main-mode-map "Q" 'mu4e-quit)
+
+;; Shortcuts for jumping around mailboxes
+;;
+(setq mu4e-maildir-shortcuts
+      '(("/hansotypede/inbox"   . ?i)
 	("/hansotypede/sent"    . ?s)
 	("/hansotypede/trash"   . ?t)
 	("/hansotypede/drafts"  . ?d)
@@ -38,49 +85,40 @@
 	("/hansschmidtmeltwatercom/drafts"  . ?D)
 	("/hansschmidtmeltwatercom/archive" . ?A)))
 
-(defvar my-mu4e-account-alist
-  '(("hansotypede"
-     (user-mail-address "hans@otype.de")
-     (message-signature-file "~/.signature-hansotypede")
-     (mu4e-sent-folder "/hansotypede/sent")
-     (mu4e-drafts-folder "/hansotypede/drafts")
-     (mu4e-trash-folder "/hansotypede/trash")
-     (mu4e-refile-folder "/hansotypede/archive"))
-    ("hansschmidtmeltwatercom"
-     (user-mail-address "hans.schmidt@meltwater.com")
-     (message-signature-file "~/.signature-hansschmidtmeltwatercom")
-     (mu4e-sent-folder "/hansschmidtmeltwatercom/sent")
-     (mu4e-drafts-folder "/hansschmidtmeltwatercom/drafts")
-     (mu4e-trash-folder "/hansschmidtmeltwatercom/trash")
-     (mu4e-refile-folder "/hansschmidtmeltwatercom/archive"))))
-
-(defun my-mu4e-set-account ()
-  "Set the account for composing a message."
-  (let* ((account
-          (if mu4e-compose-parent-message
-              (let ((maildir (mu4e-message-field mu4e-compose-parent-message :maildir)))
-                (string-match "/\\(.*?\\)/" maildir)
-                (match-string 1 maildir))
-            (completing-read (format "Compose with account: (%s) "
-                                     (mapconcat #'(lambda (var) (car var))
-                                                my-mu4e-account-alist "/"))
-                             (mapcar #'(lambda (var) (car var)) my-mu4e-account-alist)
-                             nil t nil nil (caar my-mu4e-account-alist))))
-         (account-vars (cdr (assoc account my-mu4e-account-alist))))
-    (if account-vars
-        (mapc #'(lambda (var)
-                  (set (car var) (cadr var)))
-              account-vars)
-      (error "No email account found"))))
-
-(add-hook 'mu4e-compose-pre-hook 'my-mu4e-set-account)
-
-;; spell check
-(add-hook 'mu4e-compose-mode-hook
-	  (defun my-do-compose-stuff ()
-	    "My settings for message composition."
-	    (set-fill-column 72)
-	    (flyspell-mode)))
-
-(when (fboundp 'imagemagick-register-types)
-  (imagemagick-register-types))
+;; Contexts
+;;
+(setq mu4e-contexts
+      `(, (make-mu4e-context
+	   :name "Private"
+	   :enter-func (lambda () (mu4e-message "Switch to the Private context"))
+	   ;; leave-func not defined
+	   :match-func (lambda (msg)
+			 (when msg 
+			   (mu4e-message-contact-field-matches msg
+							       :to "hans@otype.de")))
+	   :vars '(
+		   (user-mail-address      . "hans@otype.de")
+		   (user-full-name         . "Hans-Gunther Schmidt")
+		   (message-signature-file . "~/.signature-hansotypede")
+		   (mu4e-sent-folder       . "/hansotypede/sent") 
+		   (mu4e-drafts-folder     . "/hansotypede/drafts")
+		   (mu4e-trash-folder      . "/hansotypede/trash")
+		   (mu4e-refile-folder     . "/hansotypede/archive")
+		   ))
+	  ,(make-mu4e-context
+	    :name "Work"
+	    :enter-func (lambda () (mu4e-message "Switch to the Work context"))
+	    ;; leave-fun not defined
+	    :match-func (lambda (msg)
+			  (when msg 
+			    (mu4e-message-contact-field-matches msg 
+								:to "hans.schmidt@meltwater.com")))
+	    :vars '(
+		    (user-mail-address       . "hans.schmidt@meltwater.com")
+		    (user-full-name          . "Hans-Gunther Schmidt")
+		    (message-signature-file  . "~/.signature-hansschmidtmeltwatercom")
+		    (mu4e-sent-folder        . "/hansschmidtmeltwatercom/sent")
+		    (mu4e-drafts-folder      . "/hansschmidtmeltwatercom/drafts")
+		    (mu4e-trash-folder       . "/hansschmidtmeltwatercom/trash")
+		    (mu4e-refile-folder      . "/hansschmidtmeltwatercom/archive")
+		    ))))
