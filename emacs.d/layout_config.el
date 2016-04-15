@@ -41,8 +41,13 @@
 (setq initial-buffer-choice "~/")
 
 ;; Let's set the height and width of the window. The last line gets rid of the ugly bright white line when splitting a window.
-(add-to-list 'default-frame-alist '(height . 40))
-(add-to-list 'default-frame-alist '(width . 90))
+(add-to-list 'default-frame-alist '(height . 60))
+(add-to-list 'default-frame-alist '(width . 150))
+
+;; paren mode = show matching parenthesis
+(show-paren-mode t)
+(setq show-paren-style 'expression)
+(setq show-paren-delay 0)
 
 ;; We want to show trailing whitespace. Trailing whitespace is the devil.
 (require 'whitespace)
@@ -53,6 +58,8 @@
   (setq show-trailing-whitespace nil))
 
 ;; We already know two places to add it: the minibuffer and eww.
+(add-hook 'mu4e-compose-mode-hook
+	  'no-trailing-whitespace)
 (add-hook 'minibuffer-setup-hook
           'no-trailing-whitespace)
 (add-hook 'eww-mode-hook

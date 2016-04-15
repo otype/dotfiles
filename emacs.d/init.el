@@ -2,26 +2,17 @@
 (load "server")
 (unless (server-running-p) (server-start))
 
-;; Load MELPA
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(package-initialize)
-
 ;; load all settings files
-(load "~/.emacs.d/email")
-(load "~/.emacs.d/themes")
-(load "~/.emacs.d/keybindings")
+(load "~/.emacs.d/packages_config") ;; needs to be the first as this installs all packages
+(load "~/.emacs.d/email_config")
+(load "~/.emacs.d/layout_config")
+(load "~/.emacs.d/keybindings_config")
 
 ;;; Markdown
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;; paren mode = show matching parenthesis
-(show-paren-mode t)
-(setq show-paren-style 'expression)
-(setq show-paren-delay 0)
 
 ;; Check any TLS connections against my local trust roots
 (setq tls-checktrust t)
