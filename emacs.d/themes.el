@@ -19,7 +19,57 @@
 (moe-dark)
 
 ;; disable scrollbar
-(scroll-bar-mode -1)
+(scroll-bar-mode 0)
 
-;; enable line numbers
-(global-linum-mode 1)
+;;; Line numbering
+;(global-linum-mode -1)
+(setq linum-format "%d ")
+
+;; enable line numbering for text-mode
+(add-hook 'text-mode-hook 'linum-mode)
+
+;; enable line numbering for any programming language mode
+(add-hook 'prog-mode-hook 'linum-mode)
+
+;; Remove the strange white line between two fringes.
+(set-face-attribute 'vertical-border nil :foreground (face-attribute 'fringe :background))
+
+;; We also want to get rid of the splash screen and start in the home directory.
+(setq inhibit-startup-message t)
+(setq inhibit-splash-screen t)
+(setq initial-scratch-message nil)
+(setq initial-buffer-choice "~/")
+
+;; Let's set the height and width of the window. The last line gets rid of the ugly bright white line when splitting a window.
+(add-to-list 'default-frame-alist '(height . 40))
+(add-to-list 'default-frame-alist '(width . 90))
+
+;; We want to show trailing whitespace. Trailing whitespace is the devil.
+(require 'whitespace)
+(setq-default show-trailing-whitespace t)
+
+;; ... but sometimes (especially in read-only buffers that I don't control), this gets annoying. Which is why we can add this small function to any hook that we want:
+(defun no-trailing-whitespace ()
+  (setq show-trailing-whitespace nil))
+
+;; We already know two places to add it: the minibuffer and eww.
+(add-hook 'minibuffer-setup-hook
+          'no-trailing-whitespace)
+(add-hook 'eww-mode-hook
+          'no-trailing-whitespace)
+(add-hook 'ielm-mode-hook
+          'no-trailing-whitespace)
+(add-hook 'gdb-mode-hook
+          'no-trailing-whitespace)
+(add-hook 'help-mode-hook
+          'no-trailing-whitespace)
+
+;; Highlight current line. Globally enable this, turn off when not needed.
+(global-hl-line-mode 1)
+(make-variable-buffer-local 'global-hl-line-mode)
+
+;; Insert closing parens automagically
+(electric-pair-mode 1)
+
+;; alias 'sh' for ansi-term
+(defalias 'sh 'ansi-term)
