@@ -15,7 +15,11 @@ export KEYTIMEOUT=1							# reduce vi-mode lag of 0.4 second delay to 0.1
 export PAGER="less"
 
 # Preferred editor
-export EDITOR='vim'
+export EDITOR="emacsclient"
+
+# Use emacsclient frame in new window in GUI mode
+#export VISUAL="emacsclient -c -a emacs"
+export VISUAL="emacsclient"
 
 # Lang variables
 export LC_CTYPE="en_US.UTF-8"
