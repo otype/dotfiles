@@ -15,9 +15,16 @@
 (use-package mu4e-maildirs-extension :ensure t)
 (use-package lua-mode :ensure t)
 (use-package groovy-mode  :ensure t)
+(use-package multi-term :ensure t)
 
 (use-package drag-stuff :ensure t)
 (drag-stuff-global-mode 1)
+
+;; load up emacs with zsh environment, otherwise we don't have GPG_AGENT_INFO etc.
+(use-package exec-path-from-shell :ensure t)
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+(exec-path-from-shell-copy-env "GPG_AGENT_INFO")
 
 ;; Scala
 ;(use-package scala-mode2 :ensure t)
