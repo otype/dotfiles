@@ -36,10 +36,6 @@
 ;; enable line numbering for any programming language mode
 (add-hook 'prog-mode-hook 'linum-mode)
 
-;(setq-default left-fringe-width  10)
-;(setq-default right-fringe-width  0)
-;(set-face-attribute 'fringe nil :background "black")
-
 ;; Remove the strange white line between two fringes.
 ;(set-face-attribute 'vertical-border nil :foreground (face-attribute 'fringe :background))
 
