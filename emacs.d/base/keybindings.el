@@ -11,3 +11,10 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
 (global-set-key "\C-c\C-k" 'kill-region)
+
+;; alias 'sh' for multi-term
+(defalias 'sh 'multi-term)
+
+;; Use C-c s to start shell
+(global-set-key "\C-cs" 'sh)
+

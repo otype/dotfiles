@@ -85,5 +85,3 @@
 ;; Insert closing parens automagically
 (electric-pair-mode 1)
 
-;; alias 'sh' for multi-term
-(defalias 'sh 'multi-term)
