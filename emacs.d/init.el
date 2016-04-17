@@ -4,33 +4,23 @@
 
 ;; load all settings files
 (load "~/.emacs.d/packages_config") ;; needs to be the first as this installs all packages
-(load "~/.emacs.d/email_config")
-(load "~/.emacs.d/layout_config")
-(load "~/.emacs.d/keybindings_config")
+(load "~/.emacs.d/general_config") ;; all configuration needed after packages have been setup
 
-;;; Markdown
-(require 'markdown-mode)
-(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+;; load all lib files
+(load "~/.emacs.d/lib/go-autocomplete")
 
-;; automatically follow symlinks
-(setq vc-follow-symlinks t)
+;; base configurations
+(load "~/.emacs.d/base/layout")
+(load "~/.emacs.d/base/keybindings")
 
-;; Check any TLS connections against my local trust roots
-(setq tls-checktrust t)
-(setq gnutls-verify-error t)
+;; apps configurations
+(load "~/.emacs.d/apps/email")
+(load "~/.emacs.d/apps/terminal")
 
-;; store all backup and autosave files in the tmp dir
-(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+;; programming configurations
+(load "~/.emacs.d/programming/go")
 
-(setq backup-by-copying t)
-(setq delete-old-versions t
-  kept-new-versions 6
-  kept-old-versions 2
-  version-control t)
-
+;; GUI configurations
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

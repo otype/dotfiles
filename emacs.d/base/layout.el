@@ -19,10 +19,15 @@
 (moe-dark)
 
 ;; disable scrollbar
-(scroll-bar-mode 0)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+;; disable tool bar
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+
+;; disable menu-bar
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 ;;; Line numbering
-;(global-linum-mode -1)
 (setq linum-format "%d ")
 
 ;; enable line numbering for text-mode
@@ -31,8 +36,12 @@
 ;; enable line numbering for any programming language mode
 (add-hook 'prog-mode-hook 'linum-mode)
 
+;(setq-default left-fringe-width  10)
+;(setq-default right-fringe-width  0)
+;(set-face-attribute 'fringe nil :background "black")
+
 ;; Remove the strange white line between two fringes.
-(set-face-attribute 'vertical-border nil :foreground (face-attribute 'fringe :background))
+;(set-face-attribute 'vertical-border nil :foreground (face-attribute 'fringe :background))
 
 ;; We also want to get rid of the splash screen and start in the home directory.
 (setq inhibit-startup-message t)
@@ -63,11 +72,11 @@
 (add-hook 'minibuffer-setup-hook
           'no-trailing-whitespace)
 (add-hook 'eww-mode-hook
-          'no-trailing-whitespace)
-(add-hook 'ielm-mode-hook
-          'no-trailing-whitespace)
-(add-hook 'gdb-mode-hook
-          'no-trailing-whitespace)
+	  'no-trailing-whitespace)
+;(add-hook 'ielm-mode-hook
+;          'no-trailing-whitespace)
+;(add-hook 'gdb-mode-hook
+;          'no-trailing-whitespace)
 (add-hook 'help-mode-hook
           'no-trailing-whitespace)
 (add-hook 'term-mode-hook
@@ -80,5 +89,5 @@
 ;; Insert closing parens automagically
 (electric-pair-mode 1)
 
-;; alias 'sh' for ansi-term
-(defalias 'sh 'ansi-term)
+;; alias 'sh' for multi-term
+(defalias 'sh 'multi-term)
