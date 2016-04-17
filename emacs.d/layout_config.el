@@ -70,6 +70,8 @@
           'no-trailing-whitespace)
 (add-hook 'help-mode-hook
           'no-trailing-whitespace)
+(add-hook 'term-mode-hook
+          'no-trailing-whitespace)
 
 ;; Highlight current line. Globally enable this, turn off when not needed.
 (global-hl-line-mode 1)
