@@ -95,6 +95,102 @@ Channel hansotypede-trash
 Channel hansotypede-rest
 
 #
+# wir@otype.de
+#
+IMAPAccount wirotypede
+Host imap.gmail.com
+User wir@otype.de
+PassCmd "security find-generic-password -s mbsync-wirotypede-password -w"
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions SSLv3
+CertificateFile ~/.dotfiles/mail/ca-bundle.crt
+
+IMAPStore wirotypede-remote
+Account wirotypede
+
+MaildirStore wirotypede-local
+Path ~/.mails/wirotypede/
+Inbox ~/.mails/wirotypede/inbox
+
+Channel wirotypede-inbox
+Master :wirotypede-remote:"INBOX"
+Slave :wirotypede-local:inbox
+Create Slave
+Expunge Both
+SyncState *
+
+Channel wirotypede-important
+Master :wirotypede-remote:"[Gmail]/Important"
+Slave :wirotypede-local:important
+Create Slave
+Expunge Both
+SyncState *
+
+Channel wirotypede-spam
+Master :wirotypede-remote:"[Gmail]/Spam"
+Slave :wirotypede-local:spam
+Create Slave
+Expunge Both
+SyncState *
+
+Channel wirotypede-archive
+Master :wirotypede-remote:"[Gmail]/All Mail"
+Slave :wirotypede-local:archive
+Create Slave
+Expunge Both
+SyncState *
+
+Channel wirotypede-starred
+Master :wirotypede-remote:"[Gmail]/Starred"
+Slave :wirotypede-local:starred
+Create Slave
+Expunge Both
+SyncState *
+
+Channel wirotypede-drafts
+Master :wirotypede-remote:"[Gmail]/Drafts"
+Slave :wirotypede-local:drafts
+Create Slave
+Expunge Both
+SyncState *
+
+Channel wirotypede-sent
+Master :wirotypede-remote:"[Gmail]/Sent Mail"
+Slave :wirotypede-local:sent
+Create Slave
+Expunge Both
+SyncState *
+
+Channel wirotypede-trash
+Master :wirotypede-remote:"[Gmail]/Trash"
+Slave :wirotypede-local:trash
+Create Slave
+Expunge Both
+SyncState *
+
+Channel wirotypede-rest
+Master :wirotypede-remote:
+Slave :wirotypede-local:
+#Patterns * !"INBOX" !"[Gmail]/Sent Mail" !"[Gmail]/Drafts" !"[Gmail]/Starred" !"[Gmail]/All Mail" !"[Gmail]/Trash"
+Patterns * !"INBOX" !"[Gmail]/*"
+Create Slave
+Expunge Both
+SyncState *
+
+# Get all the channels together into a group.
+Group wirotypede-group
+Channel wirotypede-inbox
+Channel wirotypede-important
+Channel wirotypede-spam
+Channel wirotypede-archive
+Channel wirotypede-starred
+Channel wirotypede-drafts
+Channel wirotypede-sent
+Channel wirotypede-trash
+Channel wirotypede-rest
+
+#
 # hans.schmidt@meltwater.com
 #
 IMAPAccount hansschmidtmeltwatercom

@@ -101,6 +101,7 @@
 (setq mu4e-maildir-shortcuts
       '(("/hansotypede/inbox"   . ?I)
 	("/hansotypede/starred" . ?S)
+	("/wirotypede/inbox"    . ?w)
 	("/hansschmidtmeltwatercom/inbox"         . ?i)
 	("/hansschmidtmeltwatercom/catch_all"     . ?c)
 	("/hansschmidtmeltwatercom/all_meltwater" . ?a)
@@ -114,25 +115,42 @@
 	   :enter-func (lambda () (mu4e-message "Switch to the Private context"))
 	   ;; leave-func not defined
 	   :match-func (lambda (msg)
-			 (when msg 
+			 (when msg
 			   (mu4e-message-contact-field-matches msg
 							       :to "hans@otype.de")))
 	   :vars '(
 		   (user-mail-address      . "hans@otype.de")
 		   (user-full-name         . "Hans-Gunther Schmidt")
 		   (message-signature-file . "~/.signature-hansotypede")
-		   (mu4e-sent-folder       . "/hansotypede/sent") 
+		   (mu4e-sent-folder       . "/hansotypede/sent")
 		   (mu4e-drafts-folder     . "/hansotypede/drafts")
 		   (mu4e-trash-folder      . "/hansotypede/trash")
 		   (mu4e-refile-folder     . "/hansotypede/archive")
+		   ))
+	  ,(make-mu4e-context
+	   :name "Family"
+	   :enter-func (lambda () (mu4e-message "Switch to the Family context"))
+	   ;; leave-func not defined
+	   :match-func (lambda (msg)
+			 (when msg
+			   (mu4e-message-contact-field-matches msg
+							       :to "wir@otype.de")))
+	   :vars '(
+		   (user-mail-address      . "wir@otype.de")
+		   (user-full-name         . "Naz & Hans-Gunther Schmidt")
+		   (message-signature-file . "~/.signature-wirotypede")
+		   (mu4e-sent-folder       . "/wirotypede/sent")
+		   (mu4e-drafts-folder     . "/wirotypede/drafts")
+		   (mu4e-trash-folder      . "/wirotypede/trash")
+		   (mu4e-refile-folder     . "/wirotypede/archive")
 		   ))
 	  ,(make-mu4e-context
 	    :name "Work"
 	    :enter-func (lambda () (mu4e-message "Switch to the Work context"))
 	    ;; leave-fun not defined
 	    :match-func (lambda (msg)
-			  (when msg 
-			    (mu4e-message-contact-field-matches msg 
+			  (when msg
+			    (mu4e-message-contact-field-matches msg
 								:to "hans.schmidt@meltwater.com")))
 	    :vars '(
 		    (user-mail-address       . "hans.schmidt@meltwater.com")
