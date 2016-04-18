@@ -2,6 +2,9 @@
 
 alias h=history
 alias sl=ls
-alias vi=vim
-alias et="emacsclient -t"
+#alias vi=vim
+alias e="emacsclient -t"
 alias ec="emacsclient -c"
+alias vi="emacsclient -t"
+alias vim="emacsclient -t"
+alias mvim="emacsclient -c"
