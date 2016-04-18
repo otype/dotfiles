@@ -1,4 +1,8 @@
-;;; Markdown
+;; activate HELM
+(require 'helm-config)
+(helm-mode 1)
+
+;; Markdown
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
