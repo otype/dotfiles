@@ -23,13 +23,13 @@
 (use-package ensime
   :ensure t
   :commands ensime ensime-mode)
-(use-package auto-complete :ensure t)
+;(use-package auto-complete :ensure t)
 (use-package company :ensure t)
 (use-package company-lua :ensure t)
 (use-package company-go :ensure t)
 (use-package company-shell :ensure t)
 (use-package helm :ensure t)
 (use-package helm-company :ensure t)
-(use-package jdee  :ensure t)
-
+(use-package jdee :ensure t)
+(use-package projectile :ensure t)
 

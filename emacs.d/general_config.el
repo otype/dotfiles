@@ -29,7 +29,10 @@
 (setq dired-use-ls-dired nil)
 
 ;; setup auto-complete
-(ac-config-default)
+;(ac-config-default)
+
+;; enable company-mode
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; setup exec-path-from-shell with some ENV variables
 (setq exec-path-from-shell-check-startup-files nil)
