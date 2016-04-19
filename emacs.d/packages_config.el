@@ -32,9 +32,5 @@
 (use-package helm-company :ensure t)
 (use-package jdee :ensure t)
 (use-package projectile :ensure t)
-<<<<<<< Updated upstream
-
-=======
 (use-package neotree :ensure t)
 (use-package ag :ensure t)
->>>>>>> Stashed changes
