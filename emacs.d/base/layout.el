@@ -46,8 +46,11 @@
 (setq initial-buffer-choice "~/")
 
 ;; Let's set the height and width of the window. The last line gets rid of the ugly bright white line when splitting a window.
-(add-to-list 'default-frame-alist '(height . 60))
-(add-to-list 'default-frame-alist '(width . 150))
+;(add-to-list 'default-frame-alist '(height . 60))
+;(add-to-list 'default-frame-alist '(width . 150))
+
+;; Start fullscreen (cross-platf)
+(add-hook 'window-setup-hook 'toggle-frame-fullscreen t)
 
 ;; paren mode = show matching parenthesis
 (show-paren-mode t)

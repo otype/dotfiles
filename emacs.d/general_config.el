@@ -21,9 +21,9 @@
 
 (setq backup-by-copying t)
 (setq delete-old-versions t
-  kept-new-versions 6
-  kept-old-versions 2
-  version-control t)
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
 
 ;; prevent error on startup in dired
 (setq dired-use-ls-dired nil)
@@ -49,3 +49,25 @@
 
 ;; setup drag-stuff (move line/region with M-up or M-down)
 (drag-stuff-global-mode 1)
+
+;; enable projectile globally
+(projectile-global-mode)
+
+;; use neotree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+;; let neotree work with projectile
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
+(defun neotree-project-dir ()
+  "Open NeoTree using the git root."
+  (interactive)
+  (let ((project-dir (ffip-project-root))
+	(file-name (buffer-file-name)))
+    (if project-dir
+	(progn
+	  (neotree-dir project-dir)
+	  (neotree-find file-name))
+      (message "Could not find git project root."))))
+

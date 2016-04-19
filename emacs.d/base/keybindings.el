@@ -18,3 +18,11 @@
 ;; Use C-c s to start shell
 (global-set-key "\C-cs" 'sh)
 
+;; bind HELM to M-x
+(global-set-key (kbd "M-x") 'helm-M-x)
+
+;; open neotree
+(global-set-key (kbd "C-c C-p") 'neotree-project-dir)
+
+;; kill buffer directly with C-x k ... no confirmation unless modified
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
