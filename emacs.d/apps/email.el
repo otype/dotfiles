@@ -1,10 +1,20 @@
-(add-to-list 'load-path "/usr/local/Cellar/mu/HEAD/share/emacs/site-lisp/mu/mu4e")
 (setq mu4e-mu-binary (executable-find "/usr/local/bin/mu"))
-
 (require 'mu4e)
 (require 'mu4e-contrib)
 (require 'org-mu4e)
 (require 'mu4e-maildirs-extension)
+(require 'mu4e-contrib)
+
+;; use 'eww' renderer for HTML mails
+(defun my-render-html-message ()
+  (let ((dom (libxml-parse-html-region (point-min) (point-max))))
+    (erase-buffer)
+    (shr-insert-document dom)
+    (goto-char (point-min))))
+
+(setq mu4e-html2text-command 'my-render-html-message)
+
+;; enable maildirs extension
 (mu4e-maildirs-extension)
 
 ;; Don't send to these address in wide reply.
@@ -41,6 +51,9 @@
   (defun my-view-mode-hook ()
     (epa-mail-mode)))
 
+;; set visisble header lines
+(setq mu4e-headers-visible-lines 30)
+
 ;;; Mu4e settings
 ;;
 (setq mu4e-headers-skip-duplicates t)
@@ -74,8 +87,8 @@
   (imagemagick-register-types))
 
 ;;; View html message in firefox (type aV)
-(add-to-list 'mu4e-view-actions
-	     '("ViewInBrowser" . mu4e-action-view-in-browser) t)
+;(add-to-list 'mu4e-view-actions
+;	     '("ViewInBrowser" . mu4e-action-view-in-browser) t)
 
 ;; sendmail configuration
 (setq message-send-mail-function 'message-send-mail-with-sendmail
@@ -90,7 +103,8 @@
 (setq mu4e-sent-messages-behavior 'delete)
 
 ;; use w3m for html
-(setq mu4e-html2text-command "/usr/local/bin/w3m -T text/html")
+;(setq mu4e-html2text-command "/usr/local/bin/w3m -T text/html")
+;(setq mu4e-html2text-command "textutil -stdin -format html -convert txt -stdout")
 
 ;; bail out of mu4e with Q
 (define-key mu4e-main-mode-map "q" 'quit-window)

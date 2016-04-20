@@ -26,3 +26,10 @@
 
 ;; kill buffer directly with C-x k ... no confirmation unless modified
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
+
+;; TAB & Backspace to navigate between links in HTML 'eww' mails
+(add-hook 'mu4e-view-mode-hook
+  (lambda()
+    ;; try to emulate some of the eww key-bindings
+    (local-set-key (kbd "<tab>") 'shr-next-link)
+    (local-set-key (kbd "<backtab>") 'shr-previous-link)))

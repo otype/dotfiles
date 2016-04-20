@@ -57,6 +57,9 @@
 (setq show-paren-style 'expression)
 (setq show-paren-delay 0)
 
+;; set contrast for eww/mu4e
+(setq shr-color-visible-luminance-min 10)
+
 ;; We want to show trailing whitespace. Trailing whitespace is the devil.
 (require 'whitespace)
 (setq-default show-trailing-whitespace t)
