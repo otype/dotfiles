@@ -109,6 +109,7 @@
 	("/wirotypede/inbox"    . ?w)
 	("/hansschmidtmeltwatercom/inbox"         . ?i)
 	("/hansschmidtmeltwatercom/catch_all"     . ?c)
+	("/hansschmidtmeltwatercom/hipchat"       . ?h)
 	("/hansschmidtmeltwatercom/all_meltwater" . ?a)
 	("/hansschmidtmeltwatercom/starred"       . ?s)))
 
