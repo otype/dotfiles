@@ -2,7 +2,6 @@
 (require 'mu4e)
 (require 'mu4e-contrib)
 (require 'org-mu4e)
-(require 'mu4e-maildirs-extension)
 (require 'mu4e-contrib)
 
 ;; use 'eww' renderer for HTML mails
@@ -13,9 +12,6 @@
     (goto-char (point-min))))
 
 (setq mu4e-html2text-command 'my-render-html-message)
-
-;; enable maildirs extension
-(mu4e-maildirs-extension)
 
 ;; Don't send to these address in wide reply.
 (setq message-dont-reply-to-names '("notifications@github\\.com"
@@ -86,10 +82,6 @@
 (when (fboundp 'imagemagick-register-types)
   (imagemagick-register-types))
 
-;;; View html message in firefox (type aV)
-;(add-to-list 'mu4e-view-actions
-;	     '("ViewInBrowser" . mu4e-action-view-in-browser) t)
-
 ;; sendmail configuration
 (setq message-send-mail-function 'message-send-mail-with-sendmail
       sendmail-program "/usr/local/bin/msmtp"
@@ -103,8 +95,7 @@
 (setq mu4e-sent-messages-behavior 'delete)
 
 ;; use w3m for html
-;(setq mu4e-html2text-command "/usr/local/bin/w3m -T text/html")
-;(setq mu4e-html2text-command "textutil -stdin -format html -convert txt -stdout")
+(setq mu4e-html2text-command "/usr/local/bin/lynx -stdin -dump -force_html -list_inline -verbose -justify -underscore -underline_links -width 120")
 
 ;; bail out of mu4e with Q
 (define-key mu4e-main-mode-map "q" 'quit-window)
