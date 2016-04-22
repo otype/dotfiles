@@ -94,7 +94,7 @@
 ;;; Don't save message to Sent Messages, Gmail/IMAP takes care of this
 (setq mu4e-sent-messages-behavior 'delete)
 
-;; use w3m for html
+;; use lynx for html
 (setq mu4e-html2text-command "/usr/local/bin/lynx -stdin -dump -force_html -list_inline -verbose -justify -underscore -underline_links -width 120")
 
 ;; bail out of mu4e with Q
