@@ -106,12 +106,11 @@
 (setq mu4e-maildir-shortcuts
       '(("/hansotypede/inbox"   . ?I)
 	("/hansotypede/starred" . ?S)
+	("/hansotypede/archive" . ?A)
 	("/wirotypede/inbox"    . ?w)
-	("/hansschmidtmeltwatercom/inbox"         . ?i)
-	("/hansschmidtmeltwatercom/catch_all"     . ?c)
-	("/hansschmidtmeltwatercom/hipchat"       . ?h)
-	("/hansschmidtmeltwatercom/all_meltwater" . ?a)
-	("/hansschmidtmeltwatercom/starred"       . ?s)))
+	("/hansschmidtmeltwatercom/inbox"   . ?i)
+	("/hansschmidtmeltwatercom/archive" . ?a)
+	("/hansschmidtmeltwatercom/starred" . ?s)))
 
 ;; Contexts
 ;;
