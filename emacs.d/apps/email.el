@@ -48,7 +48,7 @@
     (epa-mail-mode)))
 
 ;; set visisble header lines
-(setq mu4e-headers-visible-lines 30)
+(setq mu4e-headers-visible-lines 20)
 
 ;;; Mu4e settings
 ;;
@@ -105,6 +105,7 @@
 ;;
 (setq mu4e-maildir-shortcuts
       '(("/hansotypede/inbox"   . ?I)
+	("/hansotypede/archive" . ?A)
 	("/hansotypede/starred" . ?S)
 	("/hansotypede/archive" . ?A)
 	("/wirotypede/inbox"    . ?w)

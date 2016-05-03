@@ -30,7 +30,7 @@
    ["#303030" "#ff4b4b" "#d7ff5f" "#fce94f" "#5fafd7" "#d18aff" "#afd7ff" "#c6c6c6"])
  '(custom-safe-themes
    (quote
-    ("613a7c50dbea57860eae686d580f83867582ffdadd63f0f3ebe6a85455ab7706" default))))
+    ("5d5bc275d76f782fcb4ca2f3394031f4a491820fd648aed5c51efc15d472562e" "613a7c50dbea57860eae686d580f83867582ffdadd63f0f3ebe6a85455ab7706" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
