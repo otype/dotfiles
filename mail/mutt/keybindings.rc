@@ -40,17 +40,12 @@ bind    index,pager   \#       delete-thread                                    
 # GPG bindings
 bind    compose       p        pgp-menu
 
-# Sidebar ctrl-n, ctrl-p to select next, prev folder, ctrl-o to open selected folder
-#bind    index,pager   \Ck      sidebar-prev
-#bind    index,pager   \Cj      sidebar-next
-#bind    index,pager   \Ci      sidebar-open
-
 # MACROS
 #
 #
 
 # Open Urls
-macro   pager         \Cu      "<pipe-message>urlview<enter>"                                "call urlview to open links"
+macro   pager         \Cu      "<pipe-message>urlview<enter>"                                   "call urlview to open links"
 
 # Sidebar visibility, use 'b'
 macro   index         B        '<enter-command>toggle sidebar_visible<enter><refresh>'
@@ -59,6 +54,7 @@ macro   pager         B        '<enter-command>toggle sidebar_visible<enter><red
 # Sync email
 macro   index         O        '<shell-escape>offlineimap<enter>'                               "run offlineimap to sync all mail"
 macro   index         o        '<shell-escape>offlineimap -qf INBOX<enter>'                     "run offlineimap to sync inbox"
+macro   index         M        '<shell-escape>mbsync -a -c .mbsyncrc-simple<enter>'             "run offlineimap to sync all mail"
 macro   index         I        '<shell-escape>imapfilter<enter>'                                "run imapfilter"
 
 # Ctrl-R to mark all as read, I = mark as read, U = mark as unread
@@ -80,4 +76,3 @@ macro   index         g1       '<sync-mailbox><enter-command>source ~/.mutt/acco
 macro   index         g2       '<sync-mailbox><enter-command>source ~/.mutt/account_hansschmidtmeltwatercom<enter><change-folder>!<enter>'
 macro   index         g3       '<sync-mailbox><enter-command>source ~/.mutt/account_wirotypede<enter><change-folder>!<enter>'
 macro   index         g4       '<sync-mailbox><enter-command>source ~/.mutt/account_local<enter><change-folder>!<enter>'
-

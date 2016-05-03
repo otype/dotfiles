@@ -19,7 +19,7 @@ source ~/.mutt/keybindings.rc                # shortcuts
 
 # Basic Options ------------------------------------------------------------
 set sendmail         = /usr/local/bin/msmtp  # Use msmtp for sending mail to SMTP
-set sendmail_wait    = 0                     # Tell Mutt to wait for the msmtp program to finish 
+set sendmail_wait    = 0                     # Tell Mutt to wait for the msmtp program to finish
 set send_charset     = "utf-8"
 set wait_key         = no                    # shut up, mutt
 set mbox_type        = Maildir               # mailbox type
@@ -85,8 +85,7 @@ set reply_to                                 # reply to Reply to: field
 set reverse_name                             # reply as whomever it was to
 set include                                  # include message in replies
 set forward_quote                            # include message in forwards
-set editor = "vim +7 --cmd 'let g:goobookrc=\"/Users/hgschmidt/.goobookrc\"' -c 'set syntax=mail ft=mail enc=utf-8'"
+set editor = "vim +7 -c 'set syntax=mail ft=mail enc=utf-8'"
 
 # Contacts options ---------------------------------------------------------
-#set query_command = "contacts -sSf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
-set query_command="goobook query '%s'"
+set query_command="mu cfind --format=mutt-ab '%s'"
