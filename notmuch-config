@@ -12,6 +12,7 @@
 #
 [database]
 path=/Users/hgschmidt/Mail
+path=/Users/hgschmidt/.mails
 
 # User configuration
 #
