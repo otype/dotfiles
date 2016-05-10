@@ -2,6 +2,13 @@
 (load "server")
 (unless (server-running-p) (server-start))
 
+;; Set Emacs env to UTF-8
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-language-environment 'utf-8)
+
 ;; load all settings files
 (load "~/.emacs.d/packages_config") ;; needs to be the first as this installs all packages
 (load "~/.emacs.d/general_config") ;; all configuration needed after packages have been setup
