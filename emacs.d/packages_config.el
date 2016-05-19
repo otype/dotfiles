@@ -38,3 +38,7 @@
 (use-package projectile :ensure t)
 (use-package neotree :ensure t)
 (use-package ag :ensure t)
+(use-package elixir-mode :ensure t)
+(use-package alchemist :ensure t)
+(use-package magit :ensure t)
+(use-package yaml-mode :ensure t)

@@ -71,3 +71,6 @@
 	  (neotree-find file-name))
       (message "Could not find git project root."))))
 
+(add-hook 'ruby-mode-hook 'projectile-mode)
+(add-hook 'elixir-mode-hook 'projectile-mode)
+(add-hook 'scala-mode-hook 'projectile-mode)
