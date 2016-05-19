@@ -42,3 +42,4 @@
 (use-package alchemist :ensure t)
 (use-package magit :ensure t)
 (use-package yaml-mode :ensure t)
+(use-package which-key :ensure t)
