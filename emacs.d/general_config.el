@@ -74,3 +74,6 @@
 (add-hook 'ruby-mode-hook 'projectile-mode)
 (add-hook 'elixir-mode-hook 'projectile-mode)
 (add-hook 'scala-mode-hook 'projectile-mode)
+
+;; for the lazy people who don't want to type 'yes' or 'no'
+(fset 'yes-or-no-p 'y-or-n-p)
