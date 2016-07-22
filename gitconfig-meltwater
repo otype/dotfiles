@@ -1,6 +1,7 @@
 [user]
 	name = Hans-Gunther Schmidt
 	email = hans.schmidt@meltwater.com
+	signingkey = CAC4CBC0
 [core]
   editor = vim
   autocrlf = input
