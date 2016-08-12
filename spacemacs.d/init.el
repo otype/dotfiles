@@ -106,9 +106,7 @@ values."
                          sanityinc-tomorrow-eighties
                          tangotango
                          tango-dark
-                         tsdh-dark
-                         moe-dark
-                         moe-light)
+                         tsdh-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
