@@ -31,10 +31,7 @@ values."
      dockerfile
      puppet
      yaml
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     terraform
      scala
      spell-checking
      syntax-checking
