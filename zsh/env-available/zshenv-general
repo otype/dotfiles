@@ -17,8 +17,7 @@ export PAGER="less"
 # Preferred editor
 export EDITOR="emacsclient"
 
-# Use emacsclient frame in new window in GUI mode
-#export VISUAL="emacsclient -c -a emacs"
+# Use emacsclient from terminal
 export VISUAL="emacsclient"
 
 # Lang variables
