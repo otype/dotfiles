@@ -27,6 +27,8 @@ values."
      better-defaults
      clojure
      dockerfile
+     erlang
+     elixir
      emacs-lisp
      git
      markdown
