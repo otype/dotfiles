@@ -1,27 +1,14 @@
 #!/bin/zsh
 
+# ZSH-ALIASES
+#
+# Only add high-level aliases here. Otherwise, create a new environment
+# file in ./env-available/zshenv-<your_new_env> and link it in
+# ./env-enabled/zshenv-<your_new_env>.
+
 # General
 alias h=history
 alias sl=ls
-
-# AWS
-alias aub='awsudo -u blacksmiths'
-alias bt='awsudo -u blacksmiths terraform'
-
-# Emacs
-alias e="emacsclient -t"
-alias ec="emacsclient -c"
-
-# Bundler
-alias be="bundle exec"
-alias ber="bundle exec rake"
-
-# Homebrew
-alias buuc="brew update && brew upgrade && brew cleanup"
-
-# RabbitMQ
-alias rma-list-queues="rabbitmqadmin list queues vhost name messages messages_ready messages_unacknowledged"
-alias rma-list-exchanges="rabbitmqadmin list exchanges vhost name type"
 
 # VI
 alias vi=vim

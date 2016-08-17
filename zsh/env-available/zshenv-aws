@@ -1,0 +1,9 @@
+#!/usr/local/bin/zsh
+
+# ZSHENV AWS
+#
+#
+
+# Aliases
+alias aub='awsudo -u blacksmiths'
+alias bt='awsudo -u blacksmiths terraform'

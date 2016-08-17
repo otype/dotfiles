@@ -15,3 +15,6 @@ if [[ `uname -s` == "Darwin" ]]; then
 	[[ -d /usr/local/share/python ]] && export PATH=/usr/local/share/python:$PATH
 	[[ -d /usr/local/share/npm/bin ]] && export PATH=/usr/local/share/npm/bin:$PATH
 fi
+
+# Aliases
+alias buuc="brew update && brew upgrade && brew cleanup"

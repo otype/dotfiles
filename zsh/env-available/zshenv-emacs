@@ -7,3 +7,7 @@
 # The emacs daemon can be started automatically in a very simple manner: when you invoke 
 # emacsclient -t/-c the server will be started (with emacs --daemon) if it's not already running.
 #export ALTERNATE_EDITOR=""
+
+# Aliases
+alias e="emacsclient -t"
+alias ec="emacsclient -c"
