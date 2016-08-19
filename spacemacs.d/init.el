@@ -26,15 +26,22 @@ values."
      auto-completion
      better-defaults
      clojure
+     colors
+     dash
      dockerfile
-     erlang
      elixir
      emacs-lisp
+     erlang
      git
      markdown
      puppet
+     python
+     ruby
+     ruby-on-rails
      scala
+     shell-scripts
      spell-checking
+     sql
      syntax-checking
      terraform
      themes-megapack
