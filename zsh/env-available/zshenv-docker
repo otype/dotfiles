@@ -1,8 +1,26 @@
 #!/usr/local/bin/zsh
 
-# Init docker
+# ZSHENV Docker
 #
 #
+
+# general docker commands
+alias doci="docker images"
+alias docps="docker ps"
+
+# Run bash in docker container
+docker_exec_helper() {
+    docker exec -it $1 bash
+}
+alias docex=docker_exec_helper
+
+# Show docker logs
+alias docl="docker logs"
+alias doclf="docker logs -f"
+
+# Remove commands
+alias docrm="docker rm"
+alias docrmi="docker rmi"
 
 # Kill all running containers.
 alias dockerkillall='docker kill $(docker ps -q)'
@@ -15,6 +33,3 @@ alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(
 
 # Delete all stopped containers and untagged images.
 alias dockerclean='dockercleanc || true && dockercleani'
-
-# Circumvent docker cert error
-#alias docker='docker --tlsverify=false'
