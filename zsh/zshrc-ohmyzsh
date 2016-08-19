@@ -14,7 +14,7 @@ DISABLE_UPDATE_PROMPT=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew common-aliases colored-man-pages colorize docker encode64 gem gpg-agent git git-extras history jira pyenv python rbenv ruby sbt scala vi-mode terraform)
+plugins=(aws brew common-aliases colored-man-pages colorize docker encode64 gem github gpg-agent git git-extras history jira pyenv python rbenv ruby sbt scala vi-mode terraform)
 
 # Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
