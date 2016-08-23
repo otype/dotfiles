@@ -34,6 +34,7 @@ values."
      erlang
      git
      markdown
+     org
      puppet
      python
      ruby
