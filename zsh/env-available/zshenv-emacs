@@ -9,5 +9,5 @@
 #export ALTERNATE_EDITOR=""
 
 # Aliases
-alias e="emacsclient -t"
-alias ec="emacsclient -c"
+alias e="/usr/local/bin/emacsclient -t"
+alias ec="/usr/local/bin/emacsclient -c"
