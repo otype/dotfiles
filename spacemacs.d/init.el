@@ -245,8 +245,8 @@ values."
    dotspacemacs-default-package-repository nil
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
-   ;; `trailing' to delete only the whitespace at end of lines, `changed'to
-   ;; delete only whitespace for changed lines or `nil' to disable cleanup.
+   ;; `trailing' to delete only the whitespace at end of lines, `changed'to   ;
+ delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    ))
@@ -258,6 +258,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq require-final-newline t)
+  ;; smoother scrolling
+  (setq mouse-wheel-scroll-amount '(4 ((shift) . 1))) ;; three lines at a time
+  (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+  (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
   )
 
 (defun dotspacemacs/user-config ()
@@ -267,6 +272,16 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (prefer-coding-system 'utf-8)
+  ;; Activate column indicator in prog-mode and text-mode
+  (add-hook 'prog-mode-hook 'turn-on-fci-mode)
+  (add-hook 'text-mode-hook 'turn-on-fci-mode)
+  ;; More subtle fci-mode color
+  (setq fci-rule-color "#8b8b00")
+  ;; fixes powerline separators color
+  (setq powerline-default-separator 'utf-8)
+  ;; needs to be called after modifying powerline
+  (spaceline-compile)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
