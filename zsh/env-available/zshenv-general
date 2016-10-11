@@ -33,4 +33,4 @@ export TERM=xterm-256color
 [[ -d "/opt/local/bin" ]] && export PATH=$PATH:/opt/local/bin
 
 # Override alias set by common-aliases (oh-my-zsh)
-unalias rm
+[[ `alias | grep "^rm"` ]] && unalias rm

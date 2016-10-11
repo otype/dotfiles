@@ -6,9 +6,11 @@
 
 # Added for brew zsh-completions
 if [[ `uname -s` == "Darwin" ]]; then
-	unalias run-help
-	autoload run-help
-	HELPDIR=/usr/local/share/zsh/helpfiles
+	if [[ `alias | grep "^run-help"` ]]; then
+ 		unalias run-help
+		autoload run-help
+		HELPDIR=/usr/local/share/zsh/helpfiles
+	fi
 
 	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
