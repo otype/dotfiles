@@ -40,6 +40,10 @@ function java-versions() {
 	env | grep JDK
 }
 
+function show-java-versions() {
+	ls /Library/Java/JavaVirtualMachines | sed 's/jdk//g' | sed 's/\.$//'
+}
+
 function switch-to-java() {
   jdk=$1
 
@@ -52,7 +56,7 @@ function switch-to-java() {
   elif [[ "$jdk" == "8" ]]; then
     JAVA_HOME=$JDK8
   else
-    JAVA_HOME=$JDK8
+    JAVA_HOME=`/usr/libexec/java_home -v $jdk`
   fi
 
   export JAVA_HOME
