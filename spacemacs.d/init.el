@@ -33,6 +33,7 @@ values."
      emacs-lisp
      erlang
      git
+     groovy
      javascript
      markdown
      org
