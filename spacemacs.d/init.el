@@ -36,6 +36,7 @@ values."
      groovy
      javascript
      markdown
+     nginx
      org
      puppet
      python
