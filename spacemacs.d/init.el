@@ -35,6 +35,7 @@ values."
      git
      groovy
      javascript
+     lua
      markdown
      nginx
      org
