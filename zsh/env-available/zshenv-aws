@@ -10,3 +10,4 @@ alias bt='awsudo -u blacksmiths terraform'
 
 # Aliases around AWSCLI
 alias aws-instances-direct="awsudo -u blacksmiths aws ec2 describe-instances --query 'Reservations[].Instances[].[PrivateIpAddress,InstanceId,Tags[?Key=='Name'].Value[]]' --output text | sed 's/None$/None\n/' | sed '$!N;s/\n/ /'"
+alias apilogs='awsudo -u blacksmiths awslogs get --no-color api --watch -G | sed -e "s|^all-services/||" -e "s|/| |1" | grep -v "/_health"'
