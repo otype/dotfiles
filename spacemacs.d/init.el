@@ -34,6 +34,7 @@ values."
      erlang
      git
      groovy
+     html
      javascript
      lua
      markdown
