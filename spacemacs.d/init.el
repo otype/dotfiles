@@ -82,7 +82,7 @@ values."
    ;; (default t)
    dotspacemacs-elpa-https t
    ;; Maximum allowed time in seconds to contact an ELPA repository.
-   dotspacemacs-elpa-timeout 5
+   dotspacemacs-elpa-timeout 10
    ;; If non nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. (default t)
    dotspacemacs-check-for-update t
@@ -112,23 +112,18 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(moe-dark
-                         moe-light
-                         material
-                         afternoon
-                         niflheim
-                         planet
-                         sanityinc-solarized-dark
-                         sanityinc-tomorrow-eighties
-                         tangotango
-                         tango-dark)
+   dotspacemacs-themes '(tango-dark
+                         tango-plus
+                         flatland
+                         moe-dark
+                         moe-light)
    ;; set moe-theme color
    moe-theme-set-color 'yellow
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Monaco"
+   dotspacemacs-default-font '("Menlo"
                                :size 14
                                :weight normal
                                :width normal
@@ -284,9 +279,9 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol t)
  '(org-agenda-files (quote ("~/org/mw-tasks.org"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-)
+ ;; If there is more than one, they won't work right.)
+ )
