@@ -1,6 +1,6 @@
 # .notmuch-config - Configuration file for the notmuch mail system
 #
-# For more information about notmuch, see http://notmuchmail.org
+# For more information about notmuch, see https://notmuchmail.org
 
 # Database configuration
 #
@@ -12,7 +12,6 @@
 #
 [database]
 path=/Users/hgschmidt/Mail
-path=/Users/hgschmidt/.mails
 
 # User configuration
 #
@@ -32,7 +31,7 @@ path=/Users/hgschmidt/.mails
 [user]
 name=Hans-Gunther Schmidt
 primary_email=hans.schmidt@meltwater.com
-other_email=hans@otype.de;
+other_email=hans@otype.de;wir@otype.de;
 
 # Configuration for "notmuch new"
 #
