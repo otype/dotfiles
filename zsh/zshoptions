@@ -2,9 +2,6 @@
 # Bind keys
 #
 
-# enable vi mode
-#bindkey -v
-
 # enable emacs mode
 bindkey -e
 
