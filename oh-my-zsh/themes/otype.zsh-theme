@@ -6,7 +6,7 @@
 # ⬅ ⬆ ⬇ ⬈ ⬉ ⬊ ⬋ ⬒ ⬓ ⬔ ⬕ ⬖ ⬗ ⬘ ⬙ ⬟  ⬤ 〒 ǀ ǁ ǂ ĭ Ť Ŧ
 #
 rbenv_version() {
-  rbenv version 2>/dev/null | awk '{print $1}'
+	rbenv version 2>/dev/null | awk '{print $1}'
 }
 
 if which rbenv &> /dev/null; then
@@ -14,7 +14,7 @@ if which rbenv &> /dev/null; then
 fi
 
 pyenv_version() {
-  pyenv version 2>/dev/null | awk '{print $1}'
+	pyenv version 2>/dev/null | awk '{print $1}'
 }
 
 if which pyenv &> /dev/null; then
