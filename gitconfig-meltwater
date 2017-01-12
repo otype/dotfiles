@@ -7,6 +7,7 @@
   autocrlf = input
 	excludesfile = /Users/hgschmidt/.gitignore_global
   whitespace = cr-at-eol
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
   st = status
   co = checkout
