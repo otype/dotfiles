@@ -273,6 +273,8 @@ you should place your code here."
   (setq-default js2-basic-offset 2
                 js-indent-level 2)
 
+  (setq js2-strict-missing-semi-warning nil)
+
 	(defun duplicate-current-line-or-region (arg)
 	 "Duplicates the current line or region ARG times.
 	 If there's no region, the current line will be duplicated. However, if
