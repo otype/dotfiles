@@ -267,7 +267,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; fix powerline separators
-  (setq ns-use-srgb-colorspace nil)
+  ;;(setq ns-use-srgb-colorspace nil)
+  (setq powerline-default-separator 'utf-8)
 
   ;; use 2 spaces in Javascript/JSON
   (setq-default js2-basic-offset 2
