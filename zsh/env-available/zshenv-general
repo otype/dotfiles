@@ -34,3 +34,10 @@ export TERM=xterm-256color
 
 # Override alias set by common-aliases (oh-my-zsh)
 [[ `alias | grep "^rm"` ]] && unalias rm
+
+# General
+alias h=history
+alias sl=ls
+
+# VI
+alias vi=vim

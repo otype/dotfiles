@@ -1,0 +1,8 @@
+#!/usr/local/bin/zsh
+
+# Meltwater API-relevant definitions
+#
+#
+
+alias api-test="newman run ~/src/github/api-postman-config/MeltwaterAPI.postman_collection.json --folder 'System Test' -e ~/.dotfiles-private/mw-api/api.meltwater.com.env.json"
+

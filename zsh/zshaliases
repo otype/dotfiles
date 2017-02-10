@@ -6,9 +6,3 @@
 # file in ./env-available/zshenv-<your_new_env> and link it in
 # ./env-enabled/zshenv-<your_new_env>.
 
-# General
-alias h=history
-alias sl=ls
-
-# VI
-alias vi=vim
