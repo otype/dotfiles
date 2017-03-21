@@ -284,6 +284,14 @@ you should place your code here."
   ;; set moe-theme color
   ;(moe-theme-set-color 'yellow)
 
+  (defun start-other-emacs ()
+    "Start another Emacs process to open an independent Emacs window."
+    (interactive)
+  ;;; Run the command "emacs", piping output into a 
+  ;;; buffer called "*other-emacs*"
+    (start-process "emacs" "*other-emacs*" "emacs"))
+  (global-set-key (kbd "C-x 5 2") 'start-other-emacs)
+
 	(defun duplicate-current-line-or-region (arg)
 	 "Duplicates the current line or region ARG times.
 	 If there's no region, the current line will be duplicated. However, if
