@@ -8,3 +8,8 @@
 if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
     source "/usr/local/share/chtf/chtf.sh"
 fi
+
+# Activate Terraform
+TERRAFORM_VERSION="0.8.8"
+export TERRAFORM_VERSION
+chtf $TERRAFORM_VERSION
