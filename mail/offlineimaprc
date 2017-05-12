@@ -11,7 +11,6 @@ maxsyncaccounts = 3
 postsynchook = notmuch new
 localrepository = hansotypede-local
 remoterepository = hansotypede-remote
-status_backend = sqlite
 
 [Repository hansotypede-local]
 type = Maildir
@@ -34,7 +33,6 @@ remotepasseval = get_password_for(account="hans@otype.de", server="imap.gmail.co
 postsynchook = notmuch new
 localrepository = wirotypede-local
 remoterepository = wirotypede-remote
-status_backend = sqlite
 
 [Repository wirotypede-local]
 type = Maildir
@@ -57,7 +55,6 @@ remotepasseval = get_password_for(account="wir@otype.de", server="imap.gmail.com
 postsynchook = notmuch new
 localrepository = hansschmidtmeltwatercom-Local
 remoterepository = hansschmidtmeltwatercom-Remote
-status_backend = sqlite
 
 [Repository hansschmidtmeltwatercom-Local]
 type = Maildir
