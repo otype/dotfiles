@@ -4,11 +4,12 @@
 #
 #
 
-if [[ -z `which pip` && -z `which pyenv` ]]; then
-    # Generate ~/.powerline.conf
-    export POWERLINE_TMUX_CONF="`pip show powerline-status | grep ^Location | awk '{print $2}'`/powerline/bindings/tmux/powerline.conf"
-    ln -nsf $POWERLINE_TMUX_CONF ~/.powerline.conf
-fi
+# Uncomment if you want to use tmux!
+#if [[ -z `which pip` && -z `which pyenv` ]]; then
+#    # Generate ~/.powerline.conf
+#    export POWERLINE_TMUX_CONF="`pip show powerline-status | grep ^Location | awk '{print $2}'`/powerline/bindings/tmux/powerline.conf"
+#    ln -nsf $POWERLINE_TMUX_CONF ~/.powerline.conf
+#fi
 
 # Run powerline-daemon
 [[ -f `which powerline-daemon` ]] && powerline-daemon -q
