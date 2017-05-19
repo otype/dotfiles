@@ -27,7 +27,6 @@ values."
      better-defaults
      clojure
      colors
-     dash
      docker
      elixir
      elm
