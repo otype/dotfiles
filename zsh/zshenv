@@ -12,4 +12,4 @@ do
     . ${config}
 done
 
-export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++')
+export PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++' | sed 's/:$//' | sed '/^$/d')
