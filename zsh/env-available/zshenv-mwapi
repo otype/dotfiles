@@ -4,5 +4,5 @@
 #
 #
 
-alias api-test="newman run ~/src/github/api-postman-config/MeltwaterAPI.postman_collection.json --folder 'System Test' -e ~/.dotfiles-private/mw-api/api.meltwater.com.env.json"
+alias api-test="newman run ~/src/api/api-postman-config/MeltwaterAPI.postman_collection.json --folder 'System Test' -e ~/.dotfiles-private/mw-api/api.meltwater.com.env.json"
 
