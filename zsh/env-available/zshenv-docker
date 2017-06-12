@@ -5,8 +5,12 @@
 #
 
 # general docker commands
-alias doci="docker images"
-alias docps="docker ps"
+alias di="docker images"
+alias dps="docker ps"
+alias dl="docker logs"
+alias dlf="docker logs -f"
+alias drm="docker rm"
+alias drmi="docker rmi"
 
 # docker-compose shortcuts
 alias dc="docker-compose"
@@ -18,15 +22,7 @@ alias dcd="docker-compose down"
 docker_exec_helper() {
     docker exec -it $1 bash
 }
-alias docex=docker_exec_helper
-
-# Show docker logs
-alias docl="docker logs"
-alias doclf="docker logs -f"
-
-# Remove commands
-alias docrm="docker rm"
-alias docrmi="docker rmi"
+alias dex=docker_exec_helper
 
 # Kill all running containers.
 alias dockerkillall='docker kill $(docker ps -q)'
