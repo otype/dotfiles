@@ -8,6 +8,12 @@
 alias doci="docker images"
 alias docps="docker ps"
 
+# docker-compose shortcuts
+alias dc="docker-compose"
+alias dcu="docker-compose up"
+alias dcud="docker-compose up -d"
+alias dcd="docker-compose down"
+
 # Run bash in docker container
 docker_exec_helper() {
     docker exec -it $1 bash
@@ -38,4 +44,4 @@ alias dockerclean='dockercleanc || true && dockercleani'
 alias dockervolclean='printf "\n>>> Deleting untagged volumes\n\n" && docker volume rm $(docker volume ls -qf dangling=true)'
 
 # Delete all downloaded images
-alias dockerimgclean='for image in $(docker images -q); do docker rmi $image; done'
+alias dockerimgclean='for image in `docker images -q` ; do docker rmi $image ; done'
