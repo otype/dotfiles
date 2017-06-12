@@ -20,7 +20,7 @@ alias dcd="docker-compose down"
 
 # Run bash in docker container
 docker_exec_helper() {
-    docker exec -it $1 bash
+    docker exec -it $1 sh
 }
 alias dex=docker_exec_helper
 
