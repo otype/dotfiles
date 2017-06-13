@@ -11,6 +11,9 @@ export SAVEHIST=10000
 export HISTFILE=~/.zsh_history
 export KEYTIMEOUT=1							# reduce vi-mode lag of 0.4 second delay to 0.1
 
+# Calculator should use higher precision (no rounding)
+alias bc="bc -l"
+
 # General exports
 export PAGER="less"
 
