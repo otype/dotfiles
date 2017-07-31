@@ -22,17 +22,17 @@ if which pyenv &> /dev/null; then
 fi
 
 # Must use Powerline font, for \uE0A0 to render.
-ZSH_THEME_GIT_PROMPT_PREFIX="on %{$fg[yellow]%}\uE0A0 "
+ZSH_THEME_GIT_PROMPT_PREFIX="on %{$fg[yellow]%}\uE0A0"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} ☂"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%} ✭"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[yellow]%} ✔"
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ⚡"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} ➜"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%} ♒"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[yellow]%} ⬆"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} 👀  "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}❓"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[yellow]%} 👍  "
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}✳️"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%}⚠️"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}❌"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}✏️"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}⚙️"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[yellow]%}🔆"
 
 local user_host='(%{$fg_bold[green]%}%n@%m%{$reset_color%})'
 local current_dir='%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}'
