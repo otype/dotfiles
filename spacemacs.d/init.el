@@ -332,7 +332,7 @@ you should place your code here."
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("a2e7b508533d46b701ad3b055e7c708323fb110b6676a8be458a758dd8f24e27" default)))
+    ("66132890ee1f884b4f8e901f0c61c5ed078809626a547dbefbb201f900d03fd8" "a2e7b508533d46b701ad3b055e7c708323fb110b6676a8be458a758dd8f24e27" default)))
  '(evil-want-Y-yank-to-eol t)
  '(fci-rule-color "#202325")
  '(magit-commit-arguments (quote ("--gpg-sign=34A1B84ACAC4CBC0")))
