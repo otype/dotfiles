@@ -269,6 +269,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; Fix for strange helm error. See https://github.com/magit/magit/issues/3158.
+  (require 'helm-bookmark)
+
   ;; fix powerline separators
   ;;(setq ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'utf-8)
@@ -291,7 +295,7 @@ you should place your code here."
   (defun start-other-emacs ()
     "Start another Emacs process to open an independent Emacs window."
     (interactive)
-  ;;; Run the command "emacs", piping output into a 
+  ;;; Run the command "emacs", piping output into a
   ;;; buffer called "*other-emacs*"
     (start-process "emacs" "*other-emacs*" "emacs"))
   (global-set-key (kbd "C-x 5 2") 'start-other-emacs)
@@ -332,7 +336,7 @@ you should place your code here."
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("66132890ee1f884b4f8e901f0c61c5ed078809626a547dbefbb201f900d03fd8" "a2e7b508533d46b701ad3b055e7c708323fb110b6676a8be458a758dd8f24e27" default)))
+    ("51e228ffd6c4fff9b5168b31d5927c27734e82ec61f414970fc6bcce23bc140d" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" "3632cf223c62cb7da121be0ed641a2243f7ec0130178722554e613c9ab3131de" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" "66132890ee1f884b4f8e901f0c61c5ed078809626a547dbefbb201f900d03fd8" "a2e7b508533d46b701ad3b055e7c708323fb110b6676a8be458a758dd8f24e27" default)))
  '(evil-want-Y-yank-to-eol t)
  '(fci-rule-color "#202325" t)
  '(magit-commit-arguments (quote ("--gpg-sign=34A1B84ACAC4CBC0")))
@@ -343,6 +347,7 @@ you should place your code here."
  '(send-mail-function (quote sendmail-send-it))
  '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(tramp-syntax (quote default) nil (tramp))
  '(vc-annotate-background "#1f2124")
  '(vc-annotate-color-map
    (quote
