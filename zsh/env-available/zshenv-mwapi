@@ -6,7 +6,9 @@
 
 alias api-test="newman run ~/src/api/api-postman-config/MeltwaterAPI.postman_collection.json --folder 'System Test' -e ~/.dotfiles-private/mw-api/api.meltwater.com.env.json"
 
-export MWAPI_CLIENTID=`cat ~/.dotfiles-private/mw-api/hgschmidt.json | jq '.clientId' | sed 's/"//g'`
-export MWAPI_USERKEY=`cat ~/.dotfiles-private/mw-api/hgschmidt.json | jq '.threescale_userkey' | sed 's/"//g'`
-export FAIRHAIR_PROD_USERNAME=`cat ~/.dotfiles-private/mw-api/hgschmidt.json | jq '.fh_prod_username' | sed 's/"//g'`
-export FAIRHAIR_PROD_PASSWORD=`cat ~/.dotfiles-private/mw-api/hgschmidt.json | jq '.fh_prod_password' | sed 's/"//g'`
+if [[ -f '~/.dotfiles-private/mw-api/hgschmidt.json' ]]; then
+	export MWAPI_CLIENTID=`cat ~/.dotfiles-private/mw-api/hgschmidt.json | jq '.clientId' | sed 's/"//g'`
+	export MWAPI_USERKEY=`cat ~/.dotfiles-private/mw-api/hgschmidt.json | jq '.threescale_userkey' | sed 's/"//g'`
+	export FAIRHAIR_PROD_USERNAME=`cat ~/.dotfiles-private/mw-api/hgschmidt.json | jq '.fh_prod_username' | sed 's/"//g'`
+	export FAIRHAIR_PROD_PASSWORD=`cat ~/.dotfiles-private/mw-api/hgschmidt.json | jq '.fh_prod_password' | sed 's/"//g'`
+fi
