@@ -3,13 +3,13 @@
 # NODENV
 #
 #
-if [ `uname -s` = "FreeBSD" ]; then
+if [[ `uname -s` = "FreeBSD" ]]; then
 	# do nothing
-elif [ `uname -s` = "Linux" ]; then
+elif [[ `uname -s` = "Linux" ]]; then
 	export PATH="$HOME/.nodenv/bin:$PATH"
 	eval "$(nodenv init -)"
 	nodenv rehash
-elif [ `uname -s` = "Linux" ]; then
+elif [[ `uname -s` = "Linux" ]]; then
   # do nothing for now!
   #
   #	export PATH="$HOME/.nodenv/bin:$PATH"

@@ -3,18 +3,18 @@
 # PYENV
 #
 #
-if [ `uname -s` = "FreeBSD" ]; then
+if [[ `uname -s` = "FreeBSD" ]]; then
     export PYENV_ROOT="${HOME}/.pyenv"
-    if [ -d "${PYENV_ROOT}" ]; then
+    if [[ -d "${PYENV_ROOT}" ]]; then
         export PATH="${PYENV_ROOT}/bin:${PATH}"
         eval "$(pyenv init -)"
     fi
-elif [ `uname -s` = "Linux" ]; then
+elif [[ `uname -s` = "Linux" ]]; then
 	export PATH="$HOME/.pyenv/bin:$PATH"
 	eval "$(pyenv init -)"
 	eval "$(pyenv virtualenv-init -)"
 	pyenv rehash
-elif [ `uname -s` = "OpenBSD" ]; then
+elif [[ `uname -s` = "OpenBSD" ]]; then
 	# do nothing
 else
 	export PYENV_ROOT=/usr/local/opt/pyenv

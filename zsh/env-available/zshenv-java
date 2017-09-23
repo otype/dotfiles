@@ -43,9 +43,9 @@ function java-versions() {
 function show-java-versions() {
 	if [[ "`uname -s`" == "FreeBSD" ]]; then
 		# do nothing
-	elif [ `uname -s` = "Linux" ]; then
+	elif [[ `uname -s` = "Linux" ]]; then
 		# do nothing
-	elif [ `uname -s` = "OpenBSD" ]; then
+	elif [[ `uname -s` = "OpenBSD" ]]; then
 		ls -d /usr/local/jdk* | sed 's#/usr/local/jdk-##g'
 
 	else
@@ -82,7 +82,7 @@ function fix-intellij-vmoptions() {
 	if [[ "`uname -s`" == "FreeBSD" ]]; then
 		echo "No config, yet! Exiting now!"
 		exit 1
-	elif [ `uname -s` = "Linux" ]; then
+	elif [[ `uname -s` = "Linux" ]]; then
 		echo "No config, yet! Exiting now!"
 		exit 1
 	else
@@ -119,11 +119,11 @@ if [[ "`uname -s`" == "FreeBSD" ]]; then
     JDK7="/usr/local/openjdk7"
     JDK8="/usr/local/openjdk8"
     defaultJDK=$JDK7
-elif [ `uname -s` = "Linux" ]; then
+elif [[ `uname -s` = "Linux" ]]; then
 		JDK7="/usr/java/jdk1.7.0_79"
 		JDK8="/usr/java/jdk1.8.0_71"
 		defaultJDK=$JDK8
-elif [ `uname -s` = "OpenBSD" ]; then
+elif [[ `uname -s` = "OpenBSD" ]]; then
 		JDK7="/usr/local/jdk-1.7.0"
 		JDK8="/usr/local/jdk-1.8.0"
 		defaultJDK=$JDK8
