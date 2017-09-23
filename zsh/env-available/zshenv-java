@@ -41,7 +41,16 @@ function java-versions() {
 }
 
 function show-java-versions() {
-	ls /Library/Java/JavaVirtualMachines | sed 's/jdk//g' | sed 's/\.$//'
+	if [[ "`uname -s`" == "FreeBSD" ]]; then
+		# do nothing
+	elif [ `uname -s` = "Linux" ]; then
+		# do nothing
+	elif [ `uname -s` = "OpenBSD" ]; then
+		ls -d /usr/local/jdk* | sed 's#/usr/local/jdk-##g'
+
+	else
+		ls /Library/Java/JavaVirtualMachines | sed 's/jdk//g' | sed 's/\.$//'
+	fi
 }
 
 function switch-to-java() {
@@ -113,6 +122,10 @@ if [[ "`uname -s`" == "FreeBSD" ]]; then
 elif [ `uname -s` = "Linux" ]; then
 		JDK7="/usr/java/jdk1.7.0_79"
 		JDK8="/usr/java/jdk1.8.0_71"
+		defaultJDK=$JDK8
+elif [ `uname -s` = "OpenBSD" ]; then
+		JDK7="/usr/local/jdk-1.7.0"
+		JDK8="/usr/local/jdk-1.8.0"
 		defaultJDK=$JDK8
 else
     JDK7=`/usr/libexec/java_home -v 1.7`

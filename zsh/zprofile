@@ -1,10 +1,3 @@
 #!/usr/local/bin/zsh
 
-# Setup GPG_AGENT_INFO ... because mu4e needs that to find a valid signing function!
-[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
-if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
-  export GPG_AGENT_INFO
-else
-  eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
-fi
-
+# nothing to do

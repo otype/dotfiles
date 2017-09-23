@@ -1,0 +1,15 @@
+#!/usr/local/bin/zsh
+
+# PYENV
+#
+#
+if [ `uname -s` = "FreeBSD" ]; then
+	# do nothing
+elif [ `uname -s` = "Linux" ]; then
+	# do nothing
+elif [ `uname -s` = "OpenBSD" ]; then
+	# pip install --user will install to ~/.local/bin
+	export PATH=$PATH:$HOME/.local/bin
+else
+	# do nothing
+fi

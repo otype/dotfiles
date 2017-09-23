@@ -1,6 +1,6 @@
 #!/usr/local/bin/zsh
 
-# RBENV
+# PYENV
 #
 #
 if [ `uname -s` = "FreeBSD" ]; then
@@ -14,6 +14,8 @@ elif [ `uname -s` = "Linux" ]; then
 	eval "$(pyenv init -)"
 	eval "$(pyenv virtualenv-init -)"
 	pyenv rehash
+elif [ `uname -s` = "OpenBSD" ]; then
+	# do nothing
 else
 	export PYENV_ROOT=/usr/local/opt/pyenv
 	export PATH="/Users/hgschmidt/Library/Python/2.7/bin:$PATH"
