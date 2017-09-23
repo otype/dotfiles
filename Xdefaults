@@ -1,4 +1,7 @@
-URxvt*termName:                         screen-256color
+! $OpenBSD: dot.Xdefaults,v 1.3 2014/07/10 10:22:59 jasper Exp $
+XTerm*loginShell:true
+
+URxvt*termName:                         rxvt-unicode-256color
 URxvt*loginShell:                       true
 URxvt*scrollColor:                      #777777
 URxvt*scrollstyle:                      plain
@@ -30,3 +33,4 @@ URxvt.cursorUnderline:                  false
 URxvt.cursorBlink:                      true
 URxvt.cursorColor:                      yellow
 URxvt.cursorColor2:                     blue
+
