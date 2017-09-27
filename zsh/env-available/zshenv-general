@@ -18,7 +18,8 @@ alias bc="bc -l"
 export PAGER="less"
 
 # Preferred editor
-export EDITOR="vim"
+# Disabled as this variable is defined in zshenv-emacs.
+# export EDITOR="vim"
 
 # Lang variables
 export LC_CTYPE="en_US.UTF-8"
