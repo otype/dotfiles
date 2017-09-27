@@ -34,3 +34,5 @@ URxvt.cursorBlink:                      true
 URxvt.cursorColor:                      yellow
 URxvt.cursorColor2:                     blue
 
+URxvt.font:     xft:bitstream vera sans mono:size=11:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=11:antialias=true
