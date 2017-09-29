@@ -1,6 +1,7 @@
 [user]
   name = Hans-Gunther Schmidt
   email = hans@otype.de
+	signingKey = 0xAAACAC4B5C17BF81
 [core]
   editor = vim
   autocrlf = input
@@ -43,3 +44,5 @@
 [mergetool "sourcetree"]
 	cmd = /Users/hgschmidt/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	gpgsign = true
