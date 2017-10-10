@@ -125,7 +125,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Meslo LG S for Powerline"
-                               :size 14
+                               :size 12
                                :weight light
                                :width normal
                                :powerline-scale 1.1)
@@ -273,6 +273,9 @@ you should place your code here."
 
   ;; Fix for strange helm error. See https://github.com/magit/magit/issues/3158.
   (require 'helm-bookmark)
+
+  ;; automatically open sym-linked files
+  (vc-follow-symlinks t)
 
   ;; ;; set moe-theme color
   ;; (moe-theme-set-color 'orange)
