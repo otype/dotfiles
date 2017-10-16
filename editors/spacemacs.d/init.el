@@ -275,7 +275,7 @@ you should place your code here."
   (require 'helm-bookmark)
 
   ;; automatically open sym-linked files
-  (vc-follow-symlinks t)
+  (setq vc-follow-symlinks t)
 
   ;; ;; set moe-theme color
   ;; (moe-theme-set-color 'orange)
