@@ -10,7 +10,7 @@ if [[ $gpg_agent_ssh_enabled -eq 1 ]];then
 	gpgconf --kill gpg-agent
 
   echo "Starting gpg-agent with enabled SSH support ..."
-	gpg-agent --daemon --enable-ssh-support
+	gpg-agent --daemon --options ~/.gnupg/gpg-agent.conf
 fi
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
