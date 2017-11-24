@@ -32,8 +32,8 @@ brew cask install intellij-idea-ce
 ## Tools through `brew`
 ```bash
 brew install hub privoxy zsh pyenv rbenv htop jq the_silver_searcher openconnect
-brew install elixir
-brew tap d12frosted/emacs-plus && brew install emacs-plus --HEAD
+brew install elixir golang dep
+brew tap d12frosted/emacs-plus && brew install emacs-plus --HEAD && brew install ispell
 ```
 
 ## Fonts
