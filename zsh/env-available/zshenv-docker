@@ -25,19 +25,63 @@ docker_exec_helper() {
 alias dex=docker_exec_helper
 
 # Kill all running containers.
-alias dockerkillall='docker kill $(docker ps -q)'
+function docker-killall() {
+    if [[ $(docker ps -q | wc -l) -gt 0 ]]; then
+        docker kill $(docker ps -q)
+        return 0
+    else
+        echo "\n>>> No running containers found!"
+        return 1
+    fi
+}
 
 # Delete all stopped containers.
-alias dockercleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+function docker-clean-containers() {
+    if [[ $(docker ps -aq | wc -l) -gt 0 ]]; then
+        echo "\n>>> Deleting stopped containers"
+        docker rm $(docker ps -aq)
+        return 0
+    else
+        echo "\n>>> No stopped containers found!"
+        return 1
+    fi
+}
 
 # Delete all untagged images.
-alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+function docker-clean-tangling-images() {
+    if [[ $(docker images -qf dangling=true | wc -l) -gt 0 ]]; then
+        echo "\n>>> Deleting untagged images!"
+        docker rmi $(docker images -qf dangling=true)
+        return 0
+    else
+        echo "\n>>> No untagged images found!"
+        return 1
+    fi
+}
 
-# Delete all stopped containers and untagged images.
-alias dockerclean='dockercleanc || true && dockercleani'
+# Delete ALL (!) images
+function docker-clean-all-images() {
+    if [[ $(docker images -q | wc -l) -gt 0 ]]; then
+        echo "\n>>> Deleting ALL(!) images!"
+        docker rmi $(docker images -q)
+        return 0
+    else
+        echo "\n>>> No images found!"
+        return 1
+    fi
+}
 
 # Delete all tangling volumes
-alias dockervolclean='printf "\n>>> Deleting untagged volumes\n\n" && docker volume rm $(docker volume ls -qf dangling=true)'
+function docker-clean-tangling-volumes() {
+    if [[ $(docker volume ls -qf dangling=true | wc -l) -gt 0 ]]; then
+        echo "\n>>> Deleting untagged, tangling volumes!"
+        docker volume rm $(docker volume ls -qf dangling=true)
+        return 0
+    else
+        echo "\n>>> No untagged, tangling volumes found!"
+        return 1
+    fi
+}
 
-# Delete all downloaded images
-alias dockerimgclean='for image in `docker images -q` ; do docker rmi $image ; done'
+# Delete all stopped containers and untagged images.
+alias docker-clean='docker-clean-containers || docker-clean-tangling-images || docker-clean-tangling-volumes'
