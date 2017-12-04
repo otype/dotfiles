@@ -47,9 +47,8 @@ function show-java-versions() {
 		# do nothing
 	elif [[ `uname -s` = "OpenBSD" ]]; then
 		ls -d /usr/local/jdk* | sed 's#/usr/local/jdk-##g'
-
 	else
-		ls /Library/Java/JavaVirtualMachines | sed 's/jdk//g' | sed 's/\.$//'
+		ls /Library/Java/JavaVirtualMachines
 	fi
 }
 
@@ -64,6 +63,8 @@ function switch-to-java() {
     JAVA_HOME=$JDK8
   elif [[ "$jdk" == "8" ]]; then
     JAVA_HOME=$JDK8
+  elif [[ "$jdk" == "9" ]]; then
+    JAVA_HOME=$JDK9
   else
     JAVA_HOME=`/usr/libexec/java_home -v $jdk`
   fi
@@ -115,10 +116,10 @@ EOF
 # JDKs
 #
 #
-if [[ "`uname -s`" == "FreeBSD" ]]; then
+if [[ `uname -s` = "FreeBSD" ]]; then
     JDK7="/usr/local/openjdk7"
     JDK8="/usr/local/openjdk8"
-    defaultJDK=$JDK7
+    defaultJDK=$JDK8
 elif [[ `uname -s` = "Linux" ]]; then
 		JDK7="/usr/java/jdk1.7.0_79"
 		JDK8="/usr/java/jdk1.8.0_71"
@@ -130,10 +131,12 @@ elif [[ `uname -s` = "OpenBSD" ]]; then
 else
     JDK7=`/usr/libexec/java_home -v 1.7`
     JDK8=`/usr/libexec/java_home -v 1.8`
+    JDK9=`/usr/libexec/java_home -v 9`
     defaultJDK=$JDK8
 fi
 export JDK7
 export JDK8
+export JDK9
 export JAVA_HOME="${defaultJDK}"
 export JRE_HOME="${defaultJDK}/jre"
 
