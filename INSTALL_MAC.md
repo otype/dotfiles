@@ -24,15 +24,16 @@ brew cask install firefox chrome boxy
 brew cask install hipchat skype
 brew cask zap amazon-music && brew cask install amazon-music
 brew cask install google-drive-file-stream
-brew cask install appcleaner fluid marked 1password keepingyouawake
-brew cask install java java8
-brew cask install intellij-idea-ce
+brew cask install appcleaner fluid marked 1password keepingyouawake keepassx 
+brew cask install java java8 intellij-idea-ce
+brew cask install postman psequel
 ```
 
 ## Tools through `brew`
 ```bash
 brew install hub privoxy zsh pyenv rbenv htop jq the_silver_searcher openconnect
 brew install elixir golang dep
+brew tap Yleisradio/terraforms && brew install chtf && chtf 0.8.8
 brew tap d12frosted/emacs-plus && brew install emacs-plus --HEAD && brew install ispell
 ```
 
