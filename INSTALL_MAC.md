@@ -54,6 +54,8 @@ Following links will redirect you to the app in the App Store:
 ```
 easy_install --user pip
 pip install --user powerline-status
+pip install --user git+https://github.com/makethunder/awsudo.git
+pip install --user git+https://github.com/otype/aws-helpers
 ```
 
 ## Docker
