@@ -84,4 +84,4 @@ function docker-clean-tangling-volumes() {
 }
 
 # Delete all stopped containers and untagged images.
-alias docker-clean='docker-clean-containers || docker-clean-tangling-images || docker-clean-tangling-volumes'
+alias docker-clean='docker-clean-containers; docker-clean-tangling-images ; docker-clean-tangling-volumes'
