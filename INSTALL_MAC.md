@@ -31,7 +31,7 @@ brew cask install postman psequel
 
 ## Tools through `brew`
 ```bash
-brew install hub privoxy pyenv rbenv htop jq the_silver_searcher openconnect asdf
+brew install hub privoxy pyenv rbenv htop jq the_silver_searcher openconnect asdf node
 brew install elixir golang dep
 brew tap Yleisradio/terraforms && brew install chtf ; chtf 0.8.8
 brew install ispell ; brew tap d12frosted/emacs-plus && brew install emacs-plus --HEAD
