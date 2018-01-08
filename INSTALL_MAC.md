@@ -39,7 +39,7 @@ brew_cask_apps=(
   keepassx
   keepingyouawake
   macvim
-  marked
+  maOBrked
   postman
   psequel
   1password
@@ -60,7 +60,6 @@ brew_apps=(
   dep
   elixir
   golang
-  htop
   hub
   ispell
   jq
