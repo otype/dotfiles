@@ -43,6 +43,7 @@ values."
      nginx
      org
      osx
+     perspectives
      puppet
      python
      ruby
