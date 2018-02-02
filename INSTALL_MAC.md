@@ -53,7 +53,7 @@ brew cask reinstall ${brew_cask_apps[@]}
 
 ```bash
 brew tap Yleisradio/terraforms
-brew tap d12frosted/emacs-plus && brew install emacs-plus --HEAD
+brew tap d12frosted/emacs-plus && brew install emacs-plus
 
 brew_apps=(
   asdf
