@@ -62,6 +62,7 @@ brew_apps=(
   elixir
   golang
   hub
+  hugo
   ispell
   jq
   node
