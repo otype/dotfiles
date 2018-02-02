@@ -75,7 +75,7 @@ brew_apps=(
 
 brew install ${brew_apps[@]}
 
-chtf 0.8.8
+chtf 0.11.2
 ```
 
 ## Fonts
