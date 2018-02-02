@@ -42,6 +42,7 @@ brew_cask_apps=(
   maOBrked
   postman
   psequel
+  tunnelblick
   1password
 )
 
