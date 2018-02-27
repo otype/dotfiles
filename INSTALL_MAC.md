@@ -1,4 +1,4 @@
-# Reinstall a Mac
+OB0;95;0c# Reinstall a Mac
 
 ## Apple Command Line tools
 
@@ -65,8 +65,10 @@ brew_apps=(
   hugo
   ispell
   jq
+  lynx
   node
   openconnect
+  pandoc
   privoxy
   pyenv
   rbenv
@@ -77,6 +79,18 @@ brew_apps=(
 brew install ${brew_apps[@]}
 
 chtf 0.11.2
+```
+
+## Dependencies for `golang`
+
+Following are proposed to be installed in order for golang to work properly in spacemacs (see https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/go):
+
+```bash
+go get -u -v github.com/nsf/gocode
+go get -u -v github.com/rogpeppe/godef
+go get -u -v golang.org/x/tools/cmd/guru
+go get -u -v golang.org/x/tools/cmd/gorename
+go get -u -v golang.org/x/tools/cmd/goimports
 ```
 
 ## Fonts
