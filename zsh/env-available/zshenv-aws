@@ -4,17 +4,8 @@
 #
 #
 
-# Aliases
-alias aub='awsudo -u blacksmiths'
-alias bt='awsudo -u blacksmiths terraform'
-alias ai='awsudo -u blacksmiths aws-instances'
-
-aig() {
+function aig() {
   PARAMS=$*
   EGREP_PARAMS=$(echo $PARAMS | sed 's/ /|/g')
-  awsudo -u blacksmiths aws-instances | egrep "($EGREP_PARAMS)"
+  aws-instances | egrep "($EGREP_PARAMS)"
 }
-
-# Aliases around AWSCLI
-alias aws-instances-direct="awsudo -u blacksmiths aws ec2 describe-instances --query 'Reservations[].Instances[].[PrivateIpAddress,InstanceId,Tags[?Key=='Name'].Value[]]' --output text | sed 's/None$/None\n/' | sed '$!N;s/\n/ /'"
-alias apilogs='awsudo -u blacksmiths awslogs get api --watch -G | sed -e "s|^all-services/||" -e "s|/| |1" | grep -v "/_health"'
