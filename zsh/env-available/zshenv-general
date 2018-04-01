@@ -38,12 +38,6 @@ fi
 # Add /opt/local/bin
 [[ -d "/opt/local/bin" ]] && export PATH=$PATH:/opt/local/bin
 
-# Add any files from ~/.dotfiles/bin to PATH
-[[ -d "$HOME/.dotfiles/bin" ]] && export PATH=$PATH:$HOME/.dotfiles/bin
-
-# Override alias set by common-aliases (oh-my-zsh)
-[[ `alias | grep "^rm"` ]] && unalias rm
-
 # General
 alias h=history
 alias sl=ls

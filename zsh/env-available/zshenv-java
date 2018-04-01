@@ -129,12 +129,12 @@ elif [[ `uname -s` = "OpenBSD" ]]; then
 		JDK8="/usr/local/jdk-1.8.0"
 		defaultJDK=$JDK8
 else
-    JDK7=`/usr/libexec/java_home -v 1.7`
+    # JDK7=`/usr/libexec/java_home -v 1.7`
     JDK8=`/usr/libexec/java_home -v 1.8`
     JDK9=`/usr/libexec/java_home -v 9`
     defaultJDK=$JDK8
 fi
-export JDK7
+# export JDK7
 export JDK8
 export JDK9
 export JAVA_HOME="${defaultJDK}"

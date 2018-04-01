@@ -1,2 +1,6 @@
-aws-instances
-secretary
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!buuc.sh

@@ -25,31 +25,23 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
-     clojure
      colors
      csv
-     docker
+     ;; docker
      elixir
-     elm
      emacs-lisp
-     erlang
      git
      go
      html
-     java
+     ;; java
      javascript
-     lua
+     ;; lua
      markdown
      nginx
      org
      osx
-     perspectives
-     puppet
      python
      ruby
-     ruby-on-rails
-     rust
-     scala
      shell-scripts
      spell-checking
      sql
@@ -57,7 +49,6 @@ values."
      terraform
      themes-megapack
      version-control
-     vimscript
      yaml
      )
    ;; List of additional packages that will be installed without being
@@ -355,55 +346,3 @@ you should place your code here."
                'anaconda-mode-show-unreadable-response)
   )
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
- '(column-number-mode t)
- '(custom-safe-themes
-   (quote
-    ("b9a06c75084a7744b8a38cb48bc987de10d68f0317697ccbd894b2d0aca06d2b" "ecb9fe1d5b165a35499191a909b2b5710a52935614058b327a39bfbbb07c7dc8" "51e228ffd6c4fff9b5168b31d5927c27734e82ec61f414970fc6bcce23bc140d" "15348febfa2266c4def59a08ef2846f6032c0797f001d7b9148f30ace0d08bcf" "3632cf223c62cb7da121be0ed641a2243f7ec0130178722554e613c9ab3131de" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" "66132890ee1f884b4f8e901f0c61c5ed078809626a547dbefbb201f900d03fd8" "a2e7b508533d46b701ad3b055e7c708323fb110b6676a8be458a758dd8f24e27" default)))
- '(evil-want-Y-yank-to-eol t)
- '(fci-rule-color "#202325" t)
- '(magit-commit-arguments (quote ("--gpg-sign=AAACAC4B5C17BF81")))
- '(org-agenda-files (quote ("~/org/mw-tasks.org")))
- '(package-selected-packages
-   (quote
-    (go-autocomplete toml-mode racer flycheck-rust cargo rust-mode let-alist white-sand-theme rebecca-theme org-mime exotica-theme ghub go-guru go-eldoc company-go go-mode package-build moe-theme org-category-capture csv-mode reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl gntp parent-mode gitignore-mode fringe-helper git-gutter+ pos-tip flx goto-chg json-snatcher json-reformat web-completion-data dash-functional edn peg eval-sexp-fu queue pythonic pkg-info epl popup company-emacs-eclim eclim s diminish paredit json-mode log4e f winum unfill solarized-theme madhat2r-theme fuzzy flycheck-credo tablist alert evil avy haml-mode docker-tramp packed simple-httpd flycheck-elm elm-mode hcl-mode powerline rake org markdown-mode projectile git-gutter flyspell-correct sbt-mode scala-mode autothemer hydra inflections multiple-cursors cider seq spinner clojure-mode bind-key auto-complete anaconda-mode tern company anzu iedit smartparens bind-map highlight undo-tree elixir-mode flycheck yasnippet request helm helm-core skewer-mode js2-mode magit magit-popup git-commit with-editor async dash inf-ruby pcre2el vimrc-mode dactyl-mode zonokai-theme zenburn-theme zen-and-art-theme yapfify yaml-mode ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme toc-org terraform-mode tao-theme tangotango-theme tango-plus-theme tango-2-theme tagedit sunny-day-theme sublime-themes subatomic256-theme subatomic-theme sql-indent spacemacs-theme spaceline spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme smeargle slim-mode seti-theme scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reverse-theme restart-emacs rbenv rainbow-mode rainbow-identifiers rainbow-delimiters railscasts-theme quelpa pyvenv pytest pyenv-mode py-isort purple-haze-theme puppet-mode pug-mode projectile-rails professional-theme popwin planet-theme pip-requirements phoenix-dark-pink-theme phoenix-dark-mono-theme persp-mode pastels-on-dark-theme paradox orgit organic-green-theme org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme ob-elixir noflet noctilux-theme niflheim-theme nginx-mode neotree naquadah-theme mwim mustang-theme move-text monokai-theme monochrome-theme molokai-theme mmm-mode minitest minimal-theme material-theme markdown-toc majapahit-theme magit-gitflow macrostep lush-theme lua-mode lorem-ipsum livid-mode live-py-mode linum-relative link-hint light-soap-theme less-css-mode js2-refactor js-doc jbeans-theme jazz-theme ir-black-theme insert-shebang inkpot-theme info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt heroku-theme hemisu-theme help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md gandalf-theme flyspell-correct-helm flycheck-pos-tip flycheck-mix flx-ido flatui-theme flatland-theme fish-mode firebelly-theme fill-column-indicator feature-mode farmhouse-theme fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu espresso-theme erlang ensime emmet-mode elisp-slime-nav dumb-jump dracula-theme dockerfile-mode docker django-theme diff-hl define-word dash-at-point darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cython-mode cyberpunk-theme company-web company-tern company-statistics company-shell company-anaconda column-enforce-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-identifiers-mode coffee-mode clues-theme clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu chruby cherry-blossom-theme busybee-theme bundler bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes alchemist aggressive-indent afternoon-theme adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(send-mail-function (quote sendmail-send-it))
- '(show-paren-mode t)
- '(tool-bar-mode nil)
- '(vc-annotate-background "#1f2124")
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#ff0000")
-     (40 . "#ff4a52")
-     (60 . "#f6aa11")
-     (80 . "#f1e94b")
-     (100 . "#f5f080")
-     (120 . "#f6f080")
-     (140 . "#41a83e")
-     (160 . "#40b83e")
-     (180 . "#b6d877")
-     (200 . "#b7d877")
-     (220 . "#b8d977")
-     (240 . "#b9d977")
-     (260 . "#93e0e3")
-     (280 . "#72aaca")
-     (300 . "#8996a8")
-     (320 . "#afc4db")
-     (340 . "#cfe2f2")
-     (360 . "#dc8cc3"))))
- '(vc-annotate-very-old-color "#dc8cc3"))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#f8f8f8" :background "#26292c")))))
