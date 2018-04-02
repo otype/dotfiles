@@ -5,14 +5,25 @@
 
 ;;; CODE:
 
+(server-start)
+
+;; tells emacs not to load any packages before starting up
+(setq package-enable-at-startup nil)
+
+;; the following lines tell emacs where on the internet to look up for new packages.
+(setq package-archives '(("org"       . "http://orgmode.org/elpa/")
+                         ("gnu"       . "http://elpa.gnu.org/packages/")
+                         ("melpa"     . "https://melpa.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+(package-initialize)
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)   ; unless it is already installed
+  (package-refresh-contents)                 ; updage packages archive
+  (package-install 'use-package))            ; and install the most recent version of use-package
+(require 'use-package)
+
 ;; config: Add a directory to the load path so we can put extra files there
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-;;(package-initialize)
-
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; Load the configuration files
