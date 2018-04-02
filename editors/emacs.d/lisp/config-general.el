@@ -3,6 +3,11 @@
 ;;; This includes all configurations for the 'general' plugin
 
 ;;; Code:
+
+;; Unset existing keybindings
+(general-define-key
+ "M-m" nil)
+
 (general-define-key
  "C-?"     'undo
  "C-a"     'mwim-beginning-of-code-or-line-or-comment
@@ -24,10 +29,15 @@
  ;; bind to double key press
  "C-'" 'avy-goto-word-1                  ; search by first character in word
  "C-d" 'duplicate-line                   ; duplicate current line
- "C-n" 'neotree-toggle
  "fr"  'counsel-recentf                  ; find recently edited files
  "pf"  '(counsel-git :which-key "find file in git dir")
  "pp"  'counsel-projectile-switch-project
+ )
+
+(general-define-key
+ :prefix "M-m"
+ "ft"  'neotree-toggle
+ "gst" 'magit-status
  )
 
 (provide 'config-general)
