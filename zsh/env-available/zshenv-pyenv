@@ -10,15 +10,18 @@ if [[ `uname -s` = "FreeBSD" ]]; then
         eval "$(pyenv init -)"
     fi
 elif [[ `uname -s` = "Linux" ]]; then
-	export PATH="$HOME/.pyenv/bin:$PATH"
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"
-	pyenv rehash
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+    pyenv rehash
 elif [[ `uname -s` = "OpenBSD" ]]; then
-	# do nothing
+    # do nothing
 else
-	export PYENV_ROOT=/usr/local/opt/pyenv
-	export PATH="$HOME/Library/Python/2.7/bin:$PATH"
-	if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-	pyenv rehash
+    # We are running 'Darwin'!
+    export PYENV_ROOT=/usr/local/opt/pyenv
+    export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+    if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+    # Following seems to be run automatically on init, otherwise we have a race condition.
+    # pyenv rehash
 fi
