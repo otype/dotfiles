@@ -29,7 +29,7 @@ export LANGUAGE="en_US.UTF-8"
 
 # prevent emacs term-mode to print "4m" at the end of each command
 if [[ `uname -s` = "Darwin" ]]; then
-	export TERM=xterm-256color
+    export TERM=xterm-256color
 fi
 
 # Add ~/bin to our PATH
