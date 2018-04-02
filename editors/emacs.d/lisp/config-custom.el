@@ -29,13 +29,15 @@
 (set-frame-font "Monaco 14")            ; Set font and size
 (load-theme 'wombat)                    ; load given theme
 
+(fset 'yes-or-no-p 'y-or-n-p)           ; yes -> y, no -> n
+
 ;; HIGHLIGHTING
 (global-hl-line-mode t)                 ; enable highlight configuration
 (require 'hl-line)
 (set-face-background 'hl-line "#2f4f4f")
-(set-face-attribute 'region nil :background "#707899" :foreground "#c1cdc1")
-(set-face-attribute hl-line-face nil :underline nil)
-(set-face-background 'highlight nil)
+;;(set-face-attribute 'region nil :background "#707899" :foreground "#c1cdc1")
+;;(set-face-attribute hl-line-face nil :underline nil)
+;;(set-face-background 'highlight nil)
 (set-cursor-color "#FEFF00")
 
 (global-linum-mode t)                   ; enable line numbers

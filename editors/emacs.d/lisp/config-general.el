@@ -18,6 +18,7 @@
 
 (general-define-key
  :prefix "C-x"
+ "b"       'counsel-projectile-switch-to-buffer
  "C-f"     'counsel-find-file
  )
 
