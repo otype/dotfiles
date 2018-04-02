@@ -31,6 +31,9 @@
  "C-d" 'duplicate-line                   ; duplicate current line
  "fr"  'counsel-recentf                  ; find recently edited files
  "pf"  '(counsel-git :which-key "find file in git dir")
+;; "pf"  '(counsel-projectile-find-file :which-key "find file dir")
+ "pk"  'projectile-kill-buffers
+ "p SPC" 'counsel-projectile
  "pp"  'counsel-projectile-switch-project
  )
 
