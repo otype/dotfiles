@@ -77,8 +77,9 @@
 
 (use-package linum
   :config
-  (setq linum-format " %3d ")
+  (setq linum-format "%4d")
   (global-linum-mode nil))
+
 
 (use-package magit
   :config
