@@ -26,7 +26,7 @@
 
 (tool-bar-mode -1)                      ; disable the button bar atop screen
 (scroll-bar-mode -1)                    ; Disable scroll bar
-(set-frame-font "Monaco 14")            ; Set font and size
+(set-frame-font "Monaco 13")            ; Set font and size
 (load-theme 'wombat)                    ; load given theme
 
 (fset 'yes-or-no-p 'y-or-n-p)           ; yes -> y, no -> n
