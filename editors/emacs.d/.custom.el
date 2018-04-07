@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dashboard yasnippet which-key wgrep use-package undo-tree smex smartparens powerline page-break-lines multiple-cursors moe-theme magit hlinum go-eldoc flymake-go flycheck-mix expand-region counsel-projectile company-go avy alchemist))))
+    (mwim yasnippet which-key wgrep use-package undo-tree smex smartparens powerline org-projectile org-bullets neotree multiple-cursors moe-theme magit hlinum go-eldoc flymake-go flycheck-mix expand-region dashboard counsel-projectile company-go avy alchemist))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

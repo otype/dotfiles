@@ -90,35 +90,39 @@
   ("C-<" . mc/mark-previous-like-this)
   ("C-c C->" . mc/mark-all-like-this))
 
-;;; TODO: Needs configuration!
-;; (use-package neotree
-;;   :config
-;;   (setq neo-theme 'arrow
-;;         neotree-smart-optn t
-;;         neo-window-fixed-size nil)
-;;   ;; Disable linum for neotree
-;;   (add-hook 'neo-after-create-hook 'disable-neotree-hook))
+(use-package mwim
+  :bind
+  ("C-a" . mwim-beginning)
+  ("C-e" . mwim-end))
 
-;; (use-package org
-;;   :config
-;;   (setq org-directory "~/org-files"
-;;         org-default-notes-file (concat org-directory "/todo.org"))
-;;   :bind
-;;   ("C-c l" . org-store-link)
-;;   ("C-c a" . org-agenda))
+(use-package neotree
+  :config
+  (setq neo-theme 'arrow
+        neotree-smart-optn t
+        neo-window-fixed-size nil)
+  ;; Disable linum for neotree
+  (add-hook 'neo-after-create-hook 'disable-neotree-hook))
 
-;; (use-package org-projectile
-;;   :config
-;;   (org-projectile-per-project)
-;;   (setq org-projectile-per-project-filepath "todo.org"
-;; 	org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
+(use-package org
+  :config
+  (setq org-directory "~/org"
+        org-default-notes-file (concat org-directory "/todo.org"))
+  :bind
+  ("C-c l" . org-store-link)
+  ("C-c a" . org-agenda))
 
-;; (use-package org-bullets
-;;   :config
-;;   (setq org-hide-leading-stars t)
-;;   (add-hook 'org-mode-hook
-;;             (lambda ()
-;;               (org-bullets-mode t))))
+(use-package org-projectile
+  :config
+  (org-projectile-per-project)
+  (setq org-projectile-per-project-filepath "todo.org"
+	org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
+
+(use-package org-bullets
+  :config
+  (setq org-hide-leading-stars t)
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (org-bullets-mode t))))
 
 (use-package page-break-lines)
 

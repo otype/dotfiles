@@ -24,7 +24,9 @@
 
   :bind (:map go-mode-map
   ; Godef jump key binding
-  ("M-." . godef-jump)))
+	      ("M-." . godef-jump)
+	      ("M-*" . pop-tag-mark)
+	      ))
 
 (use-package flymake-go
   :defer t)
