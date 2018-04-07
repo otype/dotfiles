@@ -18,4 +18,7 @@
 (powerline-moe-theme)
 (moe-dark)
 
+;; fix powerline separators
+(setq powerline-default-separator 'utf-8)
+
 (provide 'base-theme)

@@ -58,5 +58,7 @@
 (add-hook 'after-init-hook 'pyenv-init)
 (add-hook 'projectile-after-switch-project-hook 'pyenv-activate-current-project)
 
+(setq-default python-indent-offset 4)
+
 (provide 'lang-python)
 ;;; base-python.el ends here
