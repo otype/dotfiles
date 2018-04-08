@@ -1,7 +1,7 @@
 
-(use-package avy
+(use-package ace-jump-mode
   :bind
-  ("C-c SPC" . avy-goto-char))
+  ("C-c SPC" . ace-jump-mode))
 
 
 (use-package company
@@ -47,28 +47,36 @@
 (use-package flycheck)
 
 
-(use-package counsel
-  :bind
-  ("M-x" . counsel-M-x)
-  ("C-x C-m" . counsel-M-x)
-  ("C-x C-f" . counsel-find-file)
-  ("C-x c k" . counsel-yank-pop))
-
-(use-package counsel-projectile
-  :bind
-  ("C-x v" . counsel-projectile)
-  ("C-x c p" . counsel-projectile-ag)
+(use-package helm
+  :init
+  (require 'helm-config)
   :config
-  (counsel-projectile-on))
+  (setq helm-split-window-in-side-p t
+        helm-split-window-default-side 'below
+	helm-idle-delay 0.0
+	helm-input-idle-delay 0.01
+	helm-quick-update t
+	helm-ff-skip-boring-files t)
+  (helm-mode 1)
+  :bind (("M-x" . helm-M-x)
+         ("C-x C-m" . helm-M-x)
+         ("C-x C-f" . helm-find-files)
+         ("C-x v" . helm-projectile)
+         ("C-x c o" . helm-occur)
+         ("C-x c p" . helm-projectile-ag)
+         ("C-x c k" . helm-show-kill-ring)
+         :map helm-map
+         ("<tab>" . helm-execute-persistent-action)))
 
-(use-package ivy
+(use-package helm-ag)
+
+(use-package helm-git-grep)
+
+(use-package helm-projectile)
+
+(use-package helm-swoop
   :bind
-  ("C-x s" . swiper)
-  ("C-x C-r" . ivy-resume)
-  :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers nil)
-  (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
+  ("C-x c s" . helm-swoop))
 
 
 (use-package hlinum
@@ -83,9 +91,6 @@
 
 (use-package magit
   :config
-
-  (setq magit-completing-read-function 'ivy-completing-read)
-
   :bind
   ;; Magic
   ("C-x g s" . magit-status)
@@ -145,8 +150,6 @@
   :config
   (setq projectile-known-projects-file
         (expand-file-name "projectile-bookmarks.eld" temp-dir))
-
-  (setq projectile-completion-system 'ivy)
 
   (projectile-global-mode))
 
