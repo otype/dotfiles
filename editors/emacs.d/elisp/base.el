@@ -80,5 +80,8 @@
 ;; Delete trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Font settings
+(set-frame-font "Monaco 13")
+
 (provide 'base)
 ;;; base ends here
