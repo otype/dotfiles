@@ -57,15 +57,16 @@
 
 ;; Backups enabled, use nil to disable
 (setq
- history-length                     1000
- backup-inhibited                   nil
- make-backup-files                  t
- auto-save-default                  t
- auto-save-list-file-name           (concat temp-dir "/autosave")
- make-backup-files                  t
- create-lockfiles                   nil
- backup-directory-alist            `((".*" . ,(concat temp-dir "/backup/")))
- auto-save-file-name-transforms    `((".*" ,(concat temp-dir "/auto-save-list/") t)))
+ ;; history-length                     1000
+ ;; backup-inhibited                   nil
+ ;; make-backup-files                  t
+ auto-save-default                  nil
+ ;; auto-save-list-file-name           (concat temp-dir "/auto-save-list")
+ ;; make-backup-files                  t
+ ;; create-lockfiles                   nil
+ ;; backup-directory-alist            `((".*" . ,(concat temp-dir "/backup/")))
+ ;; auto-save-file-name-transforms    `((".*" ,(concat temp-dir "/auto-save-list/") t))
+ )
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-auto-revert-mode t)

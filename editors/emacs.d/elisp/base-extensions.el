@@ -70,6 +70,8 @@
 
 (use-package helm-ag)
 
+(use-package helm-flycheck)
+
 (use-package helm-git-grep)
 
 (use-package helm-projectile)
@@ -162,6 +164,11 @@
 
 (use-package smex)
 
+(use-package terraform-mode
+  :defer t
+  :config
+  (setq terraform-packages '(terraform-mode)))
+
 (use-package undo-tree
   :config
   ;; Remember undo history
@@ -175,6 +182,13 @@
   (which-key-mode))
 
 (use-package wgrep)
+
+(use-package yaml-mode
+  :defer t
+  :config
+  (add-hook 'yaml-mode-hook
+        (lambda ()
+            (define-key yaml-mode-map "\C-m" 'newline-and-indent))))
 
 (use-package yasnippet
   :config

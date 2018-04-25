@@ -28,13 +28,39 @@
 	      ("M-*" . pop-tag-mark)
 	      ))
 
-(use-package flymake-go
-  :defer t)
+(use-package flycheck
+  :defer t
+  :config
+  (add-hook 'go-mode-hook 'flycheck-mode))
+
+(use-package flycheck-gometalinter
+  :defer t
+  :config
+  (progn
+    "Enable `flycheck-gometalinter' and disable overlapping `flycheck' linters."
+    (setq flycheck-disabled-checkers '(go-gofmt
+				       go-golint
+				       go-vet
+				       go-build
+				       go-test
+				       go-errcheck))
+    (flycheck-gometalinter-setup)
+    (add-hook 'go-mode-hook 'go-enable-gometalinter t)
+    ;; skips 'vendor' directories and sets GO15VENDOREXPERIMENT=1
+    (setq flycheck-gometalinter-vendor t)
+    ;; ;; only show errors
+    ;; (setq flycheck-gometalinter-errors-only t)
+    ;; ;; only run fast linters
+    ;; (setq flycheck-gometalinter-fast t)
+    ;; use in tests files
+    (setq flycheck-gometalinter-test t)))
 
 (use-package go-eldoc
   :defer t
   :config
   (add-hook 'go-mode-hook 'go-eldoc-setup))
+
+(use-package go-guru :defer t)
 
 (defun setup-go-mode-compile ()
   ; Customize compile command to run go build
