@@ -61,10 +61,13 @@
   :bind (("M-x" . helm-M-x)
          ("C-x C-m" . helm-M-x)
          ("C-x C-f" . helm-find-files)
-         ("C-x v" . helm-projectile)
-         ("C-x c o" . helm-occur)
-         ("C-x c p" . helm-projectile-ag)
-         ("C-x c k" . helm-show-kill-ring)
+	 ("C-c h"   . helm-command-prefix)
+         ("C-c h v" . helm-projectile)
+	 ("C-c h m" . helm-mini)
+         ("C-c h o" . helm-occur)
+         ("C-c h p" . helm-projectile-ag)
+         ("C-c h a" . helm-do-ag)
+         ("C-c c k" . helm-show-kill-ring)
          :map helm-map
          ("<tab>" . helm-execute-persistent-action)))
 
@@ -117,13 +120,56 @@
   ("C-a" . mwim-beginning)
   ("C-e" . mwim-end))
 
-(use-package neotree
+;; (use-package neotree
+;;   :config
+;;   (setq neo-theme 'arrow
+;;         neotree-smart-optn t
+;;         neo-window-fixed-size nil)
+;;   ;; Disable linum for neotree
+;;   (add-hook 'neo-after-create-hook 'disable-neotree-hook))
+
+(use-package treemacs
+  :ensure t
+  :defer t
   :config
-  (setq neo-theme 'arrow
-        neotree-smart-optn t
-        neo-window-fixed-size nil)
-  ;; Disable linum for neotree
-  (add-hook 'neo-after-create-hook 'disable-neotree-hook))
+  (progn
+    (setq treemacs-change-root-without-asking t
+          ;; treemacs-collapse-dirs              (if (executable-find "python") 3 0)
+          treemacs-file-event-delay           5000
+          treemacs-follow-after-init          t
+          treemacs-follow-recenter-distance   0.1
+          treemacs-goto-tag-strategy          'refetch-index
+          treemacs-indentation                2
+          treemacs-indentation-string         " "
+          treemacs-is-never-other-window      t
+          treemacs-never-persist              nil
+          treemacs-no-png-images              t
+          treemacs-recenter-after-file-follow nil
+          treemacs-recenter-after-tag-follow  nil
+          treemacs-show-hidden-files          t
+          treemacs-silent-filewatch           nil
+          treemacs-silent-refresh             nil
+          treemacs-sorting                    'alphabetic-desc
+          treemacs-tag-follow-cleanup         t
+          treemacs-tag-follow-delay           1.5
+          treemacs-width                      35)
+
+    (treemacs-follow-mode t)
+    (treemacs-filewatch-mode t)
+    (treemacs-git-mode 'extended))
+  :bind
+  (:map global-map
+        ("M-0" . treemacs-select-window)
+        ("M-1" . treemacs-toggle)))
+
+(use-package treemacs-projectile
+  :defer t
+  :ensure t
+  :config
+  (setq treemacs-header-function #'treemacs-projectile-create-header)
+  :bind (:map global-map
+              ("C-c t p" . treemacs-projectile)
+              ("C-c t t" . treemacs-projectile-toggle)))
 
 (use-package org
   :config
