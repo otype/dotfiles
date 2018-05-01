@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/emacs
 
 ### Emacs ###
@@ -69,3 +68,9 @@ anaconda-mode/
 
 
 # End of https://www.gitignore.io/api/emacs
+
+#
+# Custom definitions
+#
+
+**/projectile.cache
