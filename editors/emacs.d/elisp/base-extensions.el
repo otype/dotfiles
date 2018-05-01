@@ -153,6 +153,8 @@
   (setq projectile-known-projects-file
         (expand-file-name "projectile-bookmarks.eld" temp-dir))
 
+  (setq projectile-completion-system 'helm)
+  (setq projectile-enable-caching t)
   (projectile-global-mode))
 
 (use-package recentf
