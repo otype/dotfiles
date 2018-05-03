@@ -74,3 +74,4 @@ anaconda-mode/
 #
 
 **/projectile.cache
+private/cache/

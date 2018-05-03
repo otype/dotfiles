@@ -141,7 +141,7 @@
           treemacs-goto-tag-strategy          'refetch-index
           treemacs-indentation                2
           treemacs-indentation-string         " "
-          treemacs-is-never-other-window      t
+          treemacs-is-never-other-window      nil
           treemacs-never-persist              nil
           treemacs-no-png-images              t
           treemacs-recenter-after-file-follow nil
@@ -174,7 +174,7 @@
 (use-package org
   :config
   (setq org-directory "~/org"
-        org-default-notes-file (concat org-directory "/todo.org"))
+        org-default-notes-file (concat org-directory "/mw-tasks.org"))
   :bind
   ("C-c l" . org-store-link)
   ("C-c a" . org-agenda))
