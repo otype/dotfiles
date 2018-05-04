@@ -44,6 +44,7 @@ brew_cask_apps=(
   psequel
   tunnelblick
   1password
+  1password-cli
 )
 
 brew cask reinstall ${brew_cask_apps[@]}
