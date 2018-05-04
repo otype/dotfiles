@@ -17,9 +17,8 @@ alias bc="bc -l"
 # General exports
 export PAGER="less"
 
-# Preferred editor
-# Disabled as this variable is defined in zshenv-emacs.
-# export EDITOR="vim"
+# Preferred editor: emacsclient if available (this will be set in zshenv-emacs), otherwise vim.
+[[ -f `which emacsclient` ]] || export EDITOR="vim"
 
 # Lang variables
 export LC_CTYPE="en_US.UTF-8"
