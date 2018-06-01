@@ -1,7 +1,3 @@
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
-
 set autochdir
 set autoread                                " reload files when changed on disk, i.e. via `git checkout`
 set autowrite                               " Automatically save before commands like :next and :make
@@ -20,9 +16,10 @@ set term=xterm-256color
 set termencoding=utf-8
 set t_Co=256
 
-colo desert
+colorscheme pastel
+
 syntax enable
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 if has("gui_running")
    let s:uname = system("uname")

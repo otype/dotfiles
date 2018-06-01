@@ -13,8 +13,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## dotfiles
+## dotfiles / dotfiles-private
 Can only be transferred via USB stick from 1 laptop to a new laptop.
+
+## Colorschemes
+
+See https://rainglow.io/
+
+gcl rainglow/vim
+gcl rainglow/macdown
+gcl rainglow/slack
+
+For Emacs: https://github.com/daylerees/colour-schemes/tree/master/emacs
 
 ## Applications through `brew cask`
 
@@ -38,10 +48,12 @@ brew_cask_apps=(
   java8
   keepassx
   keepingyouawake
+  macdown
   macvim
   maOBrked
   postman
   psequel
+  sequel-pro
   tunnelblick
   1password
   1password-cli
@@ -56,9 +68,12 @@ brew cask reinstall ${brew_cask_apps[@]}
 brew tap Yleisradio/terraforms
 # DEPRECATED: brew tap d12frosted/emacs-plus && brew install emacs-plus
 brew install emacs --with-cocoa --with-gnutls
+brew install mu --with-emacs
 
 brew_apps=(
   asdf
+  awscli
+  awsebcli
   chtf
   dep
   elixir
@@ -66,8 +81,10 @@ brew_apps=(
   hub
   hugo
   ispell
+  isync
   jq
   lynx
+  msmtp
   node
   openconnect
   pandoc

@@ -21,6 +21,9 @@
 (require 'base-functions)
 (require 'base-global-keys)
 
+;; Email
+(require 'email)
+
 ;; Language layers
 ;(require 'lang-python)
 ;(require 'lang-ruby)

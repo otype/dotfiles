@@ -1,206 +1,14 @@
 #
-# hans@otype.de
-#
-IMAPAccount hansotypede
-Host imap.gmail.com
-User hans@otype.de
-PassCmd "security find-generic-password -s mbsync-hansotypede-password -w"
-AuthMechs LOGIN
-SSLType IMAPS
-SSLVersions SSLv3
-CertificateFile ~/.dotfiles/mail/ca-bundle.crt
-
-IMAPStore hansotypede-remote
-Account hansotypede
-
-MaildirStore hansotypede-local
-Path ~/.mails/hansotypede/
-Inbox ~/.mails/hansotypede/inbox
-
-Channel hansotypede-inbox
-Master :hansotypede-remote:"INBOX"
-Slave :hansotypede-local:inbox
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansotypede-important
-Master :hansotypede-remote:"[Gmail]/Important"
-Slave :hansotypede-local:important
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansotypede-spam
-Master :hansotypede-remote:"[Gmail]/Spam"
-Slave :hansotypede-local:spam
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansotypede-archive
-Master :hansotypede-remote:"[Gmail]/All Mail"
-Slave :hansotypede-local:archive
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansotypede-starred
-Master :hansotypede-remote:"[Gmail]/Starred"
-Slave :hansotypede-local:starred
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansotypede-drafts
-Master :hansotypede-remote:"[Gmail]/Drafts"
-Slave :hansotypede-local:drafts
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansotypede-sent
-Master :hansotypede-remote:"[Gmail]/Sent Mail"
-Slave :hansotypede-local:sent
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansotypede-trash
-Master :hansotypede-remote:"[Gmail]/Trash"
-Slave :hansotypede-local:trash
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansotypede-rest
-Master :hansotypede-remote:
-Slave :hansotypede-local:
-#Patterns * !"INBOX" !"[Gmail]/Sent Mail" !"[Gmail]/Drafts" !"[Gmail]/Starred" !"[Gmail]/All Mail" !"[Gmail]/Trash"
-Patterns * !"INBOX" !"[Gmail]/*"
-Create Slave
-Expunge Both
-SyncState *
-
-# Get all the channels together into a group.
-Group hansotypede-group
-Channel hansotypede-inbox
-Channel hansotypede-important
-Channel hansotypede-spam
-Channel hansotypede-archive
-Channel hansotypede-starred
-Channel hansotypede-drafts
-Channel hansotypede-sent
-Channel hansotypede-trash
-Channel hansotypede-rest
-
-#
-# wir@otype.de
-#
-IMAPAccount wirotypede
-Host imap.gmail.com
-User wir@otype.de
-PassCmd "security find-generic-password -s mbsync-wirotypede-password -w"
-AuthMechs LOGIN
-SSLType IMAPS
-SSLVersions SSLv3
-CertificateFile ~/.dotfiles/mail/ca-bundle.crt
-
-IMAPStore wirotypede-remote
-Account wirotypede
-
-MaildirStore wirotypede-local
-Path ~/.mails/wirotypede/
-Inbox ~/.mails/wirotypede/inbox
-
-Channel wirotypede-inbox
-Master :wirotypede-remote:"INBOX"
-Slave :wirotypede-local:inbox
-Create Slave
-Expunge Both
-SyncState *
-
-Channel wirotypede-important
-Master :wirotypede-remote:"[Gmail]/Important"
-Slave :wirotypede-local:important
-Create Slave
-Expunge Both
-SyncState *
-
-Channel wirotypede-spam
-Master :wirotypede-remote:"[Gmail]/Spam"
-Slave :wirotypede-local:spam
-Create Slave
-Expunge Both
-SyncState *
-
-Channel wirotypede-archive
-Master :wirotypede-remote:"[Gmail]/All Mail"
-Slave :wirotypede-local:archive
-Create Slave
-Expunge Both
-SyncState *
-
-Channel wirotypede-starred
-Master :wirotypede-remote:"[Gmail]/Starred"
-Slave :wirotypede-local:starred
-Create Slave
-Expunge Both
-SyncState *
-
-Channel wirotypede-drafts
-Master :wirotypede-remote:"[Gmail]/Drafts"
-Slave :wirotypede-local:drafts
-Create Slave
-Expunge Both
-SyncState *
-
-Channel wirotypede-sent
-Master :wirotypede-remote:"[Gmail]/Sent Mail"
-Slave :wirotypede-local:sent
-Create Slave
-Expunge Both
-SyncState *
-
-Channel wirotypede-trash
-Master :wirotypede-remote:"[Gmail]/Trash"
-Slave :wirotypede-local:trash
-Create Slave
-Expunge Both
-SyncState *
-
-Channel wirotypede-rest
-Master :wirotypede-remote:
-Slave :wirotypede-local:
-#Patterns * !"INBOX" !"[Gmail]/Sent Mail" !"[Gmail]/Drafts" !"[Gmail]/Starred" !"[Gmail]/All Mail" !"[Gmail]/Trash"
-Patterns * !"INBOX" !"[Gmail]/*"
-Create Slave
-Expunge Both
-SyncState *
-
-# Get all the channels together into a group.
-Group wirotypede-group
-Channel wirotypede-inbox
-Channel wirotypede-important
-Channel wirotypede-spam
-Channel wirotypede-archive
-Channel wirotypede-starred
-Channel wirotypede-drafts
-Channel wirotypede-sent
-Channel wirotypede-trash
-Channel wirotypede-rest
-
-#
 # hans.schmidt@meltwater.com
 #
 IMAPAccount hansschmidtmeltwatercom
 Host imap.gmail.com
 User hans.schmidt@meltwater.com
-PassCmd "security find-generic-password -s mbsync-hansschmidtmeltwatercom-password -w"
+PassCmd "security find-internet-password -s 'imap.gmail.com' -a 'hans.schmidt@meltwater.com' -w"
 AuthMechs LOGIN
 SSLType IMAPS
-SSLVersions SSLv3
-CertificateFile ~/.dotfiles/mail/ca-bundle.crt
+SSLVersion TLSv1.2
+CertificateFile /usr/local/etc/openssl/cert.pem
 
 IMAPStore hansschmidtmeltwatercom-remote
 Account hansschmidtmeltwatercom
@@ -208,85 +16,16 @@ Account hansschmidtmeltwatercom
 MaildirStore hansschmidtmeltwatercom-local
 Path ~/.mails/hansschmidtmeltwatercom/
 Inbox ~/.mails/hansschmidtmeltwatercom/inbox
+Trash ~/.mails/hansschmidtmeltwatercom/[Gmail]/Trash
+SubFolders Verbatim
 
 Channel hansschmidtmeltwatercom-inbox
-Master :hansschmidtmeltwatercom-remote:"INBOX"
-Slave :hansschmidtmeltwatercom-local:inbox
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansschmidtmeltwatercom-important
-Master :hansschmidtmeltwatercom-remote:"[Gmail]/Important"
-Slave :hansschmidtmeltwatercom-local:important
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansschmidtmeltwatercom-spam
-Master :hansschmidtmeltwatercom-remote:"[Gmail]/Spam"
-Slave :hansschmidtmeltwatercom-local:spam
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansschmidtmeltwatercom-archive
-Master :hansschmidtmeltwatercom-remote:"[Gmail]/All Mail"
-Slave :hansschmidtmeltwatercom-local:archive
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansschmidtmeltwatercom-starred
-Master :hansschmidtmeltwatercom-remote:"[Gmail]/Starred"
-Slave :hansschmidtmeltwatercom-local:starred
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansschmidtmeltwatercom-drafts
-Master :hansschmidtmeltwatercom-remote:"[Gmail]/Drafts"
-Slave :hansschmidtmeltwatercom-local:drafts
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansschmidtmeltwatercom-sent
-Master :hansschmidtmeltwatercom-remote:"[Gmail]/Sent Mail"
-Slave :hansschmidtmeltwatercom-local:sent
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansschmidtmeltwatercom-trash
-Master :hansschmidtmeltwatercom-remote:"[Gmail]/Trash"
-Slave :hansschmidtmeltwatercom-local:trash
-Create Slave
-Expunge Both
-SyncState *
-
-Channel hansschmidtmeltwatercom-rest
 Master :hansschmidtmeltwatercom-remote:
 Slave :hansschmidtmeltwatercom-local:
-#Patterns * !"INBOX" !"[Gmail]/Sent Mail" !"[Gmail]/Drafts" !"[Gmail]/Starred" !"[Gmail]/All Mail" !"[Gmail]/Trash"
-Patterns * !"INBOX" !"[Gmail]/*"
+# Patterns * !"[Gmail]/*"
+Patterns INBOX "[Gmail]/All Mail" "[Gmail]/Drafts" "[Gmail]/Sent Mail" "[Gmail]/Trash" !"[Gmail]/Starred" !"[Gmail]/Important" !"[Gmail]/Spam"
 Create Slave
 Expunge Both
 SyncState *
 
-# Get all the channels together into a group.
-Group hansschmidtmeltwatercom-group
-Channel hansschmidtmeltwatercom-inbox
-Channel hansschmidtmeltwatercom-important
-Channel hansschmidtmeltwatercom-spam
-Channel hansschmidtmeltwatercom-archive
-Channel hansschmidtmeltwatercom-starred
-Channel hansschmidtmeltwatercom-drafts
-Channel hansschmidtmeltwatercom-sent
-Channel hansschmidtmeltwatercom-trash
-Channel hansschmidtmeltwatercom-rest
-
-Group all
-Channel hansotypede-group
-Channel hansschmidtmeltwatercom-group
-Channel wirotypede-group
+Sync All

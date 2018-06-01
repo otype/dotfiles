@@ -63,7 +63,7 @@
  auto-save-default                  nil
  ;; auto-save-list-file-name           (concat temp-dir "/auto-save-list")
  ;; make-backup-files                  t
- ;; create-lockfiles                   nil
+ create-lockfiles                   nil
  ;; backup-directory-alist            `((".*" . ,(concat temp-dir "/backup/")))
  ;; auto-save-file-name-transforms    `((".*" ,(concat temp-dir "/auto-save-list/") t))
  )
@@ -75,7 +75,7 @@
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
-(when (  fboundp 'scroll-bar-mode)
+(when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
 (show-paren-mode 1)

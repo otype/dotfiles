@@ -6,7 +6,6 @@
 (use-package moe-theme
   :ensure t
   :defer t)
-;;  (load-theme 'moe-theme t))
 
 (use-package powerline
   :ensure t)
