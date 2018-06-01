@@ -14,7 +14,7 @@
 (setq mu4e-headers-visible-lines 30)
 
 ;; when to refresh mails
-(setq mu4e-update-interval 600)
+(setq mu4e-update-interval 900)
 
 ;; Save attachment (this can also be a function)
 (setq mu4e-attachment-dir "~/Downloads")
