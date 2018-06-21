@@ -59,10 +59,9 @@
 (setq
  ;; history-length                     1000
  ;; backup-inhibited                   nil
- ;; make-backup-files                  t
+ make-backup-files                  nil
  auto-save-default                  nil
  ;; auto-save-list-file-name           (concat temp-dir "/auto-save-list")
- ;; make-backup-files                  t
  create-lockfiles                   nil
  ;; backup-directory-alist            `((".*" . ,(concat temp-dir "/backup/")))
  ;; auto-save-file-name-transforms    `((".*" ,(concat temp-dir "/auto-save-list/") t))
