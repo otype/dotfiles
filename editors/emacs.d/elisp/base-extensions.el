@@ -201,7 +201,9 @@
 
   (setq projectile-completion-system 'helm)
   (setq projectile-enable-caching t)
-  (projectile-global-mode))
+  (projectile-global-mode)
+  :bind-keymap
+  ("C-c p" . projectile-command-map))
 
 (use-package recentf
   :config

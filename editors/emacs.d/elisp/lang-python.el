@@ -12,7 +12,12 @@
     (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
     :config
     (setq elpy-rpc-backend "jedi")
-    ;; (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+    (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+    (add-hook 'python-mode-hook
+	      (lambda ()
+		(setq indent-tabs-mode nil)
+		(setq tab-width 4)
+		(setq python-indent-offset 4)))
     ;;flycheck-python-flake8-executable "/usr/local/bin/flake8"
     :bind (:map elpy-mode-map
 	      ("M-." . elpy-goto-definition)
