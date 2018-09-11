@@ -2,7 +2,7 @@
 
 # More symbols to choose from:
 # ☀ ✹ ☄ ♆ ♀ ♁ ♐ ♇ ♈ ♉ ♚ ♛ ♜ ♝ ♞ ♟ ♠ ♣ ⚢ ⚲ ⚳ ⚴ ⚥ ⚤ ⚦ ⚒ ⚑ ⚐ ♺ ♻ ♼ ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷
-# ✡ ✔ ✖ ✚ ✱ ✤ ✦ ❤ ➜ ➟ ➼ ✂ ✎ ✐ ⨀ ⨁ ⨂ ⨍ ⨎ ⨏ ⨷ ⩚ ⩛ ⩡ ⩱ ⩲ ⩵  ⩶ y⨠ 
+# ✡ ✔ ✖ ✚ ✱ ✤ ✦ ❤ ➜ ➟ ➼ ✂ ✎ ✐ ⨀ ⨁ ⨂ ⨍ ⨎ ⨏ ⨷ ⩚ ⩛ ⩡ ⩱ ⩲ ⩵  ⩶ y⨠
 # ⬅ ⬆ ⬇ ⬈ ⬉ ⬊ ⬋ ⬒ ⬓ ⬔ ⬕ ⬖ ⬗ ⬘ ⬙ ⬟  ⬤ 〒 ǀ ǁ ǂ ĭ Ť Ŧ
 #
 rbenv_version() {
@@ -19,6 +19,14 @@ pyenv_version() {
 
 if which pyenv &> /dev/null; then
 	pyenv_info='%{$fg_bold[magenta]%}${$(pyenv_version)/#system/}%{$reset_color%}'
+fi
+
+goenv_version() {
+	goenv version 2>/dev/null | awk '{print $1}'
+}
+
+if which goenv &> /dev/null; then
+	goenv_info='%{$fg_bold[white]%}${$(goenv_version)/#system/}%{$reset_color%}'
 fi
 
 # Must use Powerline font, for \uE0A0 to render.
@@ -39,5 +47,5 @@ local current_dir='%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}'
 local git_info='$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}'
 
 PROMPT="
-${user_host} :: ${current_dir} ${git_info} ${rbenv_info} ${pyenv_info}
+${user_host} :: ${current_dir} ${git_info} ${rbenv_info} ${pyenv_info} ${goenv_info}
 |:. "

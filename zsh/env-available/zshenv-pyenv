@@ -20,6 +20,7 @@ else
     # We are running 'Darwin'!
     export PYENV_ROOT=/usr/local/opt/pyenv
     export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+    # export PATH="$HOME/.local/bin:$PATH"
     if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
     # Following seems to be run automatically on init, otherwise we have a race condition.
