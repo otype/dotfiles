@@ -21,6 +21,7 @@
   :after go-mode
   :config
   (setq tab-width 4)
+  (setq indent-tabs-mode 1)
 
   :bind (:map go-mode-map
   ; Godef jump key binding
