@@ -5,18 +5,13 @@
 #
 
 # Added for brew zsh-completions
-if [[ `uname -s` == "Darwin" ]]; then
-	if [[ `alias | grep "^run-help"` ]]; then
- 		unalias run-help
-		autoload run-help
-		HELPDIR=/usr/local/share/zsh/helpfiles
-	fi
-
-	export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-	[[ -d /usr/local/share/python ]] && export PATH=/usr/local/share/python:$PATH
-	[[ -d /usr/local/share/npm/bin ]] && export PATH=/usr/local/share/npm/bin:$PATH
+if [[ `alias | grep "^run-help"` ]]; then
+    unalias run-help
+    autoload run-help
+    HELPDIR=/usr/local/share/zsh/helpfiles
 fi
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Aliases
 alias buuc="brew update && brew upgrade && brew cleanup"

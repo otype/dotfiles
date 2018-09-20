@@ -3,4 +3,4 @@
 # ASDF
 #
 #
-source /usr/local/opt/asdf/asdf.sh
+[[ -d "/usr/local/opt/asdf" ]] && source /usr/local/opt/asdf/asdf.sh

@@ -5,12 +5,8 @@
 #
 if [[ `uname -s` = "FreeBSD" ]]; then
   # do nothing, we are done
-elif [[ `uname -s` = "Linux" ]]; then
-  # do nothing, we are done
 elif [[ `uname -s` = "Darwin" ]]; then
 	[[ -d "$HOME/.luarocks/bin" ]] && export PATH="$HOME/.luarocks/bin:$PATH"
-elif [[ `uname -s` = "OpenBSD" ]]; then
-	# do nothing, we are done
 else
 	echo "`uname -s` is not supported!"
 fi

@@ -4,6 +4,5 @@
 #
 #
 if [[ -f /usr/local/bin/drone ]]; then
-   export DRONE_SERVER="https://drone.meltwater.io"
-   export DRONE_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZXh0Ijoib3R5cGUiLCJ0eXBlIjoidXNlciJ9.Xfb9qxGqF6uwgzAONZ0AxibCFaWk3vyT4UgURDtECDA"
+    . ~/.dotfiles-private/drone/drone.meltwater.io
 fi

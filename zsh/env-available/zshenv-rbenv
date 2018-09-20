@@ -5,10 +5,6 @@
 #
 if [[ `uname -s` = "FreeBSD" ]]; then
     # do nothing, we are done
-elif [[ `uname -s` = "Linux" ]]; then
-	export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-	eval "$(rbenv init -)"
-	rbenv rehash
 elif [[ `uname -s` = "Darwin" ]]; then
 	# Most likely, you are on a Mac!
 	export RBENV_ROOT=/usr/local/var/rbenv
@@ -17,8 +13,6 @@ elif [[ `uname -s` = "Darwin" ]]; then
 
 	# If you use "gem install --user <gem_name>" with the "system"-ruby version ...
 	[[ -d "$HOME/.gem/ruby/2.0.0/bin" ]] && export PATH="$HOME/.gem/ruby/2.0.0/bin:$PATH"
-elif [[ `uname -s` = "OpenBSD" ]]; then
-	# do nothing, we are done
 else
 	echo "`uname -s` is not supported!"
 fi
