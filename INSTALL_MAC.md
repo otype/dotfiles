@@ -77,7 +77,7 @@ brew_apps=(
   chtf
   dep
   elixir
-  golang
+  go@1.10
   hub
   hugo
   ispell
