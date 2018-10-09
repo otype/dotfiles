@@ -78,6 +78,7 @@ brew_apps=(
   dep
   elixir
   go@1.10
+  gnupg
   hub
   hugo
   ispell
@@ -88,6 +89,7 @@ brew_apps=(
   node
   openconnect
   pandoc
+  pinentry-mac
   privoxy
   pyenv
   rbenv
