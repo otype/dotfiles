@@ -51,6 +51,7 @@ brew_cask_apps=(
   macdown
   macvim
   maOBrked
+  md5sha1sum
   postman
   psequel
   sequel-pro

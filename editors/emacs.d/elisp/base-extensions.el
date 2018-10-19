@@ -195,12 +195,14 @@
 (use-package page-break-lines)
 
 (use-package projectile
+  :ensure t
   :config
   (setq projectile-known-projects-file
         (expand-file-name "projectile-bookmarks.eld" temp-dir))
 
   (setq projectile-completion-system 'helm)
   (setq projectile-enable-caching t)
+  (setq projectile-project-search-path '("~/src/" "~/misc/"))
   (projectile-global-mode)
   :bind-keymap
   ("C-c p" . projectile-command-map))
