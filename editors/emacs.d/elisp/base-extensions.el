@@ -16,7 +16,6 @@
                         (projects . 5)
                         (agenda . 5)
                         (registers . 5)))
-  ;; Set the title
   (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
   ;; Set the banner
   ;; Value can be
@@ -31,14 +30,6 @@
   (setq ediff-window-setup-function 'ediff-setup-windows-plain)
   (setq-default ediff-highlight-all-diffs 'nil)
   (setq ediff-diff-options "-w"))
-
-;; (use-package exec-path-from-shell
-;;   :config
-;;   ;; Add GOPATH to shell
-;;   (when (memq window-system '(mac ns))
-;;     (exec-path-from-shell-copy-env "GOPATH")
-;;     (exec-path-from-shell-copy-env "PYTHONPATH")
-;;     (exec-path-from-shell-initialize)))
 
 (use-package expand-region
   :bind
@@ -119,57 +110,6 @@
   :bind
   ("C-a" . mwim-beginning)
   ("C-e" . mwim-end))
-
-;; (use-package neotree
-;;   :config
-;;   (setq neo-theme 'arrow
-;;         neotree-smart-optn t
-;;         neo-window-fixed-size nil)
-;;   ;; Disable linum for neotree
-;;   (add-hook 'neo-after-create-hook 'disable-neotree-hook))
-
-(use-package treemacs
-  :ensure t
-  :defer t
-  :config
-  (progn
-    (setq treemacs-change-root-without-asking t
-          ;; treemacs-collapse-dirs              (if (executable-find "python") 3 0)
-          treemacs-file-event-delay           5000
-          treemacs-follow-after-init          t
-          treemacs-follow-recenter-distance   0.1
-          treemacs-goto-tag-strategy          'refetch-index
-          treemacs-indentation                2
-          treemacs-indentation-string         " "
-          treemacs-is-never-other-window      nil
-          treemacs-never-persist              nil
-          treemacs-no-png-images              t
-          treemacs-recenter-after-file-follow nil
-          treemacs-recenter-after-tag-follow  nil
-          treemacs-show-hidden-files          t
-          treemacs-silent-filewatch           nil
-          treemacs-silent-refresh             nil
-          treemacs-sorting                    'alphabetic-desc
-          treemacs-tag-follow-cleanup         t
-          treemacs-tag-follow-delay           1.5
-          treemacs-width                      35)
-
-    (treemacs-follow-mode t)
-    (treemacs-filewatch-mode t)
-    (treemacs-git-mode 'extended))
-  :bind
-  (:map global-map
-        ("M-0" . treemacs-select-window)
-        ("M-1" . treemacs-toggle)))
-
-(use-package treemacs-projectile
-  :defer t
-  :ensure t
-  :config
-  (setq treemacs-header-function #'treemacs-projectile-create-header)
-  :bind (:map global-map
-              ("C-c t p" . treemacs-projectile)
-              ("C-c t t" . treemacs-projectile-toggle)))
 
 (use-package org
   :config
