@@ -55,6 +55,7 @@ brew_cask_apps=(
   postman
   psequel
   sequel-pro
+  tableplus
   tunnelblick
   1password
   1password-cli
