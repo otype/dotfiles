@@ -101,7 +101,7 @@ brew_apps=(
 
 brew install ${brew_apps[@]}
 
-chtf 0.11.5
+chtf 0.11.11
 ```
 
 ## Dependencies for `golang`

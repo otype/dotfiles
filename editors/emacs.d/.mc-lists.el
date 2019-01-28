@@ -9,6 +9,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+	beginning-of-buffer
 	end-of-buffer
 	helm-M-x
 	ns-copy-including-secondary
