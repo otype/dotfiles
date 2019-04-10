@@ -1,4 +1,3 @@
-
 (use-package ace-jump-mode
   :bind
   ("C-c SPC" . ace-jump-mode))
@@ -76,8 +75,12 @@
 
 
 (use-package hlinum
+  :ensure t
   :config
   (hlinum-activate))
+
+(use-package iedit
+  :ensure t)
 
 (use-package linum
   :config
@@ -86,6 +89,7 @@
 
 
 (use-package magit
+  :ensure t
   :config
   :bind
   ;; Magic
@@ -99,12 +103,12 @@
 
 (use-package magit-popup)
 
-(use-package multiple-cursors
-  :bind
-  ("C-S-c C-S-c" . mc/edit-lines)
-  ("C->" . mc/mark-next-like-this)
-  ("C-<" . mc/mark-previous-like-this)
-  ("C-c C->" . mc/mark-all-like-this))
+;; (use-package multiple-cursors
+;;   :bind
+;;   ("C-S-c C-S-c" . mc/edit-lines)
+;;   ("C->" . mc/mark-next-like-this)
+;;   ("C-<" . mc/mark-previous-like-this)
+;;   ("C-c C->" . mc/mark-all-like-this))
 
 (use-package mwim
   :bind
