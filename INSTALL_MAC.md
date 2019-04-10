@@ -130,7 +130,6 @@ git clone https://github.com/powerline/fonts.git --depth=1
 
 Following links will redirect you to the app in the App Store:
 
-- [amphetamine](https://itunes.apple.com/de/app/amphetamine/id937984704?l=en&mt=12)
 - [Boxy](https://itunes.apple.com/de/app/boxy-for-inbox-by-gmail/id1053031090?l=en&mt=12)
 - [YubiKey Personalization Tool](https://itunes.apple.com/de/app/yubikey-personalization-tool/id638161122?l=en&mt=12)
 
