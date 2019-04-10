@@ -25,7 +25,8 @@
 (require 'email)
 
 ;; Language layers
-;(require 'lang-python)
-;(require 'lang-ruby)
+(require 'lang-python)
+(require 'lang-ruby)
 (require 'lang-go)
+(require 'lang-javascript)
 (require 'lang-elixir)

@@ -6,18 +6,6 @@
 ;; automatically open sym-linked files
 (setq vc-follow-symlinks t)
 
-(defun my-js-mode-hook ()
-  "Custom `js-mode' behaviours."
-  (setq indent-tabs-mode nil)
-
-  ;; use 2 spaces in Javascript/JSON
-  (setq-default js2-basic-offset 2
-		js-indent-level 2)
-
-  (setq js2-strict-missing-semi-warning nil))
-
-(add-hook 'js-mode-hook 'my-js-mode-hook)
-
 ;; HIGHLIGHTING
 ;; Turn on hl-line
 (global-hl-line-mode 1)
