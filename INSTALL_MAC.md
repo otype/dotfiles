@@ -36,6 +36,7 @@ brew cask zap amazon-music
 brew_cask_apps=(
   amazon-music
   appcleaner
+  emacs
   firefox
   fluid
   gitx
@@ -68,9 +69,7 @@ brew cask reinstall ${brew_cask_apps[@]}
 
 ```bash
 brew tap Yleisradio/terraforms
-# DEPRECATED: brew tap d12frosted/emacs-plus && brew install emacs-plus
-brew install emacs --with-cocoa --with-gnutls
-brew install mu --with-emacs
+brew install mu
 
 brew_apps=(
   asdf
