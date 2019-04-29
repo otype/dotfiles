@@ -1,5 +1,0 @@
-Either do following:
-$ git clone https://github.com/google/styleguide
-$ cp styleguide/intellij-java-google-style.xml ~/Library/Preferences/IntelliJIdea14/codestyles/
-
-Or link the file here to your Intellij installation.
