@@ -22,7 +22,7 @@
 (require 'base-global-keys)
 
 ;; Email
-(require 'email)
+;;(require 'email)
 
 ;; Language layers
 (require 'lang-python)
@@ -30,3 +30,4 @@
 (require 'lang-go)
 (require 'lang-javascript)
 (require 'lang-elixir)
+;(require 'lang-java)

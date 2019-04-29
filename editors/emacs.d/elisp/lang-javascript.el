@@ -10,8 +10,9 @@
         web-mode-style-padding 2
         web-mode-script-padding 2))
 
-;; (use-package xref-js2
-;;   :defer t)
+(use-package xref-js2
+  :ensure t
+  :defer t)
 
 (use-package js2-mode
   :defer t
@@ -33,6 +34,11 @@
   :config
   (use-package json-mode :ensure t)
   (use-package prettier-js :ensure t)
+
+  ;; js-mode (which js2 is based on) binds "M-." which conflicts with xref, so
+  ;; unbind it.
+  (define-key js-mode-map (kbd "M-.") nil)
+
   (add-hook 'js-mode-hook 'js2-minor-mode)
   (add-hook 'js2-mode-hook
             (lambda ()
