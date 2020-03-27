@@ -39,19 +39,14 @@ brew_cask_apps=(
   emacs
   firefox
   fluid
-  gitx
   google-backup-and-sync
   google-chrome
-  hipchat
   intellij-idea-ce
   iterm2
   java
-  java8
-  keepassx
   keepingyouawake
   macdown
   macvim
-  maOBrked
   md5sha1sum
   postman
   psequel
@@ -72,22 +67,17 @@ brew tap Yleisradio/terraforms
 brew install mu
 
 brew_apps=(
-  asdf
   awscli
-  awsebcli
   chtf
-  dep
   elixir
-  go@1.10
+  go
+  goreleaser
   gnupg
   hub
-  hugo
   ispell
   isync
   jq
   lynx
-  msmtp
-  node
   openconnect
   pandoc
   pinentry-mac
