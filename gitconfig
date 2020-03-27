@@ -1,7 +1,8 @@
 [user]
   name = Hans-Gunther Schmidt
   email = hans@otype.de
-  signingKey = 0xAAACAC4B5C17BF81
+  #email = hans.schmidt@meltwater.com
+#  signingKey = 0xAAACAC4B5C17BF81
 [core]
   editor = vim
   autocrlf = input
@@ -39,7 +40,7 @@
 [rebase]
   stat = true
 [commit]
-  gpgsign = true
+  gpgsign = false
 [credential]
 	helper = osxkeychain
 # [url "git@github.com:"]
