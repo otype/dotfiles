@@ -60,5 +60,7 @@ local current_dir='%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}'
 local git_info='$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}'
 
 PROMPT="
-${user_host} :: ${current_dir} ${git_info} (${pyenv_info} ${goenv_info} ${node_info})
+${user_host} :: ${current_dir} ${git_info}
 |:. "
+
+RPROMPT="(${pyenv_info} ${goenv_info} ${node_info})"
