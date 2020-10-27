@@ -6,39 +6,39 @@
 # ⬅ ⬆ ⬇ ⬈ ⬉ ⬊ ⬋ ⬒ ⬓ ⬔ ⬕ ⬖ ⬗ ⬘ ⬙ ⬟  ⬤ 〒 ǀ ǁ ǂ ĭ Ť Ŧ
 
 function rbenv_version() {
-    if which rbenv &> /dev/null && [[ -f "Gemfile" ]]; then
-        echo "(Ruby:$(rbenv version 2>/dev/null | awk '{print $1}'))"
-    fi
+  if which rbenv &> /dev/null && [[ -f "Gemfile" ]]; then
+    echo "(Ruby:$(rbenv version 2>/dev/null | awk '{print $1}'))"
+  fi
 }
 
 function pyenv_version() {
-    if which pyenv &> /dev/null && [[ -f "setup.py" ]] || [[ -f "requirements.txt" ]]; then
-        echo "(Python:$(pyenv version 2>/dev/null | awk '{print $1}'))"
-    fi
+  if which pyenv &> /dev/null && [[ -f "setup.py" ]] || [[ -f "requirements.txt" ]]; then
+    echo "(Python:$(pyenv version 2>/dev/null | awk '{print $1}'))"
+  fi
 }
 
 function node_version() {
-    if which node &> /dev/null && [[ -f "package.json" ]]; then
-        echo "(Node:$(node --version 2>/dev/null | awk '{print $1}'))"
-    fi
+  if which node &> /dev/null && [[ -f "package.json" ]]; then
+    echo "(Node:$(node --version 2>/dev/null | awk '{print $1}'))"
+  fi
 }
 
 function goenv_version() {
-	  if which goenv &> /dev/null && [[ -f "go.mod" ]]; then
-        echo "(Go:$(goenv version 2>/dev/null | awk '{print $1}'))"
-    fi
+	if which goenv &> /dev/null && [[ -f "go.mod" ]]; then
+    echo "(Go:$(goenv version 2>/dev/null | awk '{print $1}'))"
+  fi
 }
 
 function java_version() {
-    if which java &> /dev/null && [[ -f "pom.xml" ]]; then
-        echo "(Java:$(java -version 2>&1|awk -F\" '/version/ {print $2}'))"
-    fi
+  if which java &> /dev/null && [[ -f "pom.xml" ]]; then
+    echo "(Java:$(java -version 2>&1|awk -F\" '/version/ {print $2}'))"
+  fi
 }
 
 function elixir_version() {
-    if which elixir &> /dev/null && [[ -f "mix.exs" ]]; then
-        echo "(Elixir:$(elixir -v 2>&1 | grep "Elixir" | awk -F' ' '{print $2}'))"
-    fi
+  if which elixir &> /dev/null && [[ -f "mix.exs" ]]; then
+    echo "(Elixir:$(elixir -v 2>&1 | grep "Elixir" | awk -F' ' '{print $2}'))"
+  fi
 }
 
 function kernel_version() {
