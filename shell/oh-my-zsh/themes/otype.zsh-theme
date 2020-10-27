@@ -5,39 +5,43 @@
 # ✡ ✔ ✖ ✚ ✱ ✤ ✦ ❤ ➜ ➟ ➼ ✂ ✎ ✐ ⨀ ⨁ ⨂ ⨍ ⨎ ⨏ ⨷ ⩚ ⩛ ⩡ ⩱ ⩲ ⩵  ⩶ y⨠
 # ⬅ ⬆ ⬇ ⬈ ⬉ ⬊ ⬋ ⬒ ⬓ ⬔ ⬕ ⬖ ⬗ ⬘ ⬙ ⬟  ⬤ 〒 ǀ ǁ ǂ ĭ Ť Ŧ
 
-rbenv_version() {
-	rbenv version 2>/dev/null | awk '{print $1}'
+function rbenv_version() {
+    if which rbenv &> /dev/null && [[ -f "Gemfile" ]]; then
+        echo "(Ruby:$(rbenv version 2>/dev/null | awk '{print $1}'))"
+    fi
 }
 
-if which rbenv &> /dev/null; then
-	rbenv_info='%{$fg_bold[red]%}${$(rbenv_version)/#system/}%{$reset_color%}'
-fi
-
-pyenv_version() {
-	pyenv version 2>/dev/null | awk '{print $1}'
+function pyenv_version() {
+    if which pyenv &> /dev/null && [[ -f "setup.py" ]] || [[ -f "requirements.txt" ]]; then
+        echo "(Python:$(pyenv version 2>/dev/null | awk '{print $1}'))"
+    fi
 }
 
-if which pyenv &> /dev/null; then
-	pyenv_info='%{$fg_bold[magenta]%}${$(pyenv_version)/#system/}%{$reset_color%}'
-fi
-
-node_version() {
-  node --version 2>/dev/null | awk '{print $1}'
+function node_version() {
+    if which node &> /dev/null && [[ -f "package.json" ]]; then
+        echo "(Node:$(node --version 2>/dev/null | awk '{print $1}'))"
+    fi
 }
 
-if which node &> /dev/null; then
-	node_info='%{$fg_bold[yellow]%}${$(node_version)/#system/}%{$reset_color%}'
-fi
-
-goenv_version() {
-	goenv version 2>/dev/null | awk '{print $1}'
+function goenv_version() {
+	  if which goenv &> /dev/null && [[ -f "go.mod" ]]; then
+        echo "(Go:$(goenv version 2>/dev/null | awk '{print $1}'))"
+    fi
 }
 
-if which goenv &> /dev/null; then
-	goenv_info='%{$fg_bold[white]%}${$(goenv_version)/#system/}%{$reset_color%}'
-fi
+function java_version() {
+    if which java &> /dev/null && [[ -f "pom.xml" ]]; then
+        echo "(Java:$(java -version 2>&1|awk -F\" '/version/ {print $2}'))"
+    fi
+}
 
-kernel_version() {
+function elixir_version() {
+    if which elixir &> /dev/null && [[ -f "mix.exs" ]]; then
+        echo "(Elixir:$(elixir -v 2>&1 | grep "Elixir" | awk -F' ' '{print $2}'))"
+    fi
+}
+
+function kernel_version() {
   uname -r | cut -d"-" -f1
 }
 
@@ -58,9 +62,15 @@ ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[yellow]%}🔆"
 local user_host='(%{$fg_bold[green]%}%n@%m%{$fg_bold[white]%}<${$(kernel_version)}>%{$reset_color%})'
 local current_dir='%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}'
 local git_info='$(git_prompt_info)%{$reset_color%}$(git_prompt_status)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}'
+local pyenv_info='%{$fg_bold[magenta]%}${$(pyenv_version)/#system/}%{$reset_color%}'
+local node_info='%{$fg_bold[yellow]%}${$(node_version)/#system/}%{$reset_color%}'
+local rbenv_info='%{$fg_bold[red]%}${$(rbenv_version)/#system/}%{$reset_color%}'
+local goenv_info='%{$fg_bold[blue]%}${$(goenv_version)/#system/}%{$reset_color%}'
+local java_info='%{$fg_bold[white]%}${$(java_version)/#system/}%{$reset_color%}'
+local elixir_info='%{$fg_bold[red]%}${$(elixir_version)/#system/}%{$reset_color%}'
 
 PROMPT="
 ${user_host} :: ${current_dir} ${git_info}
 |:. "
 
-RPROMPT="(${pyenv_info} ${goenv_info} ${node_info})"
+RPROMPT="${pyenv_info}${goenv_info}${node_info}${java_info}${rbenv_info}${elixir_info}"
