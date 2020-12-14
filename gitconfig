@@ -1,7 +1,6 @@
 [user]
   name = Hans-Gunther Schmidt
   email = hans@otype.de
-  #email = hans.schmidt@meltwater.com
 #  signingKey = 0xAAACAC4B5C17BF81
 [core]
   editor = vim
@@ -23,6 +22,11 @@
 [diff]
   color = auto
   noprefix = true
+  tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
 [pager]
   color = true
 [status]
@@ -44,4 +48,4 @@
 [credential]
 	helper = osxkeychain
 # [url "git@github.com:"]
-# 	insteadOf = https://github.com/
+#  	insteadOf = https://github.com/
